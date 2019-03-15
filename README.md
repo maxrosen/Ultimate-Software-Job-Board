@@ -30,7 +30,7 @@ To run **Backend**, go to **backend** folder and run **npm start**. If **backend
 
 To run **Frontend**, go to **client** folder and run **npm start**. If **frontend** start correctly, there will be page rendered on **port 3000**.
 
-  
-
+## Tips
+If being prompted missing dependency, use **npm install** which will install all missing dependencies. If still not working, you can install individual ones manually.
 
 
