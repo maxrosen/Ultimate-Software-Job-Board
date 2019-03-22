@@ -26,11 +26,13 @@ The **Json** files are the dependencies.
 Details refer to [create-react-app](https://github.com/facebook/create-react-app)
 
 ## Get Started
-To run **Backend**, go to **backend** folder and run **npm start**. If **backend** start correctly, there will be prompt in the console. The **backend** will be on **port 4000**.
+To run **Backend**, go to **backend** folder and run `npm start`. If **backend** start correctly, there will be prompt in the console. The **backend** will be on **port 4000**.
 
-To run **Frontend**, go to **client** folder and run **npm start**. If **frontend** start correctly, there will be page rendered on **port 3000**.
+To run **Frontend**, go to **client** folder and run `npm start`. If **frontend** start correctly, there will be page rendered on **port 3000**.
 
 ## Tips
-If being prompted missing dependency, use **npm install** which will install all missing dependencies. If still not working, you can install individual ones manually.
+If being prompted missing dependency, use `npm install` which will install all missing dependencies. If still not working, you can install individual ones manually.
+
+There is also a Google drive([click here](https://drive.google.com/open?id=1pHtNcOMY7GyDvs-HadJavbgazAI0MEP_)) that contain more tutorials about the project.
 
 
