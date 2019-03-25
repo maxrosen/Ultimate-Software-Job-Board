@@ -1,0 +1,263 @@
+[ {
+  "title" : "Software Engineer II",
+  "description" : "Software Engineering role on an Agile team.  3-10 years experience recommended.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 15,
+  "postedDate" : "2018-12-06"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "startDate" : "2019-10-03",
+  "postedDate" : "2018-11-21",
+  "postingExpirationDate" : "2019-09-16"
+}, {
+  "title" : "Software Architect",
+  "description" : "Software Architect for software product.  Must be able to quickly design and demonstrate new architecture patterns and processes.  Recommended 10+ years experience.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "postedDate" : "2019-01-11",
+  "postingExpirationDate" : "2019-09-28"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "postedDate" : "2019-01-06"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "startDate" : "2019-07-24",
+  "postedDate" : "2018-11-02",
+  "postingExpirationDate" : "2019-07-20"
+}, {
+  "title" : "Software Architect",
+  "description" : "Software Architect for software product.  Must be able to quickly design and demonstrate new architecture patterns and processes.  Recommended 10+ years experience.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "startDate" : "2019-11-28",
+  "postedDate" : "2018-12-01",
+  "postingExpirationDate" : "2019-07-19"
+}, {
+  "title" : "Software Engineer II",
+  "description" : "Software Engineering role on an Agile team.  3-10 years experience recommended.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "postedDate" : "2018-11-16",
+  "postingExpirationDate" : "2019-10-01"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "startDate" : "2019-10-03",
+  "postedDate" : "2019-01-10",
+  "postingExpirationDate" : "2019-06-09"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "postedDate" : "2019-01-21"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "startDate" : "2019-10-05",
+  "postedDate" : "2019-02-08",
+  "postingExpirationDate" : "2019-07-01"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "startDate" : "2019-10-09",
+  "postedDate" : "2018-12-15",
+  "postingExpirationDate" : "2019-07-18"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "startDate" : "2019-08-27",
+  "postedDate" : "2019-01-22",
+  "postingExpirationDate" : "2019-06-20"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 16,
+  "startDate" : "2019-12-25",
+  "postedDate" : "2018-12-06",
+  "postingExpirationDate" : "2019-11-27"
+}, {
+  "title" : "Software Engineer II",
+  "description" : "Software Engineering role on an Agile team.  3-10 years experience recommended.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "startDate" : "2019-09-08",
+  "postedDate" : "2018-12-07",
+  "postingExpirationDate" : "2019-09-07"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "startDate" : "2019-06-04",
+  "postedDate" : "2019-01-03",
+  "postingExpirationDate" : "2019-06-03"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 19,
+  "postedDate" : "2018-12-19",
+  "postingExpirationDate" : "2019-08-23"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "startDate" : "2019-06-17",
+  "postedDate" : "2018-12-15",
+  "postingExpirationDate" : "2019-06-16"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "startDate" : "2019-11-25",
+  "postedDate" : "2019-01-23",
+  "postingExpirationDate" : "2019-08-20"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "postedDate" : "2019-01-05",
+  "postingExpirationDate" : "2019-07-26"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "startDate" : "2019-10-28",
+  "postedDate" : "2019-01-23",
+  "postingExpirationDate" : "2019-09-09"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 17,
+  "startDate" : "2019-12-03",
+  "postedDate" : "2019-02-07",
+  "postingExpirationDate" : "2019-07-11"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 10,
+  "postedDate" : "2019-02-09"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 15,
+  "startDate" : "2019-10-14",
+  "postedDate" : "2019-02-01",
+  "postingExpirationDate" : "2019-06-16"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "startDate" : "2019-12-03",
+  "postedDate" : "2018-12-22",
+  "postingExpirationDate" : "2019-09-04"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "startDate" : "2019-12-21",
+  "postedDate" : "2018-11-03",
+  "postingExpirationDate" : "2019-07-18"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "startDate" : "2019-10-29",
+  "postedDate" : "2018-11-17",
+  "postingExpirationDate" : "2019-08-02"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "postedDate" : "2019-01-11"
+}, {
+  "title" : "Software Engineer I",
+  "description" : "Entry level Software Engineering role on an Agile team.  0-3 years experience required.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "postedDate" : "2019-02-04",
+  "postingExpirationDate" : "2019-12-01"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "postedDate" : "2018-12-25"
+}, {
+  "title" : "Software Architect",
+  "description" : "Software Architect for software product.  Must be able to quickly design and demonstrate new architecture patterns and processes.  Recommended 10+ years experience.",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "startDate" : "2019-08-28",
+  "postedDate" : "2018-12-08",
+  "postingExpirationDate" : "2019-07-04"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "startDate" : "2019-11-23",
+  "postedDate" : "2019-02-07",
+  "postingExpirationDate" : "2019-06-27"
+} ]

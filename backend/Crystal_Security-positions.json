@@ -1,0 +1,51 @@
+[ {
+  "title" : "Software Engineer II",
+  "description" : "Software Engineering role on an Agile team.  3-10 years experience recommended.",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 9,
+  "startDate" : "2019-11-23",
+  "postedDate" : "2019-01-13",
+  "postingExpirationDate" : "2019-11-19"
+}, {
+  "title" : "Senior Software Engineer",
+  "description" : "Senior Engineer for an agile development team. Recommended 10+ years experience.  Must have in depth knowledge of software systems and be able to learn quickly",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 8,
+  "postedDate" : "2018-11-13"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 3,
+  "startDate" : "2019-11-13",
+  "postedDate" : "2019-02-05",
+  "postingExpirationDate" : "2019-06-15"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 7,
+  "startDate" : "2019-07-07",
+  "postedDate" : "2018-12-25",
+  "postingExpirationDate" : "2019-06-04"
+}, {
+  "title" : "Software Engineer II",
+  "description" : "Software Engineering role on an Agile team.  3-10 years experience recommended.",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 2,
+  "startDate" : "2019-10-05",
+  "postedDate" : "2018-11-22",
+  "postingExpirationDate" : "2019-09-16"
+}, {
+  "title" : "Tech Lead",
+  "description" : "Technical leader for an agile team.  Must show strong leadership skills, innovative problem solving, and deep knowledge of software systems.",
+  "companyId" : 1,
+  "companyName" : "Crystal Security",
+  "managerId" : 3,
+  "postedDate" : "2018-11-17"
+} ]

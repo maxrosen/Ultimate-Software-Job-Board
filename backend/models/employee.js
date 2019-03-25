@@ -10,7 +10,7 @@ const EmployeeSchema = new Schema({
         type: String,
         required: true
     },
-    employeeID:{
+    employeeId:{
         type: Number,
         required: true
     },
@@ -18,7 +18,7 @@ const EmployeeSchema = new Schema({
         type: String,
         required: true
     },
-    companyID:{
+    companyId:{
         type: Number,
         required: true
     },
@@ -26,7 +26,7 @@ const EmployeeSchema = new Schema({
         type: String,
         required: true
     },
-    managerID:{
+    managerId:{
         type: Number,
         required: true
     },

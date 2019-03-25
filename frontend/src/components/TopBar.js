@@ -49,7 +49,7 @@ export default class TopBar extends React.Component {
                     My Account
                   </DropdownItem>
                   <DropdownItem>
-                    Something Else
+                    Organizational Chart
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
