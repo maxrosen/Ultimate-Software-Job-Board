@@ -37,6 +37,26 @@ mongoose.connect(url,function(err){
     console.log("MongoDB Successfully Connected");
 });
 
+//Import example data to MongoDB
+let exec = require('child_process').exec
+
+let command = 'mongo slackers --eval "db.dropDatabase()"'
+exec(command, (err, stdout, stderr) => {
+})
+
+command = 'mongoimport -d slackers -c employees --jsonArray --file Clover_Enterprises-employees.json'
+exec(command, (err, stdout, stderr) => {
+})
+command = 'mongoimport -d slackers -c employees --jsonArray --file Crystal_Security-employees.json'
+exec(command, (err, stdout, stderr) => {
+})
+command = 'mongoimport -d slackers -c positions --jsonArray --file Clover_Enterprises-positions.json'
+exec(command, (err, stdout, stderr) => {
+})
+command = 'mongoimport -d slackers -c positions --jsonArray --file Crystal_Security-positions.json'
+exec(command, (err, stdout, stderr) => {
+})
+
 router.get('/get',(req,res)=>{res.send({success: "yes"});});
 router.get('/',(req,res)=>{res.send("BackEnd EntryPoint Listening on 4000");});
 app.use('/',router);

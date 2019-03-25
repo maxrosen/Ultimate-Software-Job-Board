@@ -43,6 +43,10 @@ router.put('/update/:id',(req,res)=>{
             res.status(404).send('position not found')
         else{
             position.title=req.body.title;
+            position.description=req.body.description;
+            position.companyId=req.body.companyId;
+            position.companyName=req.body.companyName;
+            position.managerId=req.body.managerId;
             //position.date=req.body.body.date
         }
         position.save().then(position=>{
