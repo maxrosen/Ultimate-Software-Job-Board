@@ -16,7 +16,15 @@ router.get('/',(req,res)=> {
 //@access   Private
 router.post('/create',(req,res)=> {
     const newEmployee = new Employee({
-        name:req.body.name
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        employeeID:req.body.employeeID,
+        email:req.body.email,
+        companyId:req.body.companyId,
+        companyName:req.body.companyName,
+        managerId:req.body.managerId,
+        positionTitle:req.body.positionTitle,
+        startDate:req.body.startDate
     });
     newEmployee.save().then(employee=>res.json(employee));
 });
@@ -38,7 +46,15 @@ router.put('/update/:id',(req,res)=>{
         if(!employee)
             res.status(404).send('employee not found')
         else{
-            employee.name=req.body.name;
+            employee.firstName=req.body.firstName,
+            employee.lastName=req.body.lastName,
+            employee.employeeID=req.body.employeeID,
+            employee.email=req.body.email,
+            employee.companyId=req.body.companyId,
+            employee.companyName=req.body.companyName,
+            employee.managerId=req.body.managerId,
+            employee.positionTitle=req.body.positionTitle,
+            employee.startDate=req.body.startDate
             //employee.date=req.body.body.date
         }
         employee.save().then(employee=>{

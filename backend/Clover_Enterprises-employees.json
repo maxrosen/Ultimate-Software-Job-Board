@@ -1,0 +1,1500 @@
+[ {
+  "firstName" : "Lanette",
+  "lastName" : "Holmgren",
+  "employeeId" : 1,
+  "email" : "Lanette_Holmgren@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "positionTitle" : "CEO",
+  "startDate" : "2005-10-11"
+}, {
+  "firstName" : "Sonny",
+  "lastName" : "Bracco",
+  "employeeId" : 2,
+  "email" : "Sonny_Bracco@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 1,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2014-08-12"
+}, {
+  "firstName" : "Vicky",
+  "lastName" : "Harryman",
+  "employeeId" : 3,
+  "email" : "Vicky_Harryman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2007-08-20"
+}, {
+  "firstName" : "Meg",
+  "lastName" : "Paton",
+  "employeeId" : 4,
+  "email" : "Meg_Paton@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1993-01-22"
+}, {
+  "firstName" : "Orville",
+  "lastName" : "Frenz",
+  "employeeId" : 5,
+  "email" : "Orville_Frenz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2007-03-07"
+}, {
+  "firstName" : "Rina",
+  "lastName" : "Hagstrom",
+  "employeeId" : 6,
+  "email" : "Rina_Hagstrom@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2003-09-13"
+}, {
+  "firstName" : "Elia",
+  "lastName" : "Godoy",
+  "employeeId" : 7,
+  "email" : "Elia_Godoy@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 5,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2014-10-05"
+}, {
+  "firstName" : "Glennie",
+  "lastName" : "Cao",
+  "employeeId" : 8,
+  "email" : "Glennie_Cao@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1994-12-29"
+}, {
+  "firstName" : "Lecia",
+  "lastName" : "Coley",
+  "employeeId" : 9,
+  "email" : "Lecia_Coley@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1998-07-10"
+}, {
+  "firstName" : "Alphonse",
+  "lastName" : "Bolding",
+  "employeeId" : 10,
+  "email" : "Alphonse_Bolding@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2014-05-30"
+}, {
+  "firstName" : "Ayanna",
+  "lastName" : "Stenger",
+  "employeeId" : 11,
+  "email" : "Ayanna_Stenger@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 8,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2014-09-20"
+}, {
+  "firstName" : "Walker",
+  "lastName" : "Hague",
+  "employeeId" : 12,
+  "email" : "Walker_Hague@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2003-10-13"
+}, {
+  "firstName" : "Marge",
+  "lastName" : "Chipman",
+  "employeeId" : 13,
+  "email" : "Marge_Chipman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2007-02-14"
+}, {
+  "firstName" : "Conchita",
+  "lastName" : "Rieger",
+  "employeeId" : 14,
+  "email" : "Conchita_Rieger@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2012-12-01"
+}, {
+  "firstName" : "Mahalia",
+  "lastName" : "Giuliani",
+  "employeeId" : 15,
+  "email" : "Mahalia_Giuliani@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1997-09-13"
+}, {
+  "firstName" : "Gwyneth",
+  "lastName" : "Viola",
+  "employeeId" : 16,
+  "email" : "Gwyneth_Viola@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 8,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1995-11-01"
+}, {
+  "firstName" : "Celsa",
+  "lastName" : "Fujita",
+  "employeeId" : 17,
+  "email" : "Celsa_Fujita@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 5,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2012-02-02"
+}, {
+  "firstName" : "Temika",
+  "lastName" : "Mefford",
+  "employeeId" : 18,
+  "email" : "Temika_Mefford@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1997-10-20"
+}, {
+  "firstName" : "Dario",
+  "lastName" : "Saenz",
+  "employeeId" : 19,
+  "email" : "Dario_Saenz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2003-05-20"
+}, {
+  "firstName" : "Sondra",
+  "lastName" : "Warrior",
+  "employeeId" : 20,
+  "email" : "Sondra_Warrior@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1998-03-27"
+}, {
+  "firstName" : "Ngan",
+  "lastName" : "Shinault",
+  "employeeId" : 21,
+  "email" : "Ngan_Shinault@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1996-12-10"
+}, {
+  "firstName" : "Lisette",
+  "lastName" : "Dungy",
+  "employeeId" : 22,
+  "email" : "Lisette_Dungy@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 19,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2017-12-25"
+}, {
+  "firstName" : "Corinne",
+  "lastName" : "Bain",
+  "employeeId" : 23,
+  "email" : "Corinne_Bain@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1990-01-08"
+}, {
+  "firstName" : "Annamae",
+  "lastName" : "Kraatz",
+  "employeeId" : 24,
+  "email" : "Annamae_Kraatz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "2006-02-05"
+}, {
+  "firstName" : "Keri",
+  "lastName" : "Simo",
+  "employeeId" : 25,
+  "email" : "Keri_Simo@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Engineering Manager",
+  "startDate" : "1996-09-18"
+}, {
+  "firstName" : "Pennie",
+  "lastName" : "Guidi",
+  "employeeId" : 26,
+  "email" : "Pennie_Guidi@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2013-01-12"
+}, {
+  "firstName" : "Candida",
+  "lastName" : "Throckmorton",
+  "employeeId" : 27,
+  "email" : "Candida_Throckmorton@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 19,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2011-03-25"
+}, {
+  "firstName" : "Lashawnda",
+  "lastName" : "Chojnacki",
+  "employeeId" : 28,
+  "email" : "Lashawnda_Chojnacki@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 10,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2009-04-12"
+}, {
+  "firstName" : "Petronila",
+  "lastName" : "Link",
+  "employeeId" : 29,
+  "email" : "Petronila_Link@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 5,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1993-06-21"
+}, {
+  "firstName" : "Theodora",
+  "lastName" : "Noriega",
+  "employeeId" : 30,
+  "email" : "Theodora_Noriega@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1995-07-26"
+}, {
+  "firstName" : "Jenna",
+  "lastName" : "Hilburn",
+  "employeeId" : 31,
+  "email" : "Jenna_Hilburn@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 8,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2011-12-10"
+}, {
+  "firstName" : "Seymour",
+  "lastName" : "Arata",
+  "employeeId" : 32,
+  "email" : "Seymour_Arata@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2012-10-06"
+}, {
+  "firstName" : "Shena",
+  "lastName" : "Brassell",
+  "employeeId" : 33,
+  "email" : "Shena_Brassell@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2004-09-27"
+}, {
+  "firstName" : "Erin",
+  "lastName" : "Alewine",
+  "employeeId" : 34,
+  "email" : "Erin_Alewine@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 19,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2005-04-13"
+}, {
+  "firstName" : "Mardell",
+  "lastName" : "Saum",
+  "employeeId" : 35,
+  "email" : "Mardell_Saum@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2006-05-07"
+}, {
+  "firstName" : "Madaline",
+  "lastName" : "Cogdill",
+  "employeeId" : 36,
+  "email" : "Madaline_Cogdill@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2012-01-14"
+}, {
+  "firstName" : "Edward",
+  "lastName" : "Weimar",
+  "employeeId" : 37,
+  "email" : "Edward_Weimar@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 16,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2006-04-11"
+}, {
+  "firstName" : "Lorine",
+  "lastName" : "Angeles",
+  "employeeId" : 38,
+  "email" : "Lorine_Angeles@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1992-10-11"
+}, {
+  "firstName" : "Anita",
+  "lastName" : "Champney",
+  "employeeId" : 39,
+  "email" : "Anita_Champney@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 14,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2015-11-22"
+}, {
+  "firstName" : "Lakenya",
+  "lastName" : "Dawn",
+  "employeeId" : 40,
+  "email" : "Lakenya_Dawn@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2011-01-27"
+}, {
+  "firstName" : "Guillermina",
+  "lastName" : "Peirce",
+  "employeeId" : 41,
+  "email" : "Guillermina_Peirce@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1996-03-22"
+}, {
+  "firstName" : "Ozell",
+  "lastName" : "Lamons",
+  "employeeId" : 42,
+  "email" : "Ozell_Lamons@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1997-06-13"
+}, {
+  "firstName" : "Cody",
+  "lastName" : "Barras",
+  "employeeId" : 43,
+  "email" : "Cody_Barras@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1995-12-04"
+}, {
+  "firstName" : "Paulene",
+  "lastName" : "Grabowski",
+  "employeeId" : 44,
+  "email" : "Paulene_Grabowski@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1993-05-06"
+}, {
+  "firstName" : "Kelly",
+  "lastName" : "Lamarche",
+  "employeeId" : 45,
+  "email" : "Kelly_Lamarche@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2016-08-04"
+}, {
+  "firstName" : "Herman",
+  "lastName" : "Roses",
+  "employeeId" : 46,
+  "email" : "Herman_Roses@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1999-03-13"
+}, {
+  "firstName" : "Emery",
+  "lastName" : "Ewert",
+  "employeeId" : 47,
+  "email" : "Emery_Ewert@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1992-02-24"
+}, {
+  "firstName" : "Shawanna",
+  "lastName" : "Liebel",
+  "employeeId" : 48,
+  "email" : "Shawanna_Liebel@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 14,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2001-01-05"
+}, {
+  "firstName" : "Wilber",
+  "lastName" : "Foree",
+  "employeeId" : 49,
+  "email" : "Wilber_Foree@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1995-07-21"
+}, {
+  "firstName" : "Eugene",
+  "lastName" : "Farnham",
+  "employeeId" : 50,
+  "email" : "Eugene_Farnham@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2003-11-20"
+}, {
+  "firstName" : "Lanette",
+  "lastName" : "Holmgren",
+  "employeeId" : 51,
+  "email" : "Lanette_Holmgren@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2002-11-07"
+}, {
+  "firstName" : "Sonny",
+  "lastName" : "Bracco",
+  "employeeId" : 52,
+  "email" : "Sonny_Bracco@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1998-04-14"
+}, {
+  "firstName" : "Vicky",
+  "lastName" : "Harryman",
+  "employeeId" : 53,
+  "email" : "Vicky_Harryman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2014-11-18"
+}, {
+  "firstName" : "Meg",
+  "lastName" : "Paton",
+  "employeeId" : 54,
+  "email" : "Meg_Paton@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2016-03-06"
+}, {
+  "firstName" : "Orville",
+  "lastName" : "Frenz",
+  "employeeId" : 55,
+  "email" : "Orville_Frenz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1994-03-05"
+}, {
+  "firstName" : "Rina",
+  "lastName" : "Hagstrom",
+  "employeeId" : 56,
+  "email" : "Rina_Hagstrom@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2005-06-11"
+}, {
+  "firstName" : "Elia",
+  "lastName" : "Godoy",
+  "employeeId" : 57,
+  "email" : "Elia_Godoy@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2018-12-02"
+}, {
+  "firstName" : "Glennie",
+  "lastName" : "Cao",
+  "employeeId" : 58,
+  "email" : "Glennie_Cao@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2008-12-28"
+}, {
+  "firstName" : "Lecia",
+  "lastName" : "Coley",
+  "employeeId" : 59,
+  "email" : "Lecia_Coley@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2017-08-18"
+}, {
+  "firstName" : "Alphonse",
+  "lastName" : "Bolding",
+  "employeeId" : 60,
+  "email" : "Alphonse_Bolding@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 16,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2000-05-20"
+}, {
+  "firstName" : "Ayanna",
+  "lastName" : "Stenger",
+  "employeeId" : 61,
+  "email" : "Ayanna_Stenger@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 14,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2007-02-11"
+}, {
+  "firstName" : "Walker",
+  "lastName" : "Hague",
+  "employeeId" : 62,
+  "email" : "Walker_Hague@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2005-12-09"
+}, {
+  "firstName" : "Marge",
+  "lastName" : "Chipman",
+  "employeeId" : 63,
+  "email" : "Marge_Chipman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1999-07-15"
+}, {
+  "firstName" : "Conchita",
+  "lastName" : "Rieger",
+  "employeeId" : 64,
+  "email" : "Conchita_Rieger@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2000-08-28"
+}, {
+  "firstName" : "Mahalia",
+  "lastName" : "Giuliani",
+  "employeeId" : 65,
+  "email" : "Mahalia_Giuliani@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 10,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1992-08-07"
+}, {
+  "firstName" : "Gwyneth",
+  "lastName" : "Viola",
+  "employeeId" : 66,
+  "email" : "Gwyneth_Viola@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2000-06-04"
+}, {
+  "firstName" : "Celsa",
+  "lastName" : "Fujita",
+  "employeeId" : 67,
+  "email" : "Celsa_Fujita@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2014-05-22"
+}, {
+  "firstName" : "Temika",
+  "lastName" : "Mefford",
+  "employeeId" : 68,
+  "email" : "Temika_Mefford@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1995-05-05"
+}, {
+  "firstName" : "Dario",
+  "lastName" : "Saenz",
+  "employeeId" : 69,
+  "email" : "Dario_Saenz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2009-02-07"
+}, {
+  "firstName" : "Sondra",
+  "lastName" : "Warrior",
+  "employeeId" : 70,
+  "email" : "Sondra_Warrior@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1995-07-29"
+}, {
+  "firstName" : "Ngan",
+  "lastName" : "Shinault",
+  "employeeId" : 71,
+  "email" : "Ngan_Shinault@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2007-01-13"
+}, {
+  "firstName" : "Lisette",
+  "lastName" : "Dungy",
+  "employeeId" : 72,
+  "email" : "Lisette_Dungy@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2000-06-09"
+}, {
+  "firstName" : "Corinne",
+  "lastName" : "Bain",
+  "employeeId" : 73,
+  "email" : "Corinne_Bain@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2017-09-03"
+}, {
+  "firstName" : "Annamae",
+  "lastName" : "Kraatz",
+  "employeeId" : 74,
+  "email" : "Annamae_Kraatz@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2005-04-27"
+}, {
+  "firstName" : "Keri",
+  "lastName" : "Simo",
+  "employeeId" : 75,
+  "email" : "Keri_Simo@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2009-09-30"
+}, {
+  "firstName" : "Pennie",
+  "lastName" : "Guidi",
+  "employeeId" : 76,
+  "email" : "Pennie_Guidi@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2008-03-14"
+}, {
+  "firstName" : "Candida",
+  "lastName" : "Throckmorton",
+  "employeeId" : 77,
+  "email" : "Candida_Throckmorton@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2005-04-30"
+}, {
+  "firstName" : "Lashawnda",
+  "lastName" : "Chojnacki",
+  "employeeId" : 78,
+  "email" : "Lashawnda_Chojnacki@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1996-01-12"
+}, {
+  "firstName" : "Petronila",
+  "lastName" : "Link",
+  "employeeId" : 79,
+  "email" : "Petronila_Link@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1993-07-22"
+}, {
+  "firstName" : "Theodora",
+  "lastName" : "Noriega",
+  "employeeId" : 80,
+  "email" : "Theodora_Noriega@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2011-12-15"
+}, {
+  "firstName" : "Jenna",
+  "lastName" : "Hilburn",
+  "employeeId" : 81,
+  "email" : "Jenna_Hilburn@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1996-09-07"
+}, {
+  "firstName" : "Seymour",
+  "lastName" : "Arata",
+  "employeeId" : 82,
+  "email" : "Seymour_Arata@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1997-01-13"
+}, {
+  "firstName" : "Shena",
+  "lastName" : "Brassell",
+  "employeeId" : 83,
+  "email" : "Shena_Brassell@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1993-11-12"
+}, {
+  "firstName" : "Erin",
+  "lastName" : "Alewine",
+  "employeeId" : 84,
+  "email" : "Erin_Alewine@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1999-02-02"
+}, {
+  "firstName" : "Mardell",
+  "lastName" : "Saum",
+  "employeeId" : 85,
+  "email" : "Mardell_Saum@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2003-01-27"
+}, {
+  "firstName" : "Madaline",
+  "lastName" : "Cogdill",
+  "employeeId" : 86,
+  "email" : "Madaline_Cogdill@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2009-10-14"
+}, {
+  "firstName" : "Edward",
+  "lastName" : "Weimar",
+  "employeeId" : 87,
+  "email" : "Edward_Weimar@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 16,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2000-03-01"
+}, {
+  "firstName" : "Lorine",
+  "lastName" : "Angeles",
+  "employeeId" : 88,
+  "email" : "Lorine_Angeles@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2015-02-22"
+}, {
+  "firstName" : "Anita",
+  "lastName" : "Champney",
+  "employeeId" : 89,
+  "email" : "Anita_Champney@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2010-12-04"
+}, {
+  "firstName" : "Lakenya",
+  "lastName" : "Dawn",
+  "employeeId" : 90,
+  "email" : "Lakenya_Dawn@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 8,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1994-02-27"
+}, {
+  "firstName" : "Guillermina",
+  "lastName" : "Peirce",
+  "employeeId" : 91,
+  "email" : "Guillermina_Peirce@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2006-01-04"
+}, {
+  "firstName" : "Ozell",
+  "lastName" : "Lamons",
+  "employeeId" : 92,
+  "email" : "Ozell_Lamons@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2006-09-08"
+}, {
+  "firstName" : "Cody",
+  "lastName" : "Barras",
+  "employeeId" : 93,
+  "email" : "Cody_Barras@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 20,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2002-11-15"
+}, {
+  "firstName" : "Paulene",
+  "lastName" : "Grabowski",
+  "employeeId" : 94,
+  "email" : "Paulene_Grabowski@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2018-02-10"
+}, {
+  "firstName" : "Kelly",
+  "lastName" : "Lamarche",
+  "employeeId" : 95,
+  "email" : "Kelly_Lamarche@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2016-05-18"
+}, {
+  "firstName" : "Herman",
+  "lastName" : "Roses",
+  "employeeId" : 96,
+  "email" : "Herman_Roses@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1997-08-18"
+}, {
+  "firstName" : "Emery",
+  "lastName" : "Ewert",
+  "employeeId" : 97,
+  "email" : "Emery_Ewert@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2018-05-30"
+}, {
+  "firstName" : "Shawanna",
+  "lastName" : "Liebel",
+  "employeeId" : 98,
+  "email" : "Shawanna_Liebel@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2009-10-01"
+}, {
+  "firstName" : "Wilber",
+  "lastName" : "Foree",
+  "employeeId" : 99,
+  "email" : "Wilber_Foree@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2013-08-08"
+}, {
+  "firstName" : "Eugene",
+  "lastName" : "Farnham",
+  "employeeId" : 100,
+  "email" : "Eugene_Farnham@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1990-04-03"
+}, {
+  "firstName" : "Elfreda",
+  "lastName" : "Ragon",
+  "employeeId" : 101,
+  "email" : "Elfreda_Ragon@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2015-01-23"
+}, {
+  "firstName" : "Marilu",
+  "lastName" : "Deshazo",
+  "employeeId" : 102,
+  "email" : "Marilu_Deshazo@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1998-06-10"
+}, {
+  "firstName" : "Leonard",
+  "lastName" : "Danks",
+  "employeeId" : 103,
+  "email" : "Leonard_Danks@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 14,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1993-10-07"
+}, {
+  "firstName" : "Yolando",
+  "lastName" : "Gilham",
+  "employeeId" : 104,
+  "email" : "Yolando_Gilham@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 4,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2005-02-21"
+}, {
+  "firstName" : "Suzanne",
+  "lastName" : "Boldt",
+  "employeeId" : 105,
+  "email" : "Suzanne_Boldt@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 19,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2017-12-13"
+}, {
+  "firstName" : "Emiko",
+  "lastName" : "Maisonet",
+  "employeeId" : 106,
+  "email" : "Emiko_Maisonet@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2006-06-05"
+}, {
+  "firstName" : "Sanford",
+  "lastName" : "Vanlandingham",
+  "employeeId" : 107,
+  "email" : "Sanford_Vanlandingham@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2014-11-10"
+}, {
+  "firstName" : "Hulda",
+  "lastName" : "Portner",
+  "employeeId" : 108,
+  "email" : "Hulda_Portner@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 13,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2000-06-13"
+}, {
+  "firstName" : "Chantell",
+  "lastName" : "Bankston",
+  "employeeId" : 109,
+  "email" : "Chantell_Bankston@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2012-08-31"
+}, {
+  "firstName" : "Kellee",
+  "lastName" : "Harkleroad",
+  "employeeId" : 110,
+  "email" : "Kellee_Harkleroad@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 5,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2010-01-30"
+}, {
+  "firstName" : "Venetta",
+  "lastName" : "Gullett",
+  "employeeId" : 111,
+  "email" : "Venetta_Gullett@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2005-12-14"
+}, {
+  "firstName" : "Leonila",
+  "lastName" : "Bloxham",
+  "employeeId" : 112,
+  "email" : "Leonila_Bloxham@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2017-11-22"
+}, {
+  "firstName" : "Haley",
+  "lastName" : "Banner",
+  "employeeId" : 113,
+  "email" : "Haley_Banner@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2015-01-21"
+}, {
+  "firstName" : "Lavette",
+  "lastName" : "Kelty",
+  "employeeId" : 114,
+  "email" : "Lavette_Kelty@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 21,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2004-02-27"
+}, {
+  "firstName" : "Madalyn",
+  "lastName" : "Barish",
+  "employeeId" : 115,
+  "email" : "Madalyn_Barish@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2010-02-13"
+}, {
+  "firstName" : "Eduardo",
+  "lastName" : "Silverman",
+  "employeeId" : 116,
+  "email" : "Eduardo_Silverman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2012-06-02"
+}, {
+  "firstName" : "Albertina",
+  "lastName" : "Briere",
+  "employeeId" : 117,
+  "email" : "Albertina_Briere@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 17,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2012-01-28"
+}, {
+  "firstName" : "Regan",
+  "lastName" : "Dearman",
+  "employeeId" : 118,
+  "email" : "Regan_Dearman@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 11,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1995-07-29"
+}, {
+  "firstName" : "Karima",
+  "lastName" : "Lovelace",
+  "employeeId" : 119,
+  "email" : "Karima_Lovelace@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 10,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2016-01-30"
+}, {
+  "firstName" : "Estelle",
+  "lastName" : "Faucette",
+  "employeeId" : 120,
+  "email" : "Estelle_Faucette@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2012-04-20"
+}, {
+  "firstName" : "Melynda",
+  "lastName" : "Burgoyne",
+  "employeeId" : 121,
+  "email" : "Melynda_Burgoyne@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2007-10-26"
+}, {
+  "firstName" : "Tashina",
+  "lastName" : "Temples",
+  "employeeId" : 122,
+  "email" : "Tashina_Temples@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1997-04-09"
+}, {
+  "firstName" : "Riva",
+  "lastName" : "Raynes",
+  "employeeId" : 123,
+  "email" : "Riva_Raynes@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1998-03-28"
+}, {
+  "firstName" : "Elli",
+  "lastName" : "Styons",
+  "employeeId" : 124,
+  "email" : "Elli_Styons@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1991-02-03"
+}, {
+  "firstName" : "Collen",
+  "lastName" : "Schreckengost",
+  "employeeId" : 125,
+  "email" : "Collen_Schreckengost@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1996-09-18"
+}, {
+  "firstName" : "Lorie",
+  "lastName" : "Sheffer",
+  "employeeId" : 126,
+  "email" : "Lorie_Sheffer@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 14,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1990-04-19"
+}, {
+  "firstName" : "Clorinda",
+  "lastName" : "Marth",
+  "employeeId" : 127,
+  "email" : "Clorinda_Marth@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2017-10-28"
+}, {
+  "firstName" : "Nathaniel",
+  "lastName" : "Hisey",
+  "employeeId" : 128,
+  "email" : "Nathaniel_Hisey@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 17,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2009-10-01"
+}, {
+  "firstName" : "Sherley",
+  "lastName" : "Libby",
+  "employeeId" : 129,
+  "email" : "Sherley_Libby@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 23,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2008-05-25"
+}, {
+  "firstName" : "Inga",
+  "lastName" : "Florez",
+  "employeeId" : 130,
+  "email" : "Inga_Florez@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 7,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2017-11-30"
+}, {
+  "firstName" : "Anton",
+  "lastName" : "Anstett",
+  "employeeId" : 131,
+  "email" : "Anton_Anstett@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2015-02-25"
+}, {
+  "firstName" : "Hilario",
+  "lastName" : "Bacchus",
+  "employeeId" : 132,
+  "email" : "Hilario_Bacchus@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2005-12-05"
+}, {
+  "firstName" : "Errol",
+  "lastName" : "Okada",
+  "employeeId" : 133,
+  "email" : "Errol_Okada@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 5,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2010-01-23"
+}, {
+  "firstName" : "Pearline",
+  "lastName" : "Barret",
+  "employeeId" : 134,
+  "email" : "Pearline_Barret@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 25,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2009-03-12"
+}, {
+  "firstName" : "Elias",
+  "lastName" : "Covey",
+  "employeeId" : 135,
+  "email" : "Elias_Covey@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2003-07-18"
+}, {
+  "firstName" : "Salena",
+  "lastName" : "Lederer",
+  "employeeId" : 136,
+  "email" : "Salena_Lederer@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1997-10-04"
+}, {
+  "firstName" : "Vanesa",
+  "lastName" : "Myles",
+  "employeeId" : 137,
+  "email" : "Vanesa_Myles@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 18,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1993-03-05"
+}, {
+  "firstName" : "Joette",
+  "lastName" : "Dysart",
+  "employeeId" : 138,
+  "email" : "Joette_Dysart@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "2013-10-14"
+}, {
+  "firstName" : "Chas",
+  "lastName" : "Vanderhoff",
+  "employeeId" : 139,
+  "email" : "Chas_Vanderhoff@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 15,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1993-01-11"
+}, {
+  "firstName" : "Rosena",
+  "lastName" : "Moos",
+  "employeeId" : 140,
+  "email" : "Rosena_Moos@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "2018-08-13"
+}, {
+  "firstName" : "Benton",
+  "lastName" : "Glynn",
+  "employeeId" : 141,
+  "email" : "Benton_Glynn@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 10,
+  "positionTitle" : "Software Architect",
+  "startDate" : "2013-03-24"
+}, {
+  "firstName" : "Yon",
+  "lastName" : "Plaza",
+  "employeeId" : 142,
+  "email" : "Yon_Plaza@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 22,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "1999-05-05"
+}, {
+  "firstName" : "Takako",
+  "lastName" : "Sandin",
+  "employeeId" : 143,
+  "email" : "Takako_Sandin@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 2,
+  "positionTitle" : "Tech Lead",
+  "startDate" : "1997-02-05"
+}, {
+  "firstName" : "Toshiko",
+  "lastName" : "Mcgill",
+  "employeeId" : 144,
+  "email" : "Toshiko_Mcgill@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1990-05-02"
+}, {
+  "firstName" : "Jerrod",
+  "lastName" : "Merino",
+  "employeeId" : 145,
+  "email" : "Jerrod_Merino@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Software Engineer II",
+  "startDate" : "2016-02-13"
+}, {
+  "firstName" : "Anneliese",
+  "lastName" : "Enders",
+  "employeeId" : 146,
+  "email" : "Anneliese_Enders@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 6,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2012-04-29"
+}, {
+  "firstName" : "Marvella",
+  "lastName" : "Alldredge",
+  "employeeId" : 147,
+  "email" : "Marvella_Alldredge@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 24,
+  "positionTitle" : "Software Architect",
+  "startDate" : "1995-01-12"
+}, {
+  "firstName" : "Hilda",
+  "lastName" : "Link",
+  "employeeId" : 148,
+  "email" : "Hilda_Link@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 12,
+  "positionTitle" : "Software Engineer I",
+  "startDate" : "1992-09-09"
+}, {
+  "firstName" : "Daisy",
+  "lastName" : "Pape",
+  "employeeId" : 149,
+  "email" : "Daisy_Pape@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 9,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "1999-12-15"
+}, {
+  "firstName" : "Porter",
+  "lastName" : "Ornelas",
+  "employeeId" : 150,
+  "email" : "Porter_Ornelas@cloverenterprises.com",
+  "companyId" : 2,
+  "companyName" : "Clover Enterprises",
+  "managerId" : 3,
+  "positionTitle" : "Senior Software Engineer",
+  "startDate" : "2006-04-29"
+} ]
