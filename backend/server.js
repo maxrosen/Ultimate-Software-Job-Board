@@ -10,7 +10,9 @@ const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
 
+
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json())
 app.use(bodyParser.json());
 app.use(logger("dev"));
 //Cross Domain
@@ -39,6 +41,35 @@ mongoose.connect(url,function(err){
 
 router.get('/get',(req,res)=>{res.send({success: "yes"});});
 router.get('/',(req,res)=>{res.send("BackEnd EntryPoint Listening on 4000");});
+
+var jsonParser = bodyParser.json();
+
+// Accepting JSON data throught POST requests. We'll probably end up changing the format of the JSON later
+// Right now it accepts JSON in the format of {Title, Salary, Description}
+// The frontend will send this post request through some kind of form
+// /jobs is the route that accepts the JSON (right now its localhost:4000/jobs)
+// jsonParser is a type of body-parser object, body parser is middleware for express 
+// that's used for obtaining the body data of http requests
+// (req, res) => is just an anonymous function that runs when a post request is made,
+// req refers to the request, res refers to the server's response.
+router.post('/jobs', jsonParser, (req,res) => {
+
+
+    //Verifying that JSON data has been submitted correctly
+    if(req.body.title == null | req.body.salary == null | req.body.description == null){
+        res.send("Invalid data");
+        return;
+    }
+
+// Here we would be inserting the application data to the database
+// For now I'm just printing it.
+    console.log("Title: " + req.body.title);
+    console.log("Salary: " + req.body.salary);
+    console.log("Description: " + req.body.description);
+
+    res.send("recieved data");
+} );
+
 app.use('/',router);
 app.use('/api/positions',position)
 app.listen(API_PORT,()=>console.log("Server listening on 4000"));
