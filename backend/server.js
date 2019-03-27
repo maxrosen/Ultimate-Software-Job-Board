@@ -91,5 +91,8 @@ router.post('/jobs', jsonParser, (req,res) => {
 } );
 
 app.use('/',router);
-app.use('/api/positions',position)
+app.use('/api/positions',position);
+app.use('/api/employees',employee);
+app.use('/api/users',user);
+
 app.listen(API_PORT,()=>console.log("Server listening on 4000"));
