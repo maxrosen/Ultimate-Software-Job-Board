@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Container, Button } from 'reactstrap'
 import Job from './Job';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import JobPage from './Pagination'
 
 class JobList extends Component {
     state = {
@@ -20,6 +21,7 @@ class JobList extends Component {
                     ADD JOB
                 </Button>
                 {this.state.positions.map((pos)=>(<Job name={pos.name}/>))}
+                <JobPage />
             </Container>
         );
     }

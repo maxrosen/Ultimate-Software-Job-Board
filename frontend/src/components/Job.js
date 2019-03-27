@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Button } from 'reactstrap';
+import {Container, Button, Row, Col } from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 class Job extends Component {
@@ -8,7 +8,13 @@ class Job extends Component {
     <Container className = 'Jobs'>
     <h1>{this.props.name}</h1>
     <p>alskdjflasdjkfasdfklj</p>
-    <Button>Apply</Button>
+    <Row>
+        <Col md = {{size:3,offset:9} }>
+        <Button>Apply</Button>
+        </Col>
+        
+    </Row>
+   
     </Container>)
     }
 }
