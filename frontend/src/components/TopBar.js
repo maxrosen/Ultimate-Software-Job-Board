@@ -29,7 +29,7 @@ export default class TopBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="TopBar" color="light" light expand="md">
           <NavbarBrand href="/">Slackers</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

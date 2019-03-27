@@ -1,0 +1,11 @@
+.TopBar {
+    border: 4px;
+    border-bottom-color: green;
+    border-bottom-style: solid;
+}
+
+.Jobs {
+    border: 1 px;
+    border-color: green;
+    border-style: solid;
+}
