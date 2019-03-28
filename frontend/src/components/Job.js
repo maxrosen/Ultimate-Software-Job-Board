@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Container, Button, Row, Col } from 'reactstrap';
+import ApplyModal from './ApplyModal';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 class Job extends Component {
@@ -10,7 +11,7 @@ class Job extends Component {
     <p>alskdjflasdjkfasdfklj</p>
     <Row>
         <Col md = {{size:3,offset:9} }>
-        <Button>Apply</Button>
+		<ApplyModal/>
         </Col>
         
     </Row>
