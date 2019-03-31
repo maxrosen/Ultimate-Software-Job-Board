@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Container, Button, Row, Col } from 'reactstrap';
 import ApplyModal from './ApplyModal';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-
+import * as template from './api/formTemplate'
 class Job extends Component {
     render(){
     return(
@@ -11,7 +11,7 @@ class Job extends Component {
     <p>alskdjflasdjkfasdfklj</p>
     <Row>
         <Col md = {{size:3,offset:9} }>
-		<ApplyModal/>
+		<ApplyModal buttonLabel='Apply' template = {template.apply} />
         </Col>
         
     </Row>

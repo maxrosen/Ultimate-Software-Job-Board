@@ -2,18 +2,12 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Axios from 'axios'; 
 import * as formfunction from './api/formFunction';
-class FormGen extends React.Component {
-    constructor(){
-        super();
-        const work ={
-            title: '',
-            description: '',
-            companyId: '',
-            companyName:'',
-            managerId: ''
-        }
-            this.state=work;
 
+class FormGen extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={};
+        Object.keys(this.props.fields).map(key=>this.state[key]='');
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
     }
@@ -33,12 +27,11 @@ class FormGen extends React.Component {
     }
     render(){
         return(
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}  id ='form'>
             <FormGroup>
                 <Label for="position">New Position</Label>
-                {Object.keys(this.state).map((field)=> <Input type="text" name={field} id={field} placeholder={"Type a " + field} value={this.state[field]||""} onChange={this.onChange.bind(this)}/>)}
+                {Object.keys(this.state).map((field)=> <Input type={this.props.fields[field]} name={field} id={field} placeholder={"Type a " + field} value={this.state[field]||""} onChange={this.onChange.bind(this)}/>)}
             </FormGroup>
-            <Button>Submit</Button>
         </Form>
         );
     };

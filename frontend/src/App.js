@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PositionForm from './components/positionForm';
+import FormGen from './components/FormGen';
 import TopBar from './components/TopBar';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";import 'bootstrap/dist/css/bootstrap.min.css';
 import JobList from './components/JobList'
@@ -15,7 +16,6 @@ class App extends Component {
 		    <TopBar />
         <Router  >
           <Route exact path="/"  component={JobList} />
-          <Route path="/create"  component={PositionForm} />
       
         </Router>
         

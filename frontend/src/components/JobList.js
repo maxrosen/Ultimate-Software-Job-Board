@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Container, Button } from 'reactstrap'
 import Job from './Job';
+import ApplyModal from './ApplyModal';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import JobPage from './Pagination'
-
+import * as template from './api/formTemplate'
 class JobList extends Component {
     state = {
         positions:[
@@ -17,10 +18,8 @@ class JobList extends Component {
         const { jobs} = this.state;
         return(
             <Container>
-                <Button color = 'dark'>
-                    ADD JOB
-                </Button>
-                {this.state.positions.map((pos)=>(<Job name={pos.name}/>))}
+                <ApplyModal buttonLabel ="Add Job" template = {template.work}/>
+                {this.state.positions.map((pos)=>(<Job key={pos.id} name={pos.name}/>))}
                 <JobPage />
             </Container>
         );
