@@ -14,7 +14,7 @@ class App extends Component {
 		
 		    <TopBar />
         <Router  >
-          <Route path="/"  component={JobList} />
+          <Route exact path="/"  component={JobList} />
           <Route path="/create"  component={PositionForm} />
       
         </Router>
