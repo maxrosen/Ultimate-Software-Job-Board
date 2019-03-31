@@ -2,16 +2,22 @@ import React, {Component} from 'react';
 import {Container, Button } from 'reactstrap'
 import Job from './Job';
 import ApplyModal from './ApplyModal';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import JobPage from './Pagination'
-import * as template from './api/formTemplate'
+import JobPage from './Pagination';
+import * as template from './api/formTemplate';
+import * as listFunction from './api/listFunction';
+
 class JobList extends Component {
-    state = {
-        positions:[
-           { id: 1, name: 'Job1'},
-           { id: 2, name: 'Job2'},
-           { id: 3, name: 'Job3'},        
-        ]
+    constructor(props){
+        super(props)
+        this.state = {
+            positions:[
+       
+            ]
+        }
+    }
+
+    componentDidMount(){
+        listFunction.getList().then((data)=> this.setState({positions:data}));
     }
 
     render(){
@@ -19,7 +25,7 @@ class JobList extends Component {
         return(
             <Container>
                 <ApplyModal buttonLabel ="Add Job" template = {template.work}/>
-                {this.state.positions.map((pos)=>(<Job key={pos.id} name={pos.name}/>))}
+                {this.state.positions.map((pos)=>(<Job key={pos.id} title={pos.title} description={pos.description}/>))}
                 <JobPage />
             </Container>
         );

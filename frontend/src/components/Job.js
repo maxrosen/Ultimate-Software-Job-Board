@@ -8,8 +8,8 @@ class Job extends Component {
     render(){
     return(
     <Container className = 'Jobs'>
-    <h1>{this.props.name}</h1>
-    <p>alskdjflasdjkfasdfklj</p>
+    <h1>{this.props.title}</h1>
+    <p>{this.props.description}</p>
     <Row>
         <Col md = {{size:3,offset:9} }>
 		<ApplyModal buttonLabel='Apply' template = {template.apply} formfunction= {formfunction.createPosition}/>

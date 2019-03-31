@@ -8,7 +8,7 @@ const Position = require('../../models/position');
 //@desc     Get all Positions
 //@access   Public
 router.get('/',(req,res)=> {
-    Position.find().sort({date:-1}).then(positions => res.json(positions));
+    Position.find().sort({date:-1}).limit(10).then(positions => res.json(positions));
 });
 
 //@route    POST api/position
