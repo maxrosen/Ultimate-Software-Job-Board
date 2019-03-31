@@ -1,8 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import Axios from 'axios'; 
-import * as formfunction from './api/formFunction';
-
+import uuid from 'uuid'
 class FormGen extends React.Component {
     constructor(props){
         super(props);
@@ -22,7 +20,7 @@ class FormGen extends React.Component {
         console.log(`Form submitted:`);
         const newPosition = this.state;
         console.log(newPosition);
-        formfunction.createPosition(newPosition)
+        this.props.formfunction(newPosition) 
         Object.keys(this.state).map( i => this.setState({ [i]:''}));
     }
     render(){
@@ -30,7 +28,7 @@ class FormGen extends React.Component {
         <Form onSubmit={this.onSubmit}  id ='form'>
             <FormGroup>
                 <Label for="position">New Position</Label>
-                {Object.keys(this.state).map((field)=> <Input type={this.props.fields[field]} name={field} id={field} placeholder={"Type a " + field} value={this.state[field]||""} onChange={this.onChange.bind(this)}/>)}
+                {Object.keys(this.state).map((field)=> <Input key={uuid.v1()} type={this.props.fields[field]} name={field} id={field} placeholder={"Type a " + field} value={this.state[field]||""} onChange={this.onChange.bind(this)}/>)}
             </FormGroup>
         </Form>
         );

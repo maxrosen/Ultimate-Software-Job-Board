@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import FormGen from './FormGen';
-import * as template from './api/formTemplate'
+import * as formfunction from './api/formFunction';
 class ApplyModal extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +27,7 @@ class ApplyModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>{this.props.buttonLabel}</ModalHeader>
           <ModalBody>
-          <FormGen  fields = {this.props.template} />
+          <FormGen  fields = {this.props.template} formfunction = {this.props.formfunction} />
           </ModalBody>
           <ModalFooter>
             <Button color="primary" type='submit' form='form'onClick={this.toggle}>Submit</Button>{' '}
