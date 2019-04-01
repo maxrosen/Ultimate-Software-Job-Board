@@ -5,6 +5,11 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import * as template from './api/formTemplate'
 import * as formfunction from './api/formFunction';
 import JobDesModal from './JobDesModal';
+import PositionForm from './positionForm'
+import FormGen from './FormGen';
+
+
+
 class Job extends Component {
     constructor(props){
         super(props);
@@ -31,7 +36,7 @@ class Job extends Component {
     <p>{this.props.description}</p>
     <Row>
         <Col md = {{size:3,offset:9} }>
-		<ApplyModal buttonLabel='Apply' template = {template.apply} formfunction= {formfunction.createPosition}/>
+		<ApplyModal buttonLabel='Apply' children ={<FormGen template = {template.apply} formfunction= {formfunction.createPosition}/>}/>
         </Col>
         
     </Row>

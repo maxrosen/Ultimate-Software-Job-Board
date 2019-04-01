@@ -27,7 +27,7 @@ class ApplyModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>{this.props.buttonLabel}</ModalHeader>
           <ModalBody>
-          <FormGen  fields = {this.props.template} formfunction = {this.props.formfunction} />
+            {this.props.children}
           </ModalBody>
           <ModalFooter>
             <Button color="primary" type='submit' form='form'onClick={this.toggle}>Submit</Button>{' '}
