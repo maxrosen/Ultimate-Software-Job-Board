@@ -4,6 +4,9 @@ import FormGen from './components/FormGen';
 import TopBar from './components/TopBar';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";import 'bootstrap/dist/css/bootstrap.min.css';
 import JobList from './components/JobList'
+import AccountPage from './components/AccountPage'
+import ApplyModal from './components/ApplyModal';
+import * as template from './components/api/formTemplate'
 import './App.css';
 
 class App extends Component {
@@ -15,8 +18,9 @@ class App extends Component {
 		
 		    <TopBar />
         <Router  >
-          <Route exact path="/"  component={JobList} />
-      
+          <Route path="/home"  component={JobList} />
+          <Route path="/myaccount"  component={AccountPage} />
+          <Route path="/postjob" render={()=> <ApplyModal  isOpen={true} buttonLabel ="Add Job" template = {template.work}/> }/>
         </Router>
         
 
