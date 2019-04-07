@@ -9,8 +9,9 @@ class AccountPage extends Component {
         return (
             <React.Fragment>
                 <ApplyModal key='1' buttonLabel='Add Job' children ={<FormGen template = {template.work} formfunction= {formfunction.createPosition}/>}/>
-                <ApplyModal key= '2' buttonLabel='View Job' children ={<FormGen template = {template.work} formfunction= {formfunction.createPosition}/>}/>
-                <ApplyModal key= '3'buttonLabel='Edit Job' children ={<FormGen template = {template.work} formfunction= {formfunction.createPosition}/>}/>
+                <Button size = 'lg' color="dark" onClick={()=>{alert('under development')}}>View Job</Button>
+                <div></div>
+                <Button size = 'lg' color="dark" onClick={()=>{alert('under development')}}>Edit Job</Button>
             </React.Fragment>
         );
     }

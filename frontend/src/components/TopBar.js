@@ -10,7 +10,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem,
+  Alert } from 'reactstrap';
 
 export default class TopBar extends React.Component {
   constructor(props) {
@@ -37,9 +38,6 @@ export default class TopBar extends React.Component {
               <NavItem>
                 <NavLink href="/home">Find Jobs</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href={window.location.href+"/postjob"}>Post Job</NavLink>
-              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
@@ -50,7 +48,7 @@ export default class TopBar extends React.Component {
                        My Account
                
                   </DropdownItem>
-                  <DropdownItem>
+                  <DropdownItem onClick = {()=>{alert("under development")}}>
                     Organizational Chart
                   </DropdownItem>
                   <DropdownItem divider />

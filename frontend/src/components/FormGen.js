@@ -30,7 +30,6 @@ class FormGen extends React.Component {
         return(
         <Form onSubmit={this.onSubmit}  id ='form'>
             <FormGroup>
-                <Label for="position">New Position</Label>
                 {Object.keys(this.props.template).map((field)=> <Input key={count++} type={this.props.template[field]} name={field} id={field} placeholder={"Type a " + field} value={this.state[field]||""} onChange={this.onChange.bind(this)}/>)}
             </FormGroup>
         </Form>
