@@ -16,3 +16,34 @@
 button{
     margin: 5px
 }
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.nav-element{
+    border: 4px;
+    border-color: green;
+    border-style: solid;
+    margin-left: 5px;
+    border-radius: 20px;
+    background: white;
+}
+
+.log-in-box{
+  align-items: center;
+  margin-top: 25px;
+  border: 5px;
+  border-color: green;
+  border-style: solid;
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.log-in-field{
+
+}

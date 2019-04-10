@@ -36,17 +36,20 @@ export default class TopBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/home">Find Jobs</NavLink>
+                <NavLink href="/home" className="nav-element">Find Jobs</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              <NavItem>
+                <NavLink href="/login" className="nav-element">Log In</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar className="nav-element">
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem href="/myaccount">
-                 
+
                        My Account
-               
+
                   </DropdownItem>
                   <DropdownItem onClick = {()=>{alert("under development")}}>
                     Organizational Chart

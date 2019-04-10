@@ -38,9 +38,9 @@ class Job extends Component {
         <Col md = {{size:3,offset:9} }>
 		<ApplyModal buttonLabel='Apply' children ={<FormGen template = {template.apply} formfunction= {formfunction.createPosition}/>}/>
         </Col>
-        
+
     </Row>
-   
+
     </Container>)
     }
 }
