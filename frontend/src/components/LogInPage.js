@@ -48,7 +48,7 @@ class LogInPage extends Component {
                   <FormGroup>
                   <Label for="position"><h1>Log In</h1></Label>
                       <Input type="text" name="username" id="username" placeholder="username" class="log-in-field" value={this.state.username||""} onChange={this.onChange.bind(this)}/>
-                      <Input type="text" name="password" id="password" placeholder="password" class="log-in-field" value={this.state.password||""} onChange={this.onChange.bind(this)}/>
+                      <Input type="password" name="password" id="password" placeholder="password" class="log-in-field" value={this.state.password||""} onChange={this.onChange.bind(this)}/>
                   </FormGroup>
               </Form>
               <Button>Log In</Button>
