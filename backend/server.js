@@ -9,6 +9,7 @@ const router = express.Router();
 const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
+const application = require('./router/api/applications');
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -93,6 +94,7 @@ router.post('/jobs', jsonParser, (req,res) => {
 app.use('/',router);
 app.use('/api/positions',position);
 app.use('/api/employees',employee);
+app.use('/api/applications',application);
 app.use('/api/users',user);
 
 app.listen(API_PORT,()=>console.log("Server listening on 4000"));

@@ -23,7 +23,7 @@ class JobList extends Component {
         const { jobs} = this.state;
         return(
             <Container>
-                {this.state.positions.map((pos)=>(<Job key={pos.id} title={pos.title} description={pos.description}/>))}
+                {this.state.positions.map((pos)=>(<Job key={pos._id} id={pos._id} title={pos.title} company={pos.companyName} description={pos.description}/>))}
                 <JobPage />
             </Container>
         );
