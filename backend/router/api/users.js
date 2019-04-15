@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require("bcrypt")
 
 //User Model
 const User = require('../../models/user');
@@ -12,14 +13,56 @@ router.get('/',(req,res)=> {
 });
 
 //@route    POST api/user
-//@desc     Create a New User
+//@desc     Register a New User
 //@access   Private
-router.post('/create',(req,res)=> {
-    const newUser = new User({
-        name:req.body.name
+router.post('/register',(req,res)=> {
+    const newUser = {
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
+        email:req.body.email
+    };
+    User.findOne({email:req.body.email}).then(
+        user=>{
+            if(user){
+                res.json({status:"Registeration Failed: User Existed",success:false});
+            }
+            else{
+                bcrypt.hash(req.body.password, 10, (err, hash) => {
+                    newUser.password = hash
+                    User.create(newUser)
+                        .then(user => {
+                            res.json({ status: user.email + ' registered!' ,success:true})
+                        })
+                        .catch(err => {
+                            res.send('error: ' + err)
+                        })
+                })
+            }
+        }
+    )
+    .catch(
+        err=>{
+        res.send(err);
     });
-    newUser.save().then(user=>res.json(user));
+    
 });
+
+//@route    POST api/user
+//@desc     Login
+//@access   Private
+// router.post('/login',(req,res)=> {
+//     User.findOne({email:req.body.email}).then(
+//         user=>{
+//             if(!user){
+//                 res.json({status:"Login Failed: invalid email or password",success:false});
+//             }
+//             else{
+                
+//             }
+//         }
+//     );
+    
+// });
 
 //@route    DEL api/user
 //@desc     Create a New User
