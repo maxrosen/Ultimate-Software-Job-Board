@@ -1,49 +1,99 @@
 .TopBar {
+    background-color: white !important;
     border: 4px;
-    border-bottom-color: green;
+    border-bottom-color: rgb(153, 197, 85);
     border-bottom-style: solid;
 }
 
 .Jobs {
-    border: 1 px;
-    border-radius: 10px;
+    color: rgb(49, 82, 184);
+    border: 1px;
+    border-radius: 3px;
     padding: 10px;
     margin: 10px;
-    border-color: green;
-    border-style: solid;
+    box-shadow: 1px 1px 6px #000000;
+    border-color: rgba(255,255,255,.01);
 }
 
-button{
-    margin: 5px
+button {
+    margin: 5px;
 }
 
 .form-control {
     margin-bottom: 5px;
 }
 
-.nav-element{
+.logo {
+    width: 30%;
+    height: 50%;
+}
+
+.positionText {
+    color: blue;
+}
+
+
+
+.nav-element {
+    color: rgba(255,255,255, 1) !important;
     border: 4px;
-    border-color: green;
+    border-color: rgba(255,255,255,.01);
+    box-shadow: 1px 1px 3.5px #000000;
     border-style: solid;
-    margin-left: 5px;
-    border-radius: 20px;
-    background: white;
+    margin-left: 7px;
+    border-radius: 5px;
+    background: rgb(153, 197, 85);
+    box-shadow: 1px 1px 4px #000000;
 }
 
-.log-in-box{
-  align-items: center;
-  margin-top: 25px;
-  border: 5px;
-  border-color: green;
-  border-style: solid;
-  width: 25%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  border-radius: 25px;
+    .nav-element:hover {
+        background-color: rgb(128, 163, 71);
+    }
+
+
+.log-in-box {
+    align-items: center;
+    margin-top: 25px;
+    border: 10px;
+    border-color: rgba(255,255,255,.01);
+    border-style: solid;
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4.5px #000000;
 }
 
-.log-in-field{
-
+.log-in-field {
 }
+
+
+
+
+.greenButton {
+ 
+    font-size:20px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    border: 2px;
+    background-color: rgb(153, 197, 85);
+    box-shadow: 1px 1px 6px #000000;
+}
+
+    .greenButton:hover {
+        background-color: rgb(128, 163, 71);
+    }
+
+.LoginButton {
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    border: 2px;
+    background-color: rgb(153, 197, 85);
+    box-shadow: 1px 1px 6px #000000;
+}
+
+    .LoginButton:hover {
+        background-color: rgb(128, 163, 71);
+    }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText, Media } from 'reactstrap';
 import ApplyModal from './ApplyModal';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import * as template from './api/formTemplate'
@@ -41,19 +41,19 @@ class LogInPage extends Component {
       })
   }
 
-  render(){
-      return (
-          <div class="log-in-box" align="center">
-              <Form onSubmit={this.onSubmit}  id ='form'>
-                  <FormGroup>
-                  <Label for="position"><h1>Log In</h1></Label>
-                      <Input type="text" name="username" id="username" placeholder="username" class="log-in-field" value={this.state.username||""} onChange={this.onChange.bind(this)}/>
-                      <Input type="password" name="password" id="password" placeholder="password" class="log-in-field" value={this.state.password||""} onChange={this.onChange.bind(this)}/>
-                  </FormGroup>
-              </Form>
-              <Button>Log In</Button>
-          </div>
-      );
-  }
+    render() {
+        return (
+            <div class="log-in-box" align="center">
+                <Form onSubmit={this.onSubmit} id='form'>
+                    <FormGroup>
+                        <Label for="position"><Media object data-src="./resources/logo_s.png" alt="Slackers logo"></Media></Label>
+                        <Input type="text" name="username" id="username" placeholder="username" class="log-in-field" value={this.state.username || ""} onChange={this.onChange.bind(this)} />
+                        <Input type="password" name="password" id="password" placeholder="password" class="log-in-field" value={this.state.password || ""} onChange={this.onChange.bind(this)} />
+                    </FormGroup>
+                </Form>
+                <Button className="LoginButton">Log In</Button>
+            </div>
+        );
+    }
 }
 export default LogInPage;

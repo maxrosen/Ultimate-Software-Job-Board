@@ -102,8 +102,8 @@ class Job extends Component {
         <p>{this.props.company}</p>
         <p>{this.props.description}</p>
         <Row>
-        <Col md = {{size:3,offset:10} }>
-        <button onClick={this.openModal}>Apply</button> 
+        <Col md = {{size:2,offset:10} }>
+        <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button> 
         </Col>
         </Row>
         <Modal
@@ -119,7 +119,8 @@ class Job extends Component {
                 <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
                 <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
             </FormGroup>
-            <Button>Submit</Button>
+            <Button color="primary">Submit</Button>
+            <Button color="secondary">Cancel</Button>
         </Form>
         </Modal>
         </Container>
