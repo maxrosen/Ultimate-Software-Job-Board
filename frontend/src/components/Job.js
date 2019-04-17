@@ -102,17 +102,26 @@ class Job extends Component {
         <p>{this.props.company}</p>
         <p>{this.props.description}</p>
         <Row>
-        <Col md = {{size:2,offset:10} }>
-        <ApplyModal key='1' buttonLabel='Apply' children ={<FormGen template = {template.apply} formfunction= {formfunction.createPosition}/>}/>
-        </Col>
-        </Row>
-        <Modal
+	        <Col md = {{size:2,offset:10} }>
+	        <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button>
+	        </Col>
+	        </Row>
+	        <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="Example Modal"
           style={customStyles}
         >
-
+        <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+                <Label for="position">Apply</Label>
+                <Input type="text" name="name" id="name" placeholder="Type your name" value={this.state.name||""} onChange={this.onChange.bind(this)}/>
+	                <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
+	                <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
+	            </FormGroup>
+	            <Button color="primary">Submit</Button>
+	            <Button color="secondary">Cancel</Button>
+	        </Form>
         </Modal>
         </Container>
         );
