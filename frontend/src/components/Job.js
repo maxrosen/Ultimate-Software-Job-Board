@@ -91,6 +91,13 @@ class Job extends Component {
             phonenumber: '',
             address: '',
         })
+
+        this.closeModal();
+        this.handleSubmit();
+    }
+
+    handleSubmit(event) {
+      alert('Application submitted!');
     }
 
 
