@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText, Media } from 'reactstrap';
+import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText, Media} from 'reactstrap';
 import ApplyModal from './ApplyModal';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import * as template from './api/formTemplate'
@@ -46,7 +46,7 @@ class LogInPage extends Component {
             <div class="log-in-box" align="center">
                 <Form onSubmit={this.onSubmit} id='form'>
                     <FormGroup>
-                        <Label for="position"><Media object data-src="./resources/logo_s.png" alt="Slackers logo"></Media></Label>
+                        <Label for="position"><Media className="logo_s" src={require("./resources/logo_s.png")} alt="Slackers logo"></Media></Label>
                         <Input type="text" name="username" id="username" placeholder="username" class="log-in-field" value={this.state.username || ""} onChange={this.onChange.bind(this)} />
                         <Input type="password" name="password" id="password" placeholder="password" class="log-in-field" value={this.state.password || ""} onChange={this.onChange.bind(this)} />
                     </FormGroup>

@@ -97,3 +97,14 @@ button {
     .LoginButton:hover {
         background-color: rgb(128, 163, 71);
     }
+
+
+.logo{
+    width:40%;
+    height:40%;
+}
+
+.logo_s {
+    width: 45%;
+    height: 45%;
+}

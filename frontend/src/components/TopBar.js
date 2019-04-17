@@ -35,7 +35,7 @@ export default class TopBar extends React.Component {
             <div>
                 <Navbar className="TopBar" color="light" light expand="md">
                     <NavbarBrand href="/">
-                        <Media object data-src="./resources/logo.png" alt="Slackers logo"></Media>
+                        <Media className="logo" src={require('./resources/logo.png')} alt="Slackers logo"></Media>
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
