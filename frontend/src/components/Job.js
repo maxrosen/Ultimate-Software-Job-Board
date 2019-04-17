@@ -52,7 +52,7 @@ class Job extends Component {
             name: '',
             phonenumber: '',
             address: '',
-            clicked: false     
+            clicked: false
         };
 
         this.openModal = this.openModal.bind(this);
@@ -60,7 +60,7 @@ class Job extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
     }
-    
+
     openModal() {
         this.setState({modalIsOpen: true});
     }
@@ -75,7 +75,7 @@ class Job extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        
+
         console.log(`Form submitted:`);
         const newApplication = {
             name: this.state.name,
@@ -85,14 +85,14 @@ class Job extends Component {
             positionid: this.props.id
         }
         Axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
-        
+
         this.setState({
             name: '',
             phonenumber: '',
             address: '',
         })
     }
-    
+
 
     render(){
         return(
@@ -103,7 +103,7 @@ class Job extends Component {
         <p>{this.props.description}</p>
         <Row>
         <Col md = {{size:2,offset:10} }>
-        <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button> 
+        <ApplyModal key='1' buttonLabel='Apply' children ={<FormGen template = {template.apply} formfunction= {formfunction.createPosition}/>}/>
         </Col>
         </Row>
         <Modal
@@ -112,21 +112,12 @@ class Job extends Component {
           contentLabel="Example Modal"
           style={customStyles}
         >
-        <Form onSubmit={this.onSubmit}>
-            <FormGroup>
-                <Label for="position">Apply</Label>
-                <Input type="text" name="name" id="name" placeholder="Type your name" value={this.state.name||""} onChange={this.onChange.bind(this)}/>
-                <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
-                <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
-            </FormGroup>
-            <Button color="primary">Submit</Button>
-            <Button color="secondary">Cancel</Button>
-        </Form>
+
         </Modal>
         </Container>
         );
     };
-    
+
 }
 
 const customStyles = {
