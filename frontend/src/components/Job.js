@@ -91,6 +91,13 @@ class Job extends Component {
             phonenumber: '',
             address: '',
         })
+
+        this.closeModal();
+        this.handleSubmit();
+    }
+
+    handleSubmit(event) {
+      alert('Application submitted!');
     }
 
 
@@ -120,7 +127,7 @@ class Job extends Component {
 	                <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
 	            </FormGroup>
 	            <Button color="primary">Submit</Button>
-	            <Button color="secondary">Cancel</Button>
+	            <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
 	        </Form>
         </Modal>
         </Container>
