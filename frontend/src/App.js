@@ -8,6 +8,7 @@ import JobList from './components/JobList'
 import AccountPage from './components/AccountPage'
 import ApplyModal from './components/ApplyModal';
 import LogInPage from './components/LogInPage';
+import SignUpPage from './components/SignUpPage';
 import * as template from './components/api/formTemplate';
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/myaccount"  component={AccountPage} />
             <Route path="/postjob" render={()=> <ApplyModal  isOpen={true} buttonLabel ="Add Job" template = {template.work}/> }/>
             <Route path="/login"  component={LogInPage} />
+            <Route path="/signup"  component={SignUpPage} />
             <Route path="/"  component={JobList} />
           </Switch>
         </Router>
