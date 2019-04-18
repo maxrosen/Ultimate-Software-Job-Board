@@ -51,12 +51,9 @@ export default class TopBar extends React.Component {
                                     Options
                     </DropdownToggle>
                                 <DropdownMenu right>
-                                    <DropdownItem href="/myaccount">
-
-                                        My Account
-                 
-                  </DropdownItem>
-                                    <DropdownItem onClick={() => { alert("under development") }}>
+                                    <DropdownItem href="/myaccount">My Account
+                                    </DropdownItem>
+                                    <DropdownItem href="/chart">
                                         Organizational Chart
                   </DropdownItem>
                                     <DropdownItem divider />

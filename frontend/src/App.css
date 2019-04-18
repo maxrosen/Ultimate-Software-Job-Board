@@ -32,6 +32,17 @@ button {
     color: blue;
 }
 
+.label {
+    color: rgb(49, 82, 184);
+    border: 1px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 6px #000000;
+    border-color: rgba(255,255,255,.01);
+}
 
 
 .nav-element {
@@ -69,8 +80,19 @@ button {
 .log-in-field {
 }
 
-
-
+.treeGraph {
+    background: rgba(245,245,245,1);
+    align-items: center;
+ 
+    border: 10px;
+    border-color: rgba(255,255,255,.01);
+    border-style: solid;
+    width: 100%;
+    height:68vh;
+   
+    border-radius: 20px;
+    box-shadow: 1px 1px 4.5px #000000;
+}
 
 .greenButton {
  
