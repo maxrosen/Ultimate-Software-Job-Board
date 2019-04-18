@@ -32,12 +32,10 @@ button {
     color: blue;
 }
 
-<<<<<<< HEAD
 .signUpText {
     color: rgb(102,178,255);
 }
 
-=======
 .label {
     color: rgb(49, 82, 184);
     border: 1px;
@@ -49,7 +47,6 @@ button {
     box-shadow: 1px 1px 6px #000000;
     border-color: rgba(255,255,255,.01);
 }
->>>>>>> 4faa84abafbb0ac69a24d846cfd31a2a299fdf07
 
 
 .nav-element {
