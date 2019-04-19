@@ -16,22 +16,28 @@ router.get('/',(req,res)=> {
 //@desc     Register a New User
 //@access   Private
 router.post('/register',(req,res)=> {
-    const newUser = {
+    if(req.body.first_name == null | req.body.last_name == null | req.body.email == null){
+        res.send("Invalid data");
+    }
+    const newUser = new User({
         first_name:req.body.first_name,
         last_name:req.body.last_name,
         email:req.body.email
-    };
+    });
     User.findOne({email:req.body.email}).then(
         user=>{
             if(user){
-                res.json({status:"Registeration Failed: User Existed",success:false});
+                res.json({status:"Registration Failed: Email is already in use.",success:false});
             }
             else{
+                if(req.body.password == null){
+                    res.send("Invalid data");
+                }
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     newUser.password = hash
                     User.create(newUser)
                         .then(user => {
-                            res.json({ status: user.email + ' registered!' ,success:true})
+                            res.json({ status: user.email + ' has been registered!' ,success:true})
                         })
                         .catch(err => {
                             res.send('error: ' + err)
@@ -44,6 +50,7 @@ router.post('/register',(req,res)=> {
         err=>{
         res.send(err);
     });
+    newUser.save().then(user=>res.json(user));
     
 });
 

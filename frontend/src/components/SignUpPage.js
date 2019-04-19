@@ -31,13 +31,13 @@ class SignUpPage extends Component {
       e.preventDefault();
 
       console.log(`Form submitted:`);
-      const newPosition = {
+      const newUser = {
           first_name: this.state.first_name,
           last_name: this.state.last_name,
           email: this.state.email,
           password: this.state.password,
       }
-      //Axios.post('http://localhost:4000/api/positions/create',newPosition).then(res=>console.log(res.data));
+      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
       this.setState({
         first_name: '',
@@ -54,12 +54,12 @@ class SignUpPage extends Component {
                     <FormGroup>
                         <Label for="position"><Media className="logo_s" src={require("./resources/logo_s.png")} alt="Slackers logo"></Media></Label>
                         <Input type="text" name="first_name" id="first_name" placeholder="First name" class="log-in-field" value={this.state.first_name || ""} onChange={this.onChange.bind(this)} />
-                        <Input type="password" name="last_name" id="last_name" placeholder="Last name" class="log-in-field" value={this.state.last_name || ""} onChange={this.onChange.bind(this)} />
+                        <Input type="text" name="last_name" id="last_name" placeholder="Last name" class="log-in-field" value={this.state.last_name || ""} onChange={this.onChange.bind(this)} />
                         <Input type="text" name="email" id="email" placeholder="Email" class="log-in-field" value={this.state.email || ""} onChange={this.onChange.bind(this)} />
                         <Input type="password" name="password" id="password" placeholder="Password" class="log-in-field" value={this.state.password || ""} onChange={this.onChange.bind(this)} />
                     </FormGroup>
                 </Form>
-                <Button className="SignUpButton">Sign Up</Button>
+                <Button className="LoginButton">Sign Up</Button>
             </div>
         );
     }

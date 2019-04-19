@@ -13,7 +13,7 @@ const application = require('./router/api/applications');
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.json())
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(logger("dev"));
 //Cross Domain
