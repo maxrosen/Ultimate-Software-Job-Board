@@ -37,7 +37,10 @@ class SignUpPage extends Component {
           email: this.state.email,
           password: this.state.password,
       }
-      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
+      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>{
+          console.log(res.data.success)
+          if (res.data.success){window.location.href='/login';console.log(window.location.href)
+        } });
 
       this.setState({
         first_name: '',
