@@ -9,7 +9,7 @@ import PositionForm from './positionForm'
 import FormGen from './FormGen';
 import uuid from 'uuid'
 import Axios from 'axios';
-import {NavItem, NavLink} from 'reactstrap';
+import {NavLink} from 'reactstrap';
 
 class LogInPage extends Component {
   constructor(){

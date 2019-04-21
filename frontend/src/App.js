@@ -10,6 +10,7 @@ import ApplyModal from './components/ApplyModal';
 import LogInPage from './components/LogInPage';
 import SignUpPage from './components/SignUpPage';
 import ChartPage from './components/ChartPage';
+import ManAppPage from './components/ManAppPage';
 import * as template from './components/api/formTemplate';
 import './App.css';
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/login"  component={LogInPage} />
             <Route path="/signup"  component={SignUpPage} />
             <Route path="/chart" component={ChartPage} />
+            <Route path="/applications" component={ManAppPage} />
             <Route path="/"  component={JobList} />
           </Switch>
         </Router>
