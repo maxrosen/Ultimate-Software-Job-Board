@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 //User Model
 const User = require('../../models/user');
-
+process.env.SECRET_KEY = 'slackers'
 //@route    GET api/user
 //@desc     Get all Users
 //@access   Public
@@ -28,6 +29,7 @@ router.post('/register',(req,res)=> {
         user=>{
             if(user){
                 res.json({status:"Registration Failed: Email is already in use.",success:false});
+                return;
             }
             else{
                 if(req.body.password == null){
@@ -50,26 +52,41 @@ router.post('/register',(req,res)=> {
         err=>{
         res.send(err);
     });
-    newUser.save().then(user=>res.json(user));
+    
     
 });
 
 //@route    POST api/user
 //@desc     Login
 //@access   Private
-// router.post('/login',(req,res)=> {
-//     User.findOne({email:req.body.email}).then(
-//         user=>{
-//             if(!user){
-//                 res.json({status:"Login Failed: invalid email or password",success:false});
-//             }
-//             else{
-                
-//             }
-//         }
-//     );
+router.post('/login',(req,res)=> {
+    User.findOne({email:req.body.email}).then(
+        user=>{
+            if(!user){
+                res.json({status:"Login Failed: invalid email or password",success:false});
+            }
+            else{
+               
+                if (bcrypt.compareSync(req.body.password, user.password)) {
+                    const payload = {
+                        _id: user._id,
+                        first_name: user.first_name,
+                        last_name: user.last_name,
+                        email: user.email
+                    }
+                    let token = jwt.sign(payload, process.env.SECRET_KEY, {
+                        expiresIn: 1440
+                    })
+                    res.send(token)
+                } 
+                else {
+                    res.json({status:"Login Failed: invalid email or password",success:false});
+                }
+            }
+        }
+    );
     
-// });
+});
 
 //@route    DEL api/user
 //@desc     Create a New User
