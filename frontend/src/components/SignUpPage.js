@@ -58,8 +58,9 @@ class SignUpPage extends Component {
                         <Input type="text" name="email" id="email" placeholder="Email" class="log-in-field" value={this.state.email || ""} onChange={this.onChange.bind(this)} />
                         <Input type="password" name="password" id="password" placeholder="Password" class="log-in-field" value={this.state.password || ""} onChange={this.onChange.bind(this)} />
                     </FormGroup>
+                    <Button className="LoginButton">Sign Up</Button>
                 </Form>
-                <Button className="LoginButton">Sign Up</Button>
+                
             </div>
         );
     }
