@@ -22,7 +22,9 @@ export default class TopBar extends React.Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            isLoggedIn : false,
+            token: ''
         };
     }
     toggle() {
@@ -31,6 +33,13 @@ export default class TopBar extends React.Component {
         });
     }
     render() {
+        let loginbutton;
+        if(!this.state.isLoggedIn){
+            loginbutton= <NavLink href="/login" className="nav-element">Log In</NavLink>
+        }
+        else{
+            loginbutton= <NavLink href="/myaccount" className="nav-element">My Account</NavLink>
+        }
         return (
             <div>
                 <Navbar className="TopBar" color="light" light expand="md">
