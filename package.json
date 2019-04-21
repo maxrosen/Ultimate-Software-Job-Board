@@ -1,0 +1,25 @@
+{
+  "name": "slackers",
+  "version": "1.0.0",
+  "description": "CS 320 Semester project based on the MERN Stack",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd frontend && npm run start",
+    "server": "cd backend && nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conor-Carmichael/Slackers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Conor-Carmichael/Slackers/issues"
+  },
+  "homepage": "https://github.com/Conor-Carmichael/Slackers#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
+  }
+}
