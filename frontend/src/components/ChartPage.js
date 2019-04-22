@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button } from 'reactstrap';
 import Tree from 'react-d3-tree';
+import axios from 'axios';
 
 const svgRect = {
     shape: 'rect',
@@ -11,6 +12,9 @@ const svgRect = {
     }
 }
 
+const companyId = 1;
+
+
 const data = {
     name: 'Parent',
     children: [{
@@ -20,6 +24,20 @@ const data = {
     }]
 };
 class ChartPage extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            employees:[
+       
+            ]
+        }
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:4000/api/employees/getCompany/1').then((res)=> {this.setState({employees:res.data});console.log(this.state);});
+    }
+
     render() {
         return (
             <Container>

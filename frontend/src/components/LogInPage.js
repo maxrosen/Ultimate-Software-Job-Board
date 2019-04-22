@@ -8,8 +8,7 @@ import JobDesModal from './JobDesModal';
 import PositionForm from './positionForm'
 import FormGen from './FormGen';
 import uuid from 'uuid'
-import Axios from 'axios';
-import {NavLink} from 'reactstrap';
+import axios from 'axios';
 import {NavItem, NavLink} from 'reactstrap';
 import jwt_decode from 'jwt-decode'
 
@@ -36,7 +35,7 @@ class LogInPage extends Component {
           email: this.state.email,
           password: this.state.password,
       }
-      Axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{localStorage.setItem('jwttoken',res.data)});
+      axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{localStorage.setItem('jwttoken',res.data)});
 
       if(localStorage.jwttoken){
           console.log(jwt_decode(localStorage.jwttoken));
