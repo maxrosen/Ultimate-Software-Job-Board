@@ -22,6 +22,18 @@ const UserSchema = new Schema({
         type: Number,
         default:'-1'
     },
+    companyId:{
+        type: Number,
+        default:'-1'
+    },
+    managerId:{
+        type: Number,
+        default: '-1'
+    },
+    positionTitle:{
+        type: Number,
+        default:'-1'
+    },
     date: {
         type: Date,
         default: Date.now

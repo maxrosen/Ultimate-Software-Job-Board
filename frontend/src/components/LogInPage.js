@@ -9,7 +9,6 @@ import PositionForm from './positionForm'
 import FormGen from './FormGen';
 import uuid from 'uuid'
 import Axios from 'axios';
-import {NavLink} from 'reactstrap';
 import {NavItem, NavLink} from 'reactstrap';
 import jwt_decode from 'jwt-decode'
 
