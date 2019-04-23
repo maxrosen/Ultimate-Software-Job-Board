@@ -81,25 +81,40 @@ button {
     box-shadow: 1px 1px 4.5px #000000;
 }
 
+.personal-info-box {
+    align-items: center;
+    margin-top: 25px;
+    border: 10px;
+    border-color: rgba(255,255,255,.01);
+    border-style: solid;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4.5px #000000;
+}
+
 .log-in-field {
 }
 
 .treeGraph {
     background: rgba(245,245,245,1);
     align-items: center;
- 
+
     border: 10px;
     border-color: rgba(255,255,255,.01);
     border-style: solid;
     width: 100%;
     height:68vh;
-   
+
     border-radius: 20px;
     box-shadow: 1px 1px 4.5px #000000;
 }
 
 .greenButton {
- 
+
     font-size:20px;
     border-radius: 3px;
     color: rgb(255, 255, 255);

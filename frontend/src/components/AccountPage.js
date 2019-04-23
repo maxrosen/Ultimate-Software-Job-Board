@@ -12,6 +12,9 @@ class AccountPage extends Component {
                 <Button className="greenButton" size = 'lg' color="dark" onClick={()=>{alert('under development')}}>View Job</Button>
                 <Button className="greenButton" size = 'lg' color="dark" onClick={()=>{alert('under development')}}>Edit Job</Button>
                 <Button href="/ManAppPage" className="greenButton" size = 'lg' color="dark">View Applications</Button>
+                <br/>
+                <Button href="/onboard" className="greenButton" size = 'lg' color="dark">Edit Personal Information</Button>
+
             </React.Fragment>
         );
     }
