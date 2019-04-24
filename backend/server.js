@@ -31,7 +31,7 @@ app.all('*', function (req, res, next) {
 //var url = 'mongodb://mongodb:27017/myproject';
 
 // Connection URL(local)
-var url = 'mongodb+srv://Kumar_320:abc@cluster0-wyhgq.mongodb.net/test?retryWrites=true';
+var url = 'mongodb+srv://Kumar_320:abc@cluster0-wyhgq.mongodb.net/slackers?retryWrites=true';
 
 // Use connect method to connect to the server
 mongoose.connect(url,function(err){

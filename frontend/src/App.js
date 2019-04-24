@@ -10,7 +10,6 @@ import ApplyModal from './components/ApplyModal';
 import LogInPage from './components/LogInPage';
 import SignUpPage from './components/SignUpPage';
 import ChartPage from './components/ChartPage';
-import ManAppPage from './components/ManAppPage';
 import ManEditJobs from './components/ManEditJobs';
 import Onboard from './components/Onboard.js';
 import ViewApplications from './components/ViewApplications.js';
@@ -32,7 +31,6 @@ class App extends Component {
             <Route path="/login"  component={LogInPage} />
             <Route path="/signup"  component={SignUpPage} />
             <Route path="/chart" component={ChartPage} />
-            <Route path="/applications" component={ManAppPage} />
             <Route path="/editJobs" component={ManEditJobs} />
             <Route path="/onboard" component={Onboard} />
             <Route path="/viewapps" component={ViewApplications} />
