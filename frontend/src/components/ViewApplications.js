@@ -15,7 +15,17 @@ import jwt_decode from 'jwt-decode'
 class ViewApplications extends Component {
   render(){
       return (
-        <button>TEST</button>
+        <Container className = 'Jobs'  >
+        <h1>{this.props.title}</h1>
+        <p>{this.props.company}</p>
+        <p>{this.props.description}</p>
+        <Row>
+          <Col md = {{size:2,offset:10} }>
+          <button size='lg' className = "greenButton" onClick={this.openModal}>Email Applicant</button>
+           <button size='lg' className = "greenButton" onClick={this.openModal}>Accepted</button>
+          </Col>
+        </Row>
+        </Container>
       );
   }
 }
