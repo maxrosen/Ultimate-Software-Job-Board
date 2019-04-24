@@ -13,6 +13,10 @@ router.get('/',(req,res)=> {
     Employee.find().sort({date:-1}).then(employees => res.json(employees));
 });
 
+router.get('/getCompany/:id',(req,res)=> {
+    Employee.find({companyId:req.params.id}).then(employees => res.json(employees));
+});
+
 //@route    POST api/employee
 //@desc     Create a New Employee
 //@access   Private
