@@ -4,7 +4,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 export default class JobPage extends React.Component {
   render() {
     return (
-      <Pagination aria-label="Page navigation example">
+      <Pagination size="sm" aria-label="Page navigation example">
       <PaginationItem>
           <PaginationLink first href="#" />
         </PaginationItem>

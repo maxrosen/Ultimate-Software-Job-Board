@@ -14,6 +14,9 @@ class AccountPage extends Component {
                 <Button href="/ManAppPage" className="greenButton" size = 'lg' color="dark">View Applications</Button>
                 <Button className="greenButton" size = 'lg' color="dark">Import Employees</Button>
                 <Button  className="greenButton" size = 'lg' color="dark">Import Jobs</Button>
+                <br/>
+                <Button href="/onboard" className="greenButton" size = 'lg' color="dark">Edit Personal Information</Button>
+
             </React.Fragment>
         );
     }

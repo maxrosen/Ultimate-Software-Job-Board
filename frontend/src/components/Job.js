@@ -103,7 +103,6 @@ class Job extends Component {
       alert('Application submitted!');
     }
 
-
     render(){
         return(
         <Container className = 'Jobs'  >
@@ -113,25 +112,24 @@ class Job extends Component {
         <p>{this.props.description}</p>
         <Row>
 	        <Col md = {{size:2,offset:10} }>
-	        <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button>
+	         <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button>
 	        </Col>
-	        </Row>
-	        <Modal
+        </Row>
+        <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="Example Modal"
           style={customStyles}
         >
         <Form onSubmit={this.onSubmit}>
-            <FormGroup>
-                <Label for="position">Apply</Label>
-                    <Input type="text" name="first_name" id="first_name" placeholder="Type your first name" value={this.state.first_name||""} onChange={this.onChange.bind(this)}/>
-                    <Input type="text" name="last_name" id="last_name" placeholder="Type your last name" value={this.state.last_name||""} onChange={this.onChange.bind(this)}/>
-	                <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
-	                <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
-	            </FormGroup>
-	            <Button color="primary">Submit</Button>
-	            <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
+          <FormGroup>
+              <Label for="position">Apply</Label>
+              <Input type="text" name="name" id="name" placeholder="Type your name" value={this.state.name||""} onChange={this.onChange.bind(this)}/>
+              <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
+              <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
+            </FormGroup>
+            <Button color="primary">Submit</Button>
+            <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
 	        </Form>
         </Modal>
         </Container>
