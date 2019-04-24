@@ -31,7 +31,7 @@ app.all('*', function (req, res, next) {
 //var url = 'mongodb://mongodb:27017/myproject';
 
 // Connection URL(local)
-var url = 'mongodb://localhost:27017/slackers';
+var url = 'mongodb+srv://Kumar_320:abc@cluster0-wyhgq.mongodb.net/slackers?retryWrites=true';
 
 // Use connect method to connect to the server
 mongoose.connect(url,function(err){
@@ -69,7 +69,7 @@ var jsonParser = bodyParser.json();
 // Right now it accepts JSON in the format of {Title, Salary, Description}
 // The frontend will send this post request through some kind of form
 // /jobs is the route that accepts the JSON (right now its localhost:4000/jobs)
-// jsonParser is a type of body-parser object, body parser is middleware for express 
+// jsonParser is a type of body-parser object, body parser is middleware for express
 // that's used for obtaining the body data of http requests
 // (req, res) => is just an anonymous function that runs when a post request is made,
 // req refers to the request, res refers to the server's response.

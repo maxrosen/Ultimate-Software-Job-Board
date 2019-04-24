@@ -10,8 +10,13 @@ class AccountPage extends Component {
             <React.Fragment>
                 <ApplyModal key='1' buttonLabel='Add Job' children ={<FormGen template = {template.work} formfunction= {formfunction.createPosition}/>}/>
                 <Button className="greenButton" size = 'lg' color="dark" onClick={()=>{alert('under development')}}>View Job</Button>
-                <Button className="greenButton" size = 'lg' color="dark" onClick={()=>{alert('under development')}}>Edit Job</Button>
-                <Button href="/ManAppPage" className="greenButton" size = 'lg' color="dark">View Applications</Button>
+                <Button href="/ManEditJobs" className="greenButton" size = 'lg' color="dark">Edit Jobs</Button>
+                <Button className="greenButton" size = 'lg' color="dark">View Applications</Button>
+                <Button className="greenButton" size = 'lg' color="dark" onClick={()=>{alert('under development')}}>Import Employees</Button>
+                <Button  className="greenButton" size = 'lg' color="dark"onClick={()=>{alert('under development')}}>Import Jobs</Button>
+                <br/>
+                <Button href="/onboard" className="greenButton" size = 'lg' color="dark">Edit Personal Information</Button>
+
             </React.Fragment>
         );
     }
