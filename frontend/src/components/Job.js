@@ -49,7 +49,8 @@ class Job extends Component {
         super();
         this.state={
             modalIsOpen: false,
-            name: '',
+            first_name: '',
+            last_name: '',
             phonenumber: '',
             address: '',
             clicked: false
@@ -78,7 +79,8 @@ class Job extends Component {
 
         console.log(`Form submitted:`);
         const newApplication = {
-            name: this.state.name,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
             phonenumber: this.state.phonenumber,
             address: this.state.address,
             position: this.props.title,
@@ -87,7 +89,8 @@ class Job extends Component {
         Axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
 
         this.setState({
-            name: '',
+            first_name: '',
+            last_name: '',
             phonenumber: '',
             address: '',
         })
@@ -122,7 +125,8 @@ class Job extends Component {
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
                 <Label for="position">Apply</Label>
-                <Input type="text" name="name" id="name" placeholder="Type your name" value={this.state.name||""} onChange={this.onChange.bind(this)}/>
+                    <Input type="text" name="first_name" id="first_name" placeholder="Type your first name" value={this.state.first_name||""} onChange={this.onChange.bind(this)}/>
+                    <Input type="text" name="last_name" id="last_name" placeholder="Type your last name" value={this.state.last_name||""} onChange={this.onChange.bind(this)}/>
 	                <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
 	                <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
 	            </FormGroup>
