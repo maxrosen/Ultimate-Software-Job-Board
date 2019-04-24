@@ -12,6 +12,7 @@ import SignUpPage from './components/SignUpPage';
 import ChartPage from './components/ChartPage';
 import ManAppPage from './components/ManAppPage';
 import Onboard from './components/Onboard.js';
+import ViewApplications from './components/ViewApplications.js';
 import * as template from './components/api/formTemplate';
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path="/chart" component={ChartPage} />
             <Route path="/applications" component={ManAppPage} />
             <Route path="/onboard" component={Onboard} />
+            <Route path="/viewapps" component={ViewApplications} />
             <Route path="/"  component={JobList} />
 
           </Switch>
