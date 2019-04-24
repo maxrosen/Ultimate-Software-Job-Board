@@ -75,15 +75,18 @@ class ChartPage extends Component {
 
     render() {
         return (
-            <Container>
-                <h1 className="label">Company Hierarchy</h1>
-                <div className="treeGraph" align="center" >
+            <div align="center">
+                <div className="label">
+                    <h1 className="compText">Company Hierarchy</h1>
+                </div>
+                <div className="treeGraph">
                     <Tree
+                        //nodeSvgShape={svgRect}
                         orientation={"vertical"}
                         data={this.state.tree}
                     />
                 </div>
-            </Container>
+            </div>
         );
     }
 }
