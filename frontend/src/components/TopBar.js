@@ -19,7 +19,7 @@ import {
 export default class TopBar extends React.Component {
     constructor(props) {
         super(props);
-
+        this.logout=this.logout.bind(this);
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
@@ -27,6 +27,11 @@ export default class TopBar extends React.Component {
             token: ''
         };
     }
+
+    logout(){
+        localStorage.clear();
+    }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -66,7 +71,7 @@ export default class TopBar extends React.Component {
                                         Organizational Chart
                   </DropdownItem>
                                     <DropdownItem divider />
-                                    <DropdownItem>
+                                    <DropdownItem onClick={this.logout}>
                                         Log Out
                   </DropdownItem>
                                 </DropdownMenu>
