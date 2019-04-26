@@ -23,7 +23,14 @@ router.post('/register',(req,res)=> {
     const newUser = new User({
         first_name:req.body.first_name,
         last_name:req.body.last_name,
-        email:req.body.email
+		password:req.body.password,
+		employeeID:req.body.employeeID,
+        email:req.body.email,
+        companyId:req.body.companyId,
+        companyName:req.body.companyName,
+        managerId:req.body.managerId,
+        positionTitle:req.body.positionTitle,
+        startDate:req.body.startDate
     });
     User.findOne({email:req.body.email}).then(
         user=>{
@@ -52,8 +59,6 @@ router.post('/register',(req,res)=> {
         err=>{
         res.send(err);
     });
-    
-    
 });
 
 //@route    POST api/user
