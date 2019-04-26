@@ -35,11 +35,15 @@ class LogInPage extends Component {
           email: this.state.email,
           password: this.state.password,
       }
-      axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{localStorage.setItem('jwttoken',res.data)});
+      axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{
+        localStorage.clear()
+        localStorage.setItem('jwttoken',res.data)
+        if(localStorage.jwttoken){
+            console.log(jwt_decode(localStorage.jwttoken));
+            localStorage.setItem('user',JSON.stringify(jwt_decode(localStorage.jwttoken)))
+        }
+    });
 
-      if(localStorage.jwttoken){
-          console.log(jwt_decode(localStorage.jwttoken));
-      }
 
       this.setState({
           email: '',
