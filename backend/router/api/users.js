@@ -83,7 +83,7 @@ router.post('/login',(req,res)=> {
                     let token = jwt.sign(payload, process.env.SECRET_KEY, {
                         expiresIn: 1440
                     })
-                    res.send(token)
+                    res.json({status:"Login Success",success:true, token:token});
                 } 
                 else {
                     res.json({status:"Login Failed: invalid email or password",success:false});

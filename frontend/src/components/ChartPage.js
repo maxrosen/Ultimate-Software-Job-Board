@@ -54,6 +54,7 @@ class ChartPage extends Component {
               },
             children:[]
         }
+
         if (node!=undefined||node!='') {
             for (var k in list[id]){
                 var temp = this.buildtree(list[id][k],list[id][k]['employeeId'],list)
@@ -69,7 +70,6 @@ class ChartPage extends Component {
             let user = jwt_decode(localStorage.jwttoken);
             //Replace "user.companyId" with "1" to view the tree for Crystal Security.
             let url = "http://localhost:4000/api/employees/getCompany/"+user.companyId;
-            console.log(user);
             axios.get(url).then(
                 (res)=> {
                     var employeesList = lodash.groupBy(res.data,'managerId');
