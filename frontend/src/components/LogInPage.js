@@ -37,11 +37,17 @@ class LogInPage extends Component {
       }
       axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{
         localStorage.clear()
-        localStorage.setItem('jwttoken',res.data)
+        if(res.data.success){
+        localStorage.setItem('jwttoken',res.data.token)
         if(localStorage.jwttoken){
             console.log(jwt_decode(localStorage.jwttoken));
             localStorage.setItem('user',JSON.stringify(jwt_decode(localStorage.jwttoken)))
         }
+        window.location.href='/';
+    }
+    else{
+        alert("Invalid Credentials")
+    }
     });
 
 
