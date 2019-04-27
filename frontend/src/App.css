@@ -175,3 +175,7 @@ button {
     width: 45%;
     height: 45%;
 }
+.pagination {
+    justify-content: center;
+    margin:30px;
+  }

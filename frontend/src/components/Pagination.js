@@ -1,47 +1,44 @@
 import React from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink,Container } from 'reactstrap';
 
 export default class JobPage extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+      this.state={
+        pageNum:this.props.pageNum,
+        pages:[],
+        currentPage:this.props.currentPage
+      }
+    }
+
+    componentWillReceiveProps(newProps) {
+      const oldProps = this.props
+      if(oldProps.pageNum != newProps.pageNum) {
+        this.setState({pageNum:newProps.pageNum})
+        this.setState({currentPage:newProps.currentPage})
+        var ps = []
+        for (let number = 1; number <=newProps.pageNum; number++) {
+          ps.push(
+            <PaginationItem active={number===Number(newProps.currentPage)}>
+              <PaginationLink href={number}>
+              {number}
+            </PaginationLink>
+          </PaginationItem>
+          );
+        }
+        this.setState({pages:ps})
+      }
+    }
+
+    componentDidMount(){
+
+    }
+  render(){
     return (
-      <Pagination size="sm" aria-label="Page navigation example">
-      <PaginationItem>
-          <PaginationLink first href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink previous href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            1
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            3
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            4
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            5
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink next href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink last href="#" />
-        </PaginationItem>
+
+      <Pagination size="lg" aria-label="Pages for jobs" className='Pages' >
+      {this.state.pages}
+
       </Pagination>
     );
   }

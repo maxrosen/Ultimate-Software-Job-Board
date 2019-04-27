@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PositionForm from './components/positionForm';
 import FormGen from './components/FormGen';
 import TopBar from './components/TopBar';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import JobList from './components/JobList'
 import AccountPage from './components/AccountPage'
@@ -34,8 +34,8 @@ class App extends Component {
             <Route path="/editJobs" component={ManEditJobs} />
             <Route path="/onboard" component={Onboard} />
             <Route path="/viewapps" component={ViewApplications} />
-            <Route path="/"  component={JobList} />
-
+            <Route path="/:page"  component={JobList} />
+            <Route exact path="/"  render={()=><Redirect to='/1' />} />
           </Switch>
         </Router>
 
