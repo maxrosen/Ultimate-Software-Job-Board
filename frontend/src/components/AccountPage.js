@@ -71,13 +71,10 @@ class AccountPage extends Component {
                                 <Button className="greenButton" size='lg'>Import Employees</Button>
                             </Row>
                                 <Row className="space">
-                                        <Button className="greenButton" size='lg'>Import Jobs</Button>
-                                    
+                                    <Button className="greenButton" size='lg'>Import Jobs</Button>
                                 </Row>
                                 <Row className="space">
-                                    <Link to = "/question">
-                                        <Button className="greenButton" size='lg' >Manage Questions</Button>
-                                    </Link>
+                                    <Button className="greenButton" size='lg' onClick={this.openModal}>Manage Questions</Button>
                                 </Row>
                             </Col>
                             </div>
@@ -95,9 +92,9 @@ class AccountPage extends Component {
                         <FormGroup>
                             <Label for="position">Questions</Label>
                            
-                    </FormGroup>
-                    <Button color="primary">Submit</Button>
-                    <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
+                        </FormGroup>
+                        <Button color="primary">Submit</Button>
+                        <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
                     </Form>
                 </Modal>
 
