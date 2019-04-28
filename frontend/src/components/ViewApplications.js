@@ -16,6 +16,7 @@ class ViewApplications extends Component {
   render(){
       return (
         <Container className = 'Jobs'  >
+        <h1></h1>
         <h1>{this.props.title}</h1>
         <p>{this.props.company}</p>
         <p>{this.props.description}</p>

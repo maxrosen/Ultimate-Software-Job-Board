@@ -4,7 +4,7 @@ import ApplyModal from './ApplyModal';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
 import FormGen from './FormGen';
-class AccountPage extends Component {
+class ImoprtPage extends Component {
     render(){
         return (
             <React.Fragment>
@@ -13,4 +13,4 @@ class AccountPage extends Component {
         );
     }
 }
-export default AccountPage;
+export default ImportPage;
