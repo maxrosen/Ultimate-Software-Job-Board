@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Button } from 'reactstrap';
+import { Container, Button, UncontrolledTooltip } from 'reactstrap';
 import Tree from 'react-d3-tree';
 import axios from 'axios';
-import lodash from 'lodash'
+import lodash from 'lodash';
 
 const svgRect = {
     shape: 'rect',
@@ -13,44 +13,50 @@ const svgRect = {
     }
 }
 
+const svgSquare = {
+  shape: 'rect',
+  shapeProps: {
+    width: 120,
+    height: 120,
+    x: -60,
+  }
+}
+
 const companyId = 1;
 
+class NodeLabel extends React.PureComponent {
+	render() {
+    const {className, nodeData} = this.props
+	const name = nodeData.name
+    return (
+      <div className={className}>
+		  <h2 style={{'font-size':18}}>{name}</h2>
+		  <p>{nodeData.title}</p>
 
-const data = {
-    name: 'Parent',
-    children: [{
-        name: 'Child One',
-        children:[
-            {
-                name: 'child three'
-            }
-        ]
-    }, {
-        name: 'Child Two'
-    }]
-};
+	  </div>
+    )
+  }
+}
 class ChartPage extends Component {
 
     constructor(props){
         super(props)
         this.state = {
             employees:[
-       
-            ],
+			],
             tree:{}
 
         }
         this.buildtree=this.buildtree.bind(this)
     }
-
+	
+	
     buildtree(node,id,list){
        
         var tree={
             name: node.firstName+" "+node.lastName,
-            attributes: {
-                email:node.email,
-                title: node.positionTitle
-              },
+            email: node.email,
+            title: node.positionTitle,
             children:[]
         }
         if (node!=undefined||node!='') {
@@ -66,6 +72,7 @@ class ChartPage extends Component {
     componentDidMount(){
         axios.get('http://localhost:4000/api/employees/getCompany/1').then(
             (res)=> {
+				var count = 0;
                 var employeesList = lodash.groupBy(res.data,'managerId');
                 var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
                 console.log(tree)
@@ -79,8 +86,16 @@ class ChartPage extends Component {
                 <h1 className="label">Company Hierarchy</h1>
                 <div className="treeGraph" align="center" >
                     <Tree
+					allowForeignObjects
+					nodeLabelComponent={{
+						render: <NodeLabel className='myLabelComponentInSvg' />,
+						foreignObjectWrapper: {
+							x:-60
+						}
+					}}
                         orientation={"vertical"}
                         data={this.state.tree}
+						nodeSvgShape={svgSquare}
                     />
                 </div>
             </Container>
