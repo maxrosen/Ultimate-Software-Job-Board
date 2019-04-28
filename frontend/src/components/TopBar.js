@@ -40,7 +40,7 @@ export default class TopBar extends React.Component {
     }
 
     componentDidMount(){
-        if(localStorage.jwttoken){
+        if(!localStorage.jwttoken){
             this.setState({ loginbutton: <NavLink href="/login" className="nav-element">Log In</NavLink>});
         }
         else{
