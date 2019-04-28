@@ -12,6 +12,7 @@ import SignUpPage from './components/SignUpPage';
 import ChartPage from './components/ChartPage';
 import Onboard from './components/Onboard.js';
 import ViewApplications from './components/ViewApplications.js';
+import ManageCustomQuestion from './components/ManageCustomQuestion.js';
 import * as template from './components/api/formTemplate';
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path="/chart" component={ChartPage} />
             <Route path="/onboard" component={Onboard} />
             <Route path="/viewapps" component={ViewApplications} />
+            <Route path="/question" component={ManageCustomQuestion} />
             <Route path="/:page"  component={JobList} />
             <Route exact path="/"  render={()=><Redirect to='/1' />} />
           </Switch>
