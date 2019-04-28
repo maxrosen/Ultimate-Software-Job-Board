@@ -61,6 +61,22 @@ router.post('/register',(req,res)=> {
     });
 });
 
+//@route	POST api/position
+//@desc		Import positions
+//@access	Private
+router.post('/import',(req,res)=> {
+	//const Users = JSON.parse(req.body.users);
+	User.collection.insert(req.body.users, function (err, docs) {
+      if (err){
+		  res.send('error: ' + err);
+          console.log(err);
+      } else {
+		res.send("Multiple documents inserted to Users");
+        console.log("Multiple documents inserted to Users");
+      }
+	});
+});
+
 //@route    POST api/user
 //@desc     Login
 //@access   Private
