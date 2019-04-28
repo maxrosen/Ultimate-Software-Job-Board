@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './resources/logo.png';
 import {
     Collapse,
     Navbar,
@@ -45,7 +44,22 @@ export default class TopBar extends React.Component {
             this.setState({ loginbutton: <NavLink href="/login" className="nav-element">Log In</NavLink>});
         }
         else{
-            this.setState({ loginbutton: <NavLink href="/myaccount" className="nav-element">My Account</NavLink>});
+            this.setState({
+                loginbutton:<UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret className="nav-element">
+                        Options
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                        <DropdownItem href="/myaccount">My Account
+                                    </DropdownItem>
+                        <DropdownItem href="/chart">
+                            Organizational Chart
+                  </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem href="/home" onClick={this.logout} >Log Out</DropdownItem>
+
+                    </DropdownMenu>
+                </UncontrolledDropdown>});
         }
     }
 
@@ -66,22 +80,6 @@ export default class TopBar extends React.Component {
                             <NavItem>
                                 {this.state.loginbutton}
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar >
-                                <DropdownToggle nav caret className="nav-element">
-                                    Options
-                    </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem href="/myaccount">My Account
-                                    </DropdownItem>
-                                    <DropdownItem href="/chart">
-                                        Organizational Chart
-                  </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem onClick={this.logout}>
-                                        Log Out
-                  </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
                         </Nav>
                     </Collapse>
                 </Navbar>
