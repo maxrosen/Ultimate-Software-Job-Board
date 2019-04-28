@@ -45,8 +45,7 @@ class Job extends Component {
 
         console.log(`Form submitted:`);
         const newApplication = {
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
+            name: this.state.name,
             phonenumber: this.state.phonenumber,
             address: this.state.address,
             position: this.props.title,
