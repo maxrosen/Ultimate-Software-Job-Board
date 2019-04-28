@@ -15,6 +15,17 @@
     border-color: rgba(255,255,255,.01);
 }
 
+.cancelImg{
+    width:30px ;
+    height:30px;
+   
+}
+    .cancelImg:hover {
+        filter: brightness(0) saturate(100%) invert(22%) sepia(34%) saturate(5994%) hue-rotate(7deg) brightness(95%) contrast(96%);
+    }
+
+
+
 button {
     margin: 5px;
 }
