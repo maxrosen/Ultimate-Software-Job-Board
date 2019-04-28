@@ -68,7 +68,7 @@ class AccountPage extends Component {
                                     </Link>
                             </Row>
                                 <Row className="space">
-                                <Button className="greenButton" size='lg'>Import Employees</Button>
+                                <Button className="greenButton" size='lg' onClick={() => {alert('import popup')}}>Import Employees</Button>
                             </Row>
                                 <Row className="space">
                                     <Button className="greenButton" size='lg'>Import Jobs</Button>
