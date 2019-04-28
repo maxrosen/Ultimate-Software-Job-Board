@@ -9,7 +9,7 @@ class JobList extends Component {
     constructor(props){
         super(props)
         this.state = {
-            currentPage:0,
+            currentPage:1,
             positionscnt:5,
             positions:[
        
