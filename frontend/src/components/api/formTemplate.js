@@ -12,6 +12,6 @@ export const apply ={
     phonenumber: 'number',
 }
 
-export const import = {
+export const file = {
 	file: 'select file'
 }
