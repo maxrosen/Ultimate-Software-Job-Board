@@ -7,8 +7,17 @@ const Position = require('../../models/position');
 //@route    GET api/position
 //@desc     Get all Positions
 //@access   Public
-router.get('/',(req,res)=> {
-    Position.find().sort({postedDate:-1}).then(positions => res.json(positions));
+router.get('/page',(req,res)=> {
+    var perpage =6, page =Number(req.query.page);
+    Position.find().sort({postedDate:-1}).skip(perpage*(page-1)).limit(perpage).then(positions => res.json(positions));
+});
+
+//@route    GET api/position
+//@desc     Get all Positions
+//@access   Public
+router.get('/count',(req,res)=> {
+
+    Position.count().then(data =>res.json(data));
 });
 
 //@route    POST api/position
