@@ -8,7 +8,7 @@ import JobDesModal from './JobDesModal';
 import PositionForm from './positionForm'
 import FormGen from './FormGen';
 import uuid from 'uuid'
-import Axios from 'axios';
+import axios from 'axios';
 import {NavItem, NavLink} from 'reactstrap';
 import jwt_decode from 'jwt-decode'
 
@@ -35,11 +35,21 @@ class LogInPage extends Component {
           email: this.state.email,
           password: this.state.password,
       }
-      Axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{localStorage.setItem('jwttoken',res.data)});
+      axios.post('http://localhost:4000/api/users/login',userCred).then(res=>{
+        localStorage.clear()
+        if(res.data.success){
+        localStorage.setItem('jwttoken',res.data.token)
+        if(localStorage.jwttoken){
+            console.log(jwt_decode(localStorage.jwttoken));
+            localStorage.setItem('user',JSON.stringify(jwt_decode(localStorage.jwttoken)))
+        }
+        window.location.href='/';
+    }
+    else{
+        alert("Invalid Credentials")
+    }
+    });
 
-      if(localStorage.jwttoken){
-          console.log(jwt_decode(localStorage.jwttoken));
-      }
 
       this.setState({
           email: '',

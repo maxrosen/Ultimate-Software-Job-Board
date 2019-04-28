@@ -19,27 +19,38 @@ import {
 export default class TopBar extends React.Component {
     constructor(props) {
         super(props);
-
+        this.logout=this.logout.bind(this);
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
             isLoggedIn : false,
-            token: ''
+            token: '',
+            loginbutton:<NavLink href="/login" className="nav-element">Log In</NavLink>
         };
     }
+
+    logout(){
+        localStorage.clear();
+        window.location.href='/';
+    }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
-    render() {
-        let loginbutton;
-        if(!this.state.isLoggedIn){
-            loginbutton= <NavLink href="/login" className="nav-element">Log In</NavLink>
+
+    componentDidMount(){
+        if(!localStorage.jwttoken){
+            this.setState({ loginbutton: <NavLink href="/login" className="nav-element">Log In</NavLink>});
         }
         else{
-            loginbutton= <NavLink href="/myaccount" className="nav-element">My Account</NavLink>
+            this.setState({ loginbutton: <NavLink href="/myaccount" className="nav-element">My Account</NavLink>});
         }
+    }
+
+    render() {
+
         return (
             <div>
                 <Navbar className="TopBar" color="light" light expand="md">
@@ -53,7 +64,7 @@ export default class TopBar extends React.Component {
                                 <NavLink href="/home" className="nav-element">Find Jobs</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/login" className="nav-element">Log In</NavLink>
+                                {this.state.loginbutton}
                             </NavItem>
                             <UncontrolledDropdown nav inNavbar >
                                 <DropdownToggle nav caret className="nav-element">
@@ -66,7 +77,7 @@ export default class TopBar extends React.Component {
                                         Organizational Chart
                   </DropdownItem>
                                     <DropdownItem divider />
-                                    <DropdownItem>
+                                    <DropdownItem onClick={this.logout}>
                                         Log Out
                   </DropdownItem>
                                 </DropdownMenu>

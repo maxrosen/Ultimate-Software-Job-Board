@@ -1,3 +1,5 @@
+//THIS IS NO LONGER IN USE, PLEASE USE USERS INSTEAD
+
 const express = require('express');
 const router = express.Router();
 
@@ -11,10 +13,32 @@ router.get('/',(req,res)=> {
     Employee.find().sort({date:-1}).then(employees => res.json(employees));
 });
 
+router.get('/getCompany/:id',(req,res)=> {
+    Employee.find({companyId:req.params.id}).then(employees => res.json(employees));
+});
+
 //@route    POST api/employee
 //@desc     Create a New Employee
 //@access   Private
 router.post('/create',(req,res)=> {
+    const newEmployee = new Employee({
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        employeeID:req.body.employeeID,
+        email:req.body.email,
+        companyId:req.body.companyId,
+        companyName:req.body.companyName,
+        managerId:req.body.managerId,
+        positionTitle:req.body.positionTitle,
+        startDate:req.body.startDate
+    });
+    newEmployee.save().then(employee=>res.json(employee));
+});
+
+//@route    POST api/employee
+//@desc     Import a multiple employees
+//@access   Private
+router.post('/import',(req,res)=> {
     const newEmployee = new Employee({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
