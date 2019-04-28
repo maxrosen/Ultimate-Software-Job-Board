@@ -1,47 +1,81 @@
 import React from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink,Container } from 'reactstrap';
 
 export default class JobPage extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+      this.state={
+        pageNum:this.props.pageNum,
+        pages:[],
+        currentPage:this.props.currentPage
+      }
+    }
+
+    componentWillReceiveProps(newProps) {
+      const oldProps = this.props;
+      let range = 4;
+      if(oldProps.pageNum != newProps.pageNum || true) {
+        this.setState({pageNum:newProps.pageNum})
+        this.setState({currentPage:newProps.currentPage})
+        var ps = []
+        //ps.push(<PaginationItem active={})
+        if(oldProps.currentPage!=1){
+          ps.push(
+            <PaginationItem active={false}>
+              <PaginationLink href={1}>
+                &lt;&lt;
+              </PaginationLink>
+            </PaginationItem>
+          );
+          ps.push(
+            <PaginationItem active={false}>
+              <PaginationLink href={oldProps.currentPage-1}>
+                &lt;
+              </PaginationLink>
+            </PaginationItem>
+          );
+        }
+        let pg = oldProps.currentPage-range;
+        for (let number = Math.max(1, oldProps.currentPage-range); number <= Math.min(pg+range, newProps.pageNum); number++) {
+          if(number===Number(newProps.currentPage))
+            pg = number;
+          ps.push(
+            <PaginationItem active={number===Number(newProps.currentPage)}>
+              <PaginationLink href={number}>
+              {number}
+            </PaginationLink>
+          </PaginationItem>
+          );
+        }
+        if(oldProps.currentPage != newProps.pageNum){
+          ps.push(
+            <PaginationItem active={false}>
+              <PaginationLink href={pg+1}>
+                &gt;
+              </PaginationLink>
+            </PaginationItem>
+          );
+          ps.push(
+            <PaginationItem active={false}>
+              <PaginationLink href={newProps.pageNum}>
+                &gt;&gt;
+              </PaginationLink>
+            </PaginationItem>
+          );
+        }
+        this.setState({pages:ps})
+      }
+    }
+
+    componentDidMount(){
+
+    }
+  render(){
     return (
-      <Pagination size="sm" aria-label="Page navigation example">
-      <PaginationItem>
-          <PaginationLink first href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink previous href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            1
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            3
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            4
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">
-            5
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink next href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink last href="#" />
-        </PaginationItem>
+
+      <Pagination size="lg" aria-label="Pages for jobs" className='Pages' >
+      {this.state.pages}
+
       </Pagination>
     );
   }

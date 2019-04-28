@@ -9,22 +9,28 @@ class JobList extends Component {
     constructor(props){
         super(props)
         this.state = {
+            currentPage:1,
+            positionscnt:5,
             positions:[
        
             ]
         }
+        
     }
 
     componentDidMount(){
-        listFunction.getList().then((data)=> this.setState({positions:data}));
+        const{match:{params}}=this.props;
+        this.setState({currentPage:params.page});
+        listFunction.getList(params.page).then((data)=> this.setState({positions:data}));
+        listFunction.getCount().then((data)=>this.setState({positionscnt:data}));
     }
 
     render(){
-        const { jobs} = this.state;
+
         return(
             <Container>
                 {this.state.positions.map((pos)=>(<Job key={pos._id} id={pos._id} title={pos.title} company={pos.companyName} description={pos.description}/>))}
-                <JobPage />
+                <JobPage pageNum={Math.ceil(this.state.positionscnt/6.0)} currentPage={this.state.currentPage}/>
             </Container>
         );
     }
