@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, Button } from 'reactstrap';
 import Tree from 'react-d3-tree';
 import axios from 'axios';
-import lodash from 'lodash'
+import lodash from 'lodash';
+import jwt_decode from 'jwt-decode';
 
 const svgRect = {
     shape: 'rect',
@@ -53,6 +54,7 @@ class ChartPage extends Component {
               },
             children:[]
         }
+
         if (node!=undefined||node!='') {
             for (var k in list[id]){
                 var temp = this.buildtree(list[id][k],list[id][k]['employeeId'],list)
@@ -64,27 +66,47 @@ class ChartPage extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4000/api/employees/getCompany/1').then(
-            (res)=> {
-                var employeesList = lodash.groupBy(res.data,'managerId');
-                var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
-                console.log(tree)
-                this.setState({employees:employeesList,tree:tree});
-        console.log(this.state);});
+        if(localStorage.jwttoken){
+            let user = jwt_decode(localStorage.jwttoken);
+            //Replace "user.companyId" with "1" to view the tree for Crystal Security.
+            let url = "http://localhost:4000/api/employees/getCompany/"+user.companyId;
+            axios.get(url).then(
+                (res)=> {
+                    var employeesList = lodash.groupBy(res.data,'managerId');
+                    if(employeesList['undefined']){
+                        var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
+                        console.log(tree)
+                        this.setState({employees:employeesList,tree:tree});
+                    }
+            console.log(this.state);});
+        }
     }
 
     render() {
-        return (
-            <Container>
-                <h1 className="label">Company Hierarchy</h1>
-                <div className="treeGraph" align="center" >
-                    <Tree
-                        orientation={"vertical"}
-                        data={this.state.tree}
-                    />
+        if(localStorage.jwttoken && this.state.employees.undefined){
+            return (
+                <div align="center">
+                    <div className="label">
+                        <h1 className="compText">Company Hierarchy</h1>
+                    </div>
+                    <div className="treeGraph">
+                        <Tree
+                            //nodeSvgShape={svgRect}
+                            orientation={"vertical"}
+                            data={this.state.tree}
+                        />
+                    </div>
                 </div>
-            </Container>
-        );
+            );
+        }
+        else{
+            return(
+                <div>
+                    <br></br>
+                    <div align="center">Please log in with an account associated with your employer to view this feature.</div>
+                </div>
+            );
+        }
     }
 }
 export default ChartPage;

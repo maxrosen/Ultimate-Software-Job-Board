@@ -1,3 +1,5 @@
+//THIS IS NO LONGER IN USE, PLEASE USE USER INSTEAD
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
