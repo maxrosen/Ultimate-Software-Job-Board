@@ -36,9 +36,8 @@ export default class JobPage extends React.Component {
   render(){
     return (
 
-      <Pagination size="lg" aria-label="Pages for jobs" className='Pages' >
-      {this.state.pages}
-
+      <Pagination aria-label="Pages for jobs" className='Pages' >
+        {this.state.pages}
       </Pagination>
     );
   }
