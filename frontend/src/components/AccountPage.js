@@ -59,6 +59,10 @@ class AccountPage extends Component {
         this.setState({ questions: temparray });
     }
 
+    handleSubmit(event) {
+        
+    }
+
     render() {
         let { questions } = this.state
         return (
