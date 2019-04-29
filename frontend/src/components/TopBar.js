@@ -76,7 +76,7 @@ export default class TopBar extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/home" className="nav-element">Find Jobs</NavLink>
+                                <NavLink href="/1" className="nav-element">Find Jobs</NavLink>
                             </NavItem>
                             <NavItem>
                                 {this.state.loginbutton}
