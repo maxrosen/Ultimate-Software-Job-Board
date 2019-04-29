@@ -75,15 +75,21 @@ class ChartPage extends Component {
 
     componentDidMount(){
 
-        axios.get('http://localhost:4000/api/employees/getCompany/1').then(
-            (res)=> {
-				var count = 0;
-                var employeesList = lodash.groupBy(res.data,'managerId');
-                var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
-                console.log(tree)
-                this.setState({employees:employeesList,tree:tree});
-        console.log(this.state);});
-    }
+        if(localStorage.jwttoken){
+            let user = jwt_decode(localStorage.jwttoken);
+            //Replace "user.companyId" with "1" to view the tree for Crystal Security.
+            let url = "http://localhost:4000/api/employees/getCompany/"+user.companyId;
+            axios.get(url).then(
+                (res)=> {
+                    var employeesList = lodash.groupBy(res.data,'managerId');
+                    if(employeesList['undefined']){
+                        var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
+                        console.log(tree)
+                        this.setState({employees:employeesList,tree:tree});
+                    }
+            console.log(this.state);});
+		}
+	}
 
     render() {
         return (
@@ -104,21 +110,9 @@ class ChartPage extends Component {
                     />
                    </div>
             </Container>)
-        if(localStorage.jwttoken){
-            let user = jwt_decode(localStorage.jwttoken);
-            //Replace "user.companyId" with "1" to view the tree for Crystal Security.
-            let url = "http://localhost:4000/api/employees/getCompany/"+user.companyId;
-            axios.get(url).then(
-                (res)=> {
-                    var employeesList = lodash.groupBy(res.data,'managerId');
-                    if(employeesList['undefined']){
-                        var tree = this.buildtree(employeesList['undefined'][0],1,employeesList)
-                        console.log(tree)
-                        this.setState({employees:employeesList,tree:tree});
-                    }
-            console.log(this.state);});
+
         }
-    }
+    
 
 }
 export default ChartPage;
