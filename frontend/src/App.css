@@ -39,6 +39,10 @@ button {
     height: 50%;
 }
 
+.titleHome {
+    color: rgb(153, 197, 85);
+}
+
 .positionText {
     color: blue;
 }

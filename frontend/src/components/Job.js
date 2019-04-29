@@ -12,7 +12,7 @@ class Job extends Component {
             first_name: '',
             last_name: '',
             phonenumber: '',
-            address: '',
+            email: '',
             clicked: false
         };
 
@@ -41,7 +41,7 @@ class Job extends Component {
         const newApplication = {
             name: this.state.name,
             phonenumber: this.state.phonenumber,
-            address: this.state.address,
+            email: this.state.email,
             position: this.props.title,
             positionid: this.props.id
         }
@@ -51,7 +51,7 @@ class Job extends Component {
             first_name: '',
             last_name: '',
             phonenumber: '',
-            address: '',
+            email: '',
         })
 
         this.closeModal();
@@ -84,7 +84,7 @@ class Job extends Component {
           <FormGroup>
               <Label for="position">Apply</Label>
               <Input type="text" name="name" id="name" placeholder="Type your name" value={this.state.name||""} onChange={this.onChange.bind(this)}/>
-              <Input type="text" name="address" id="email" placeholder="Type your email" value={this.state.address||""} onChange={this.onChange.bind(this)}/>
+              <Input type="text" name="email" id="email" placeholder="Type your email" value={this.state.email||""} onChange={this.onChange.bind(this)}/>
               <Input type="number" name="phonenumber" id="phonenumber" placeholder="Type your phone number" value={this.state.phonenumber||""} onChange={this.onChange.bind(this)}/>
             </FormGroup>
             <Button color="primary">Submit</Button>

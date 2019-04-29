@@ -56,7 +56,7 @@ export default class TopBar extends React.Component {
                             Organizational Chart
                   </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem href="/home" onClick={this.logout} >Log Out</DropdownItem>
+                        <DropdownItem href="/1" onClick={this.logout} >Log Out</DropdownItem>
 
                     </DropdownMenu>
                 </UncontrolledDropdown>});
@@ -75,7 +75,7 @@ export default class TopBar extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/home" className="nav-element">Find Jobs</NavLink>
+                                <NavLink href="/1" className="nav-element">Find Jobs</NavLink>
                             </NavItem>
                             <NavItem>
                                 {this.state.loginbutton}
