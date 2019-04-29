@@ -11,8 +11,7 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    Media,
-    Alert
+    Media
 } from 'reactstrap';
 
 export default class TopBar extends React.Component {

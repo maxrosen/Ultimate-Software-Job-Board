@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import FormGen from './FormGen';
-import * as formfunction from './api/formFunction';
 class ApplyModal extends React.Component {
   constructor(props) {
     super(props);

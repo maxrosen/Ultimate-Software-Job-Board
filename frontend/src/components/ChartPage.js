@@ -63,7 +63,7 @@ class ChartPage extends Component {
             children:[]
         }
 
-        if (node!=undefined||node!='') {
+        if (node!=undefined||node!=='') {
             for (var k in list[id]){
                 var temp = this.buildtree(list[id][k],list[id][k]['employeeId'],list)
                 tree.children.push(temp)

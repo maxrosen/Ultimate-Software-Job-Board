@@ -1,16 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText, Media} from 'reactstrap';
-import ApplyModal from './ApplyModal';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import * as template from './api/formTemplate'
-import * as formfunction from './api/formFunction';
-import JobDesModal from './JobDesModal';
-import PositionForm from './positionForm';
-import FormGen from './FormGen';
-import uuid from 'uuid';
-import Axios from 'axios';
-import {NavItem, NavLink} from 'reactstrap';
-import jwt_decode from 'jwt-decode'
+import {Button, Form, FormGroup, Label, Input, Media} from 'reactstrap';
 
 class Onboard extends Component {
   constructor(props) {

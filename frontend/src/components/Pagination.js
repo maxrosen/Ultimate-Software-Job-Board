@@ -14,12 +14,12 @@ export default class JobPage extends React.Component {
     componentWillReceiveProps(newProps) {
       const oldProps = this.props;
       let range = 4;
-      if(oldProps.pageNum != newProps.pageNum || true) {
+      if(oldProps.pageNum !== newProps.pageNum || true) {
         this.setState({pageNum:newProps.pageNum})
         this.setState({currentPage:newProps.currentPage})
         var ps = []
         //ps.push(<PaginationItem active={})
-        if(oldProps.currentPage!=1){
+        if(oldProps.currentPage!==1){
           ps.push(
             <PaginationItem active={false}>
               <PaginationLink href={1}>
@@ -47,7 +47,7 @@ export default class JobPage extends React.Component {
           </PaginationItem>
           );
         }
-        if(oldProps.currentPage != newProps.pageNum){
+        if(oldProps.currentPage !== newProps.pageNum){
           ps.push(
             <PaginationItem active={false}>
               <PaginationLink href={pg+1}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
+import {Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
 import ApplyModal from './ApplyModal';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
@@ -35,7 +35,7 @@ class AccountPage extends Component {
     }
 
     onChange(event) {
-        this.state.questions[this.state.questions.indexOf(event.target.key)] = event.target.value;
+        // this.state.questions[this.state.questions.indexOf(event.target.key)] = event.target.value;
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
     }
@@ -60,7 +60,7 @@ class AccountPage extends Component {
     }
 
     handleSubmit(event) {
-        
+
     }
 
     render() {

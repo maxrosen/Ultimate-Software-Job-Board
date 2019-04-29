@@ -1,15 +1,7 @@
 import React, {Component} from 'react';
-import {Container, Button, Row, Col, Form, FormGroup, Label, Input, FormText, Media} from 'reactstrap';
-import ApplyModal from './ApplyModal';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import * as template from './api/formTemplate'
-import * as formfunction from './api/formFunction';
-import JobDesModal from './JobDesModal';
-import PositionForm from './positionForm'
-import FormGen from './FormGen';
-import uuid from 'uuid'
+import {Button, Form, FormGroup, Label, Input, Media} from 'reactstrap';
 import axios from 'axios';
-import {NavItem, NavLink} from 'reactstrap';
+import {NavLink} from 'reactstrap';
 import jwt_decode from 'jwt-decode'
 
 class LogInPage extends Component {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import uuid from 'uuid'
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class FormGen extends React.Component {
     constructor(props){
         super(props);
