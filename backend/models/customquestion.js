@@ -6,6 +6,14 @@ const CustomQuestionSchema = new Schema({
         type: [String],
         required: true
     },
+    companyId:{
+        type: Number,
+        required: true
+    },
+    managerId:{
+        type: Number,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
