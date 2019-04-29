@@ -57,7 +57,7 @@ export default class TopBar extends React.Component {
                             Organizational Chart
                   </DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem href="/home" onClick={this.logout} >Log Out</DropdownItem>
+                        <DropdownItem href="/1" onClick={this.logout} >Log Out</DropdownItem>
 
                     </DropdownMenu>
                 </UncontrolledDropdown>});
