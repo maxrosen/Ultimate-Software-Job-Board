@@ -15,16 +15,22 @@
     border-color: rgba(255,255,255,.01);
 }
 
-.cancelImg{
-    width:30px ;
-    height:30px;
-   
+.cancelImg {
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: 10px
 }
+
     .cancelImg:hover {
         filter: brightness(0) saturate(100%) invert(22%) sepia(34%) saturate(5994%) hue-rotate(7deg) brightness(95%) contrast(96%);
+        cursor: pointer;
     }
 
-
+.UserProfile {
+    align-self: flex-start
+}
 
 button {
     margin: 5px;
@@ -47,19 +53,37 @@ button {
     color: blue;
 }
 
+.AccountPageConfig {
+    margin-left: -15px;
+    float: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.questForm {
+    display: block;
+    max-height: 50vh;
+}
+
+.questionAlign {
+    display: flex;
+    flex-direction: row;
+}
+
 .AccountBar {
+    padding-left: 20px;
     background-color: rgb(242, 242, 242);
     border-right-color: gray;
     border-right-style: solid;
     width: 32%;
     border-right-width: thick;
-    height: 600px;
-    min-width: 260px;
-    max-width: 260px;
+    height: 800px;
+    min-width: 300px;
+    max-width: 300px;
 }
 
 .sideBar {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 25px;
     height: auto;
     width: auto;

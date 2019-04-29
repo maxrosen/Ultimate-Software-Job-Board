@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\components"
+    "\\components",
+    "\\components\\resources"
   ],
-  "SelectedNode": "\\components\\Job.js",
+  "SelectedNode": "\\components\\AccountPage.js",
   "PreviewInSolutionExplorer": false
 }
