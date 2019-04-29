@@ -24,7 +24,7 @@ const UserSchema = new Schema({
     },
     companyName:{
         type: String,
-        required: true
+        default: ''
     },
     companyId:{
         type: Number,
