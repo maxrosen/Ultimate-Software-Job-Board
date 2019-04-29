@@ -11,3 +11,7 @@ export const apply ={
     address: 'text',
     phonenumber: 'number',
 }
+
+export const file = {
+	file: 'select file'
+}

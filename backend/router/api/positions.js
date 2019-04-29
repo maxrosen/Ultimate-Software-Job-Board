@@ -34,8 +34,24 @@ router.post('/create',(req,res)=> {
     newPosition.save().then(position=>res.json(position));
 });
 
+//@route	POST api/position
+//@desc		Import positions
+//@access	Private
+router.post('/import',(req,res)=> {
+	//const Users = JSON.parse(req.body.users);
+	Position.collection.insert(req.body.positions, function (err, docs) {
+      if (err){
+		  res.send('error: ' + err);
+          console.log(err);
+      } else {
+		res.send("Multiple documents inserted to Positions");
+        console.log("Multiple documents inserted to Positions");
+      }
+	});
+});
+
 //@route    DEL api/position
-//@desc     Create a New Position
+//@desc     Delete an existing Position
 //@access   Private
 router.delete('/delete/:id',(req,res)=>{
     Position.findById(req.params.id).then(position => position.remove().then(()=> res.json({ success: true})))

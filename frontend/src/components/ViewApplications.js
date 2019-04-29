@@ -11,6 +11,7 @@ import Axios from 'axios';
 import Modal from 'react-modal';
 
 class ViewApplications extends Component {
+<<<<<<< HEAD
     constructor(){
         super();
         this.state={
@@ -65,6 +66,24 @@ class ViewApplications extends Component {
         );
     };
 
+=======
+  render(){
+      return (
+        <Container className = 'Jobs'  >
+        <h1></h1>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.company}</p>
+        <p>{this.props.description}</p>
+        <Row>
+          <Col md = {{size:2,offset:10} }>
+          <button size='lg' className = "greenButton" onClick={this.openModal}>Email Applicant</button>
+           <button size='lg' className = "greenButton" onClick={this.openModal}>Accepted</button>
+          </Col>
+        </Row>
+        </Container>
+      );
+  }
+>>>>>>> 1e2b5d60f66bef657a4ec34e217bdf2a3b8430dc
 }
 
 const customStyles = {

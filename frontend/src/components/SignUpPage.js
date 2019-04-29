@@ -39,9 +39,12 @@ class SignUpPage extends Component {
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>{
           console.log(res.data.success)
-          if (res.data.success){window.location.href='/login';console.log(window.location.href)
-        } });
-
+          if (res.data.success){
+              window.location.href='/login';
+              console.log(window.location.href)
+          }
+          else{alert('Sign Up Failed');} 
+      });
       this.setState({
         first_name: '',
         last_name: '',

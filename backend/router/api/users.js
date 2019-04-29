@@ -17,21 +17,22 @@ router.get('/',(req,res)=> {
 //@desc     Register a New User
 //@access   Private
 router.post('/register',(req,res)=> {
-    if(req.body.first_name == null | req.body.last_name == null | req.body.email == null){
+    if(req.body.first_name == null || req.body.last_name == null || req.body.email == null || req.body.password == null){
         res.send("Invalid data");
     }
     const newUser = new User({
         first_name:req.body.first_name,
         last_name:req.body.last_name,
-		password:req.body.password,
-		employeeID:req.body.employeeID,
-        email:req.body.email,
-        companyId:req.body.companyId,
-        companyName:req.body.companyName,
-        managerId:req.body.managerId,
-        positionTitle:req.body.positionTitle,
-        startDate:req.body.startDate
+        email:req.body.email
     });
+    if(req.body.employeeID != null){
+        newUser.employeeID = req.body.employeeID;
+        newUser.companyId = req.body.companyId;
+        newUser.companyName = req.body.companyName;
+        newUser.managerId = req.body.managerId;
+        newUser.positionTitle = req.body.positionTitle;
+        newUser.startDate = req.body.startDate;
+    }
     User.findOne({email:req.body.email}).then(
         user=>{
             if(user){
@@ -39,9 +40,6 @@ router.post('/register',(req,res)=> {
                 return;
             }
             else{
-                if(req.body.password == null){
-                    res.send("Invalid data");
-                }
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     newUser.password = hash
                     User.create(newUser)
@@ -59,6 +57,22 @@ router.post('/register',(req,res)=> {
         err=>{
         res.send(err);
     });
+});
+
+//@route	POST api/position
+//@desc		Import positions
+//@access	Private
+router.post('/import',(req,res)=> {
+	//const Users = JSON.parse(req.body.users);
+	User.collection.insert(req.body.users, function (err, docs) {
+      if (err){
+		  res.send('error: ' + err);
+          console.log(err);
+      } else {
+		res.send("Multiple documents inserted to Users");
+        console.log("Multiple documents inserted to Users");
+      }
+	});
 });
 
 //@route    POST api/user
