@@ -18,6 +18,7 @@ class ViewApplications extends Component {
             position: '',
             phonenumber: '',
             name: '',
+            email: '',
             clicked: false
         };
 
@@ -50,15 +51,46 @@ class ViewApplications extends Component {
       alert('Applicant hired!');
     }
 
+    deleteApp(e) {
+        e.preventDefault();
+        console.log(`Application removed`);
+
+        const deletingApp = {
+          app: this.state._id
+        }
+
+        Axios.get('http://localhost:4000/api/applications/')
+          .then(res => {
+            //const emps = res.data;
+            //this.setState({ emps });
+            console.log(res.data);
+          })
+
+        Axios.delete('http://localhost:4000/api/applications/delete/', this.state.id)
+          .then(res => {
+          console.log(res.data);
+        });
+
+        Axios.get('http://localhost:4000/api/applications/')
+          .then(res => {
+            //const emps = res.data;
+            //this.setState({ emps });
+            console.log(res.data);
+          })
+    }
+
     render(){
         return(
           <Container className = 'Jobs'>
-          <h1>{this.props.position}</h1>
-          <p>{this.props.name}</p>
-          <p>{this.props.phonenumber}</p>
+          <h1>Applicant Name: {this.props.name}</h1>
+          <p>Position: {this.props.name}</p>
+          <p>Phone number: {this.props.phonenumber}</p>
+          <p>Email address: {this.props.email}</p>
           <Row>
   	        <Col md = {{size:2,offset:10} }>
-  	         <button size='lg' className = "greenButton" onClick={this.openModal}>Apply</button>
+  	         <button size='lg' className = "greenButton" onClick={(e) => this.deleteApp(e)}>Delete</button>
+             <button size='lg' className = "greenButton" onClick={this.openModal}>Email Applicant</button>
+             <button size='lg' className = "greenButton" onClick={this.openModal}>Hire Applicant</button>
   	        </Col>
           </Row>
           </Container>
