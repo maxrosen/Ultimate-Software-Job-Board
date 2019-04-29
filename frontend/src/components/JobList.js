@@ -12,10 +12,10 @@ class JobList extends Component {
             currentPage:1,
             positionscnt:5,
             positions:[
-       
+
             ]
         }
-        
+
     }
 
     componentDidMount(){
