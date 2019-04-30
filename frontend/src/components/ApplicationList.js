@@ -29,7 +29,7 @@ class ApplicationList extends Component {
 
       return(
           <Container>
-              {this.state.applications.map((pos)=>(<ViewApplications key={pos._id} id={pos._id} position={pos.position} name={pos.name} phonenumber={pos.phonenumber}/>))}
+              {this.state.applications.map((pos)=>(<ViewApplications key={pos._id} id={pos._id} position={pos.position} name={pos.name} phonenumber={pos.phonenumber} email={pos.email}/>))}
           </Container>
       );
   }
