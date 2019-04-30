@@ -9,8 +9,7 @@ class Job extends Component {
         super();
         this.state={
             modalIsOpen: false,
-            first_name: '',
-            last_name: '',
+            name: '',
             phonenumber: '',
             email: '',
             clicked: false
@@ -48,8 +47,7 @@ class Job extends Component {
         Axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
 
         this.setState({
-            first_name: '',
-            last_name: '',
+            name: '',
             phonenumber: '',
             email: '',
         })
