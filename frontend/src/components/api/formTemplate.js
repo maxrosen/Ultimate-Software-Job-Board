@@ -9,9 +9,13 @@ export const work ={
 export const apply ={
     name: 'text',
     address: 'text',
-    phonenumber: 'number',
+    phonenumber: 'number'
 }
 
 export const file = {
    file: 'file'
+}
+
+export const question = {
+	question: 'text'
 }

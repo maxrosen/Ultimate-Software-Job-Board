@@ -10,6 +10,11 @@ const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
 const application = require('./router/api/applications');
+const customquestion = require('./router/api/customquestions');
+
+var cors = require('cors')
+
+app.use(cors())
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,7 +45,7 @@ mongoose.connect(url,function(err){
     console.log("MongoDB Successfully Connected");
 });
 
-//Import example data to MongoDB
+//Import example data to MongoDB locally
 let exec = require('child_process').exec
 
 let command = 'mongo slackers --eval "db.dropDatabase()"'
@@ -96,5 +101,6 @@ app.use('/api/positions',position);
 app.use('/api/employees',employee);
 app.use('/api/applications',application);
 app.use('/api/users',user);
+app.use('/api/customquestions',customquestion);
 
 app.listen(API_PORT,()=>console.log("Server listening on 4000"));

@@ -48,6 +48,7 @@ class ChartPage extends Component {
             employees:[
 			],
             tree:{}
+            
 
         }
         this.buildtree=this.buildtree.bind(this)
@@ -87,6 +88,14 @@ class ChartPage extends Component {
                         console.log(tree)
                         this.setState({employees:employeesList,tree:tree});
                     }
+
+                    const dimensions = this.treeContainer.getBoundingClientRect();
+                    this.setState({
+                      translate: {
+                        x: dimensions.width / 2,
+                        y: dimensions.height / 2
+                      }
+                    });
             console.log(this.state);});
 		}
 	}
@@ -95,8 +104,10 @@ class ChartPage extends Component {
         return (
             <Container>
                 <h1 className="label">Company Hierarchy</h1>
-                <div className="treeGraph" align="center" >
+                <div className="treeGraph" align="center"  ref={tc => (this.treeContainer = tc)}>
                     <Tree
+                    translate={this.state.translate}
+                   
 					allowForeignObjects
 					nodeLabelComponent={{
 						render: <NodeLabel className='myLabelComponentInSvg' />,

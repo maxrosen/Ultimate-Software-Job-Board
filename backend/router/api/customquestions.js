@@ -1,5 +1,3 @@
-//THIS IS NO LONGER IN USE, PLEASE USE USERS INSTEAD
-
 const express = require('express');
 const router = express.Router();
 
@@ -21,12 +19,17 @@ router.get('/getCompany/:id',(req,res)=> {
 //@desc     Create a New customquestion
 //@access   Private
 router.post('/create',(req,res)=> {
+<<<<<<< HEAD:backend/router/api/customquestion.js
     const newCustomQuestion = new customquestion({
         question:req.body.question,
+=======
+    const newCustomQuestion = new CustomQuestion({
+        question:req.body.firstName,
+>>>>>>> b52098ccc7f2659a1f8a86107bb2f9daf2fe1dfd:backend/router/api/customquestions.js
         companyId:req.body.companyId,
         managerId:req.body.managerId
     });
-    NewCustomQuestion.save().then(customquestion=>res.json(customquestion));
+    newCustomQuestion.save().then(question=>res.json(question));
 });
 
 //@route    DEL api/customquestion
@@ -45,11 +48,9 @@ router.put('/update/:id',(req,res)=>{
     CustomQuestion.findById(req.params.id,function(err,customquestion){
         if(!customquestion)
             res.status(404).send('customquestion not found')
-        else{
+        else
             question:req.body.firstName,
-            companyId:req.body.companyId,
-            managerId:req.body.managerId
-        }
+        
         customquestion.save().then(customquestion=>{
             res.json({success:true})
         })

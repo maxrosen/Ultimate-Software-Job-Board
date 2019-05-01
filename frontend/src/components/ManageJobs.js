@@ -9,17 +9,19 @@ import FormGen from './FormGen';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Axios from 'axios';
 import Modal from 'react-modal';
-import ApplicationList from './ApplicationList';
+import ManageJobsList from './ManageJobsList';
 
 class ViewApplications extends Component {
     constructor(){
         super();
         this.state={
             modalIsOpen: false,
-            position: '',
-            phonenumber: '',
-            name: '',
-            email: '',
+            title: '',
+            description: '',
+            companyId: '',
+            companyName: '',
+            managerId: '',
+            postedDate: '',
             clicked: false
         };
 
@@ -52,11 +54,11 @@ class ViewApplications extends Component {
       alert('Applicant hired!');
     }
 
-    deleteApp(e) {
+    deletePosting(e) {
         e.preventDefault();
-        console.log(`Application removed`);
+        console.log(`Posting removed`);
 
-        Axios.delete('http://localhost:4000/api/applications/delete/' + this.props.id)
+        Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.id)
           .then(res => {
           console.log(res.data);
           window.location.reload();
@@ -68,15 +70,13 @@ class ViewApplications extends Component {
     render(){
         return(
           <Container className = 'Jobs'>
-          <h1>Applicant Name: {this.props.name}</h1>
-          <p>Position: {this.props.name}</p>
-          <p>Phone number: {this.props.phonenumber}</p>
-          <p>Email address: {this.props.email}</p>
+          <h1>Position Title: {this.props.title}</h1>
+          <p>Description: {this.props.description}</p>
+          <p>Post Date: {this.props.postedDate}</p>
+          <p>Company Name: {this.props.companyName}</p>
           <Row>
   	        <Col md = {{size:2,offset:10} }>
-  	         <button size='lg' className = "greenButton" onClick={(e) => this.deleteApp(e)}>Delete</button>
-             <button size='lg' className = "greenButton" onClick={this.openModal}>Email Applicant</button>
-             <button size='lg' className = "greenButton" onClick={this.openModal}>Hire Applicant</button>
+  	         <button size='lg' className = "greenButton" onClick={(e) => this.deletePosting(e)}>Delete</button>
   	        </Col>
           </Row>
           </Container>

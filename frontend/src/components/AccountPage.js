@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
+import {Container,  Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
 import ApplyModal from './ApplyModal';
+import CustomQuestionModal from './CustomQuestionModal';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
 import FormGen from './FormGen';
@@ -12,16 +13,13 @@ class AccountPage extends Component {
     constructor() {
         super();
         this.state = {
-            questions: ["test1", "test2"],
+            // questions: [""],
             modalIsOpen: false,
             clicked: false
         };
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.saveQuestions = this.saveQuestions.bind(this);
-        this.deleteQuestion = this.deleteQuestion.bind(this);
-        this.addQuestion = this.addQuestion.bind(this);
         this.onChange = this.onChange.bind(this);
     }
 
@@ -35,100 +33,75 @@ class AccountPage extends Component {
     }
 
     onChange(event) {
-        this.state.questions[event.target.id] = event.target.value;
-        const temparray = this.state.questions;
-        this.setState({ questions: temparray });
-    }
-
-    saveQuestions(e) {
-        e.preventDefault();
-        this.closeModal();
-
-    }
-
-    addQuestion() {
-        this.state.questions.push("");
-        const temparray = this.state.questions;
-        this.setState({ questions: temparray });
-    }
-
-    deleteQuestion(event) {
-        this.state.questions.splice(event.target.id, 1);
-        console.log(this.state.questions);
-        let temparray = this.state.questions;
-        this.setState({ questions: temparray });
+        //not in use right now
     }
 
     render() {
         let user = jwt_decode(localStorage.jwttoken)
         return (
-            <React.Fragment>
+            <Container className>
                 <div className="AccountPageConfig">
                     <div className="AccountBar" align="center">
-                    <h2 align="center">Manager Options</h2>
+
+                        <h2 align="center">Manager Options</h2>
+                        
                         <div className="sideBar">
-                            <h3 align="left">Applications</h3>
-                            <Row className="space">
-                                <Link to="/viewapps">
-                                    <Button className="greenButton" size='lg'>Current Applications</Button>
-                                </Link>
-                            </Row>
-                            <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={this.openModal}>Edit Questions</Button>
-                            </Row>
-                            <br></br>
-                            <h3 align="left">Jobs</h3>
-                            <Row className="space">
-                                <ApplyModal key='1' buttonLabel='Add Position' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-                            </Row>
-                            <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Positions</Button>
-                            </Row>
-                            <br></br>
-                            <h3 align="left">Import Data</h3>
-                            <Row className="space">
-                                <ApplyModal key='1' buttonLabel='Import Positions' children={<FormGen template={template.file} formfunction={formfunction.importPositions} />} />
-                            </Row>
-                            <Row className="space">
-                                <ApplyModal key='1' buttonLabel='Import Employees' children={<FormGen template={template.file} formfunction={formfunction.importEmployees} />} />
-                            </Row>
+                            <div className="space">
+                                <h3 align="left">Applications</h3>
+                            </div>
+                                <Row className="space">
+                                    <Link to="/viewapps">
+                                        <Button className="greenButton" size='lg'>View Current</Button>
+                                    </Link>
+                                </Row>
+                                <Row className="space">
+                                    <CustomQuestionModal key='0' buttonLabel='Manage Questions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
+                                </Row>
+
+                            <div className="space">
+                                <h3 align="left">Jobs</h3>
+                            </div>
+                                <Row className="space">
+                                    <ApplyModal key='1' buttonLabel='Add Position' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
+                                </Row>
+                                <Row className="space">
+                                    <Link to="/managejobs">
+                                        <Button className="greenButton" size='lg'>Edit Postings</Button>
+                                    </Link>
+                                </Row>
+
+                            <div className="space">
+                                <h3 align="left">Import Data</h3>
+                            </div>
+                                <Row className="space">
+                                    <ApplyModal key='1' buttonLabel='Import Positions' children={<FormGen template={template.file} formfunction={formfunction.importPositions} />} />
+                                </Row>
+                                <Row className="space">
+                                    <ApplyModal key='1' buttonLabel='Import Employees' children={<FormGen template={template.file} formfunction={formfunction.importEmployees} />} />
+                                </Row>   
                         </div>
                     </div>
+
                     <div className="UserProfile">
-                        <Label>{user.companyId}</Label>
+                        <div className = "profileInfo">
+                            <Media className="profileImg" src={require('./resources/profile.png')} alt="image"/>
+                            <div className = "profileTextdiv" >
+                                    <p className="profileName">Joe Smith</p>
+                                    <p className="profileText">Software Engineer</p>
+                                    <p className="profileText">Joesmith@slackers.com</p>
+                                    <p className="profileText">Employee ID: 123456789</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        contentLabel="Example Modal"
+                        style={customStyles}>
+                    </Modal>
                 </div>
-
-
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Example Modal"
-                    style={customStyles}
-                >
-                    <Form className="questForm" >
-                        <FormGroup>
-                            <Label>Questions</Label>
-                            {this.state.questions.map((question, index) =>
-                                <div className="questionAlign" key={index} id={index}>
-                                    <Input type="text" id={index} key={index} placeholder="Type your question" Value={question} onChange={this.onChange.bind(this)} />
-                                    <Media id={index} key={index} className="cancelImg" src={require('./resources/redX.png')} alt="image" onClick={this.deleteQuestion.bind(this)} />
-                                </div>
-
-                            )}
-                        </FormGroup>
-                        <Button color="primary" onClick={this.addQuestion}>Add Question</Button>
-                        <Button color="secondary" onClick={this.saveQuestions}>Save</Button>
-                        <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
-
-
-                    </Form>
-
-
-                </Modal>
-
-
-            </React.Fragment>
+            </Container>
         );
     }
 
