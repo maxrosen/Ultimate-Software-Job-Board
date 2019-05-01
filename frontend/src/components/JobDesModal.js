@@ -17,7 +17,7 @@ class JobDesModal extends React.Component {
   componentDidMount(){
      if (this.props.clicked){
          this.toggle();
-         console.log("asdfalsdflsdakfj ")
+         console.log("component mounted ")
      }
   }
 
