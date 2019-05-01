@@ -13,14 +13,13 @@ class AccountPage extends Component {
     constructor() {
         super();
         this.state = {
-            // questions: [""],
             modalIsOpen: false,
             clicked: false
         };
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.onChange = this.onChange.bind(this);
+        
     }
 
 
@@ -32,14 +31,12 @@ class AccountPage extends Component {
         this.setState({ modalIsOpen: false });
     }
 
-    onChange(event) {
-        //not in use right now
-    }
+
 
     render() {
         let user = jwt_decode(localStorage.jwttoken)
         return (
-            <Container className>
+            <Container>
                 <div className="AccountPageConfig">
                     <div className="AccountBar" align="center">
 
@@ -83,23 +80,37 @@ class AccountPage extends Component {
                     </div>
 
                     <div className="UserProfile">
-                        <div className = "profileInfo">
-                            <Media className="profileImg" src={require('./resources/profile.png')} alt="image"/>
-                            <div className = "profileTextdiv" >
+                        <div className="profileCenter">
+                            <div className="profileInfo">
+                                <Media className="profileImg" src={require('./resources/profile.png')} alt="image" />
+                                <div className="profileTextdiv" >
                                     <p className="profileName">Joe Smith</p>
                                     <p className="profileText">Software Engineer</p>
                                     <p className="profileText">Joesmith@slackers.com</p>
                                     <p className="profileText">Employee ID: 123456789</p>
+                                </div>
+                            </div>
+                            <div className="companyBox">
+                                text
                             </div>
                         </div>
                     </div>
 
-                    <Modal
-                        isOpen={this.state.modalIsOpen}
-                        onRequestClose={this.closeModal}
-                        contentLabel="Example Modal"
-                        style={customStyles}>
-                    </Modal>
+                    <div className="recentJobs">
+                        <p className="recentJobsText">Recently Posted</p>
+                        <Container>
+                            stuff
+                        </Container>
+                    </div>
+
+                    <div>
+                        <Modal
+                            isOpen={this.state.modalIsOpen}
+                            onRequestClose={this.closeModal}
+                            contentLabel="Example Modal"
+                            style={customStyles}>
+                        </Modal>
+                    </div>
                 </div>
             </Container>
         );
@@ -115,7 +126,9 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         width: '60vh'
-    }
+    },
+    overlay: {zIndex:9999}
+   
 };
 
 export default AccountPage;
