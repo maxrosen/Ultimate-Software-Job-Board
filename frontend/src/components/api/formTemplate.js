@@ -1,9 +1,9 @@
 export const work ={
-    title: 'text',
-    description: 'text',
-    companyId: 'number',
-    companyName:'text',
-    managerId: 'number'
+    Title: 'text',
+    Description: 'text',
+    CompanyID: 'number',
+    CompanyName:'text',
+    ManagerId: 'number'
 }
 
 export const apply ={
@@ -13,5 +13,5 @@ export const apply ={
 }
 
 export const file = {
-	file: 'select file'
+   file: 'file'
 }

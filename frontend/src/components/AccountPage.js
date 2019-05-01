@@ -65,36 +65,38 @@ class AccountPage extends Component {
             <React.Fragment>
                 <div className="AccountPageConfig">
                     <div className="AccountBar" align="center">
+                    <h2 align="center">Manager Options</h2>
                         <div className="sideBar">
-                            <Row className="space">
-                                <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-                            </Row>
-                            <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
-                            </Row>
+                            <h3 align="left">Applications</h3>
                             <Row className="space">
                                 <Link to="/viewapps">
-                                    <Button className="greenButton" size='lg'>Manage Applications</Button>
+                                    <Button className="greenButton" size='lg'>Current Applications</Button>
                                 </Link>
                             </Row>
                             <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('import popup') }}>Import Employees</Button>
+                                <Button className="greenButton" size='lg' onClick={this.openModal}>Edit Questions</Button>
+                            </Row>
+                            <br></br>
+                            <h3 align="left">Jobs</h3>
+                            <Row className="space">
+                                <ApplyModal key='1' buttonLabel='Add Position' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
                             </Row>
                             <Row className="space">
-                                <Button className="greenButton" size='lg'>Import Jobs</Button>
+                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Positions</Button>
+                            </Row>
+                            <br></br>
+                            <h3 align="left">Import Data</h3>
+                            <Row className="space">
+                                <ApplyModal key='1' buttonLabel='Import Positions' children={<FormGen template={template.file} formfunction={formfunction.importPositions} />} />
                             </Row>
                             <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={this.openModal}>Manage Questions</Button>
+                                <ApplyModal key='1' buttonLabel='Import Employees' children={<FormGen template={template.file} formfunction={formfunction.importEmployees} />} />
                             </Row>
                         </div>
                     </div>
                     <div className="UserProfile">
-
                         <Label>{user.companyId}</Label>
-
-
                     </div>
-
                 </div>
 
 

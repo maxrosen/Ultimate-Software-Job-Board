@@ -73,10 +73,7 @@ button {
 .AccountBar {
     padding-left: 20px;
     background-color: rgb(242, 242, 242);
-    border-right-color: gray;
-    border-right-style: solid;
     width: 32%;
-    border-right-width: thick;
     height: 800px;
     min-width: 300px;
     max-width: 300px;
