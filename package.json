@@ -4,8 +4,8 @@
   "description": "CS 320 Semester project based on the MERN Stack",
   "main": "index.js",
   "scripts": {
-    "client": "cd frontend && npm run start",
-    "server": "cd backend && nodemon server.js",
+    "client": "cd frontend && npm install && npm run start",
+    "server": "cd backend && npm install && nodemon server.js",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "repository": {
