@@ -6,37 +6,37 @@ import * as template from './api/formTemplate';
 import * as listFunction from './api/listFunction';
 
 class JobList extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            currentPage:1,
-            positionscnt:5,
-            positions:[
+  constructor(props){
+      super(props)
+      this.state = {
+          currentPage:1,
+          positionscnt:5,
+          positions:[
 
-            ]
-        }
+          ]
+      }
 
-    }
+  }
 
-    componentDidMount(){
-        const{match:{params}}=this.props;
-        this.setState({currentPage:params.page});
-        listFunction.getList(params.page).then((data)=> this.setState({positions:data}));
-        listFunction.getCount().then((data)=>this.setState({positionscnt:data}));
-    }
+  componentDidMount(){
+      const{match:{params}}=this.props;
+      this.setState({currentPage:params.page});
+      listFunction.getList(params.page).then((data)=> this.setState({positions:data}));
+      listFunction.getCount().then((data)=>this.setState({positionscnt:data}));
+  }
 
-    render(){
+  render(){
 
-        return(
-            <div>
-                <br></br><h1 className= "titleHome" align = "center">Currently Open Positions</h1>
-                <Container>
-                    {this.state.positions.map((pos)=>(<Job key={pos._id} id={pos._id} title={pos.title} company={pos.companyName} description={pos.description}/>))}
-                    <JobPage pageNum={Math.ceil(this.state.positionscnt/6.0)} currentPage={this.state.currentPage}/>
-                </Container>
-            </div>
-        );
-    }
+      return(
+          <div>
+              <br></br><h1 className= "titleHome" align = "center">Currently Open Positions</h1>
+              <Container>
+                  {this.state.positions.map((pos)=>(<Job key={pos._id} id={pos._id} title={pos.title} company={pos.companyName} description={pos.description}/>))}
+                  <JobPage pageNum={Math.ceil(this.state.positionscnt/6.0)} currentPage={this.state.currentPage}/>
+              </Container>
+          </div>
+      );
+  }
 }
 
 export default JobList;
