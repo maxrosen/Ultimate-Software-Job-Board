@@ -37,23 +37,41 @@ class Job extends Component {
         e.preventDefault();
 
         console.log(`Form submitted:`);
-        const newApplication = {
-            name: this.state.name,
-            phonenumber: this.state.phonenumber,
-            email: this.state.email,
-            position: this.props.title,
-            positionid: this.props.id
+
+        let email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        let phone_regex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+
+        let valid_email = email_regex.test(this.state.email);
+        let valid_phone = phone_regex.test(this.state.phonenumber);
+
+        if(valid_email && valid_phone){
+            const newApplication = {
+                name: this.state.name,
+                phonenumber: this.state.phonenumber,
+                email: this.state.email,
+                position: this.props.title,
+                positionid: this.props.id
+            }
+            Axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
+
+            this.setState({
+                name: '',
+                phonenumber: '',
+                email: '',
+            });
+        
+            this.closeModal();
+            this.handleSubmit();
+
         }
-        Axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
-
-        this.setState({
-            name: '',
-            phonenumber: '',
-            email: '',
-        })
-
-        this.closeModal();
-        this.handleSubmit();
+        else{
+            if(!valid_email){
+                alert('Invalid email address');
+            }
+            else{
+                alert('Invalid phone number');
+            }
+        }
     }
 
     handleSubmit(event) {

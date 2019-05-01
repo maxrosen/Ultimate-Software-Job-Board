@@ -21,29 +21,37 @@ class SignUpPage extends Component {
 
   onSubmit(e) {
       e.preventDefault();
-
       console.log(`Form submitted:`);
-      const newUser = {
-          first_name: this.state.first_name,
-          last_name: this.state.last_name,
-          email: this.state.email,
-          password: this.state.password,
+
+      var email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+      
+      if(!email_regex.test(this.state.email)){
+        alert('Invalid email address');
       }
-      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>{
-          console.log(res.data.success)
-          if (res.data.success){
-              alert('Successfully signed up!');
-              window.location.href='/login';
-              console.log(window.location.href)
-          }
-          else{alert('Sign Up Failed');} 
-      });
-      this.setState({
-        first_name: '',
-        last_name: '',
-        email: '',
-        password: '',
-      });
+
+      else{
+        const newUser = {
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            password: this.state.password,
+        }
+        Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>{
+            console.log(res.data.success)
+            if (res.data.success){
+                alert('Successfully signed up!');
+                window.location.href='/login';
+                console.log(window.location.href)
+            }
+            else{alert('Sign Up Failed');} 
+        });
+        this.setState({
+          first_name: '',
+          last_name: '',
+          email: '',
+          password: '',
+        });
+      }
   }
 
     render() {
