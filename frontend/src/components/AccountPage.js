@@ -42,52 +42,68 @@ class AccountPage extends Component {
             <Container className>
                 <div className="AccountPageConfig">
                     <div className="AccountBar">
-                            <div className="space">
+                        <div className="space">
+                            <Row className="space">
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-                            </div>
-                            <div className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
-                            </div>
-                            <div className="space">
-                                <Link to="/viewapps">
-                                    <Button className="greenButton" size='lg'>Manage Applications</Button>
-                                </Link>
-                            </div>
-                            <div className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('import popup') }}>Import Employees</Button>
-                            </div>
-                            <div className="space">
-                                <Button className="greenButton" size='lg'>Import Jobs</Button>
 
-                            <div className="space">
-                                <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
-                           </div>
+                            </Row>
+
                         </div>
+
+                        <Row className="space">
+                            <Link to="/managejobs">
+                                <Button className="greenButton" size='lg'>Edit Postings</Button>
+                            </Link>
+                        </Row>
+
+                        <Row className="space">
+                            <Link to="/viewapps">
+                                <Button className="greenButton" size='lg'>Manage Applications</Button>
+                            </Link>
+                        </Row>
+
+                        <div className="space">
+                            <Row className="space">
+                              <Button className="greenButton" size='lg' onClick={() => { alert('import popup') }}>Import Employees</Button>
+                            </Row>
+                        </div>
+                        
+                          <div className="space">
+                            <Row className="space">
+                                <Button className="greenButton" size='lg'>Import Jobs</Button>
+                            </Row>
+
+                        </div>
+
+    
+                            <Row className="space">
+                                <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
+                            </Row>
                     </div>
+                </div>
                     <div className="UserProfile">
                            <div className = "profileInfo">
                                 <Media className="profileImg" src={require('./resources/profile.png')} alt="image"/>
                             <div className = "profileTextdiv" >
-                
+
                                     <p className="profileName">Joe Smith</p>
                                     <p className="profileText">Software Engineer</p>
                                     <p className="profileText">Joesmith@slackers.com</p>
                                     <p className="profileText">Employee ID: 123456789</p>
-                               
-                            </div>
+
                             </div>
                         </div>
                     </div>
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Example Modal"
-                    style={customStyles}
-                >
-                   
- 
 
-                </Modal>
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        contentLabel="Example Modal"
+                        style={customStyles}
+                    >
+                   
+
+                    </Modal>
 
 
             </Container>

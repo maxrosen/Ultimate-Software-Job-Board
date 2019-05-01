@@ -59,7 +59,7 @@ class Job extends Component {
                 phonenumber: '',
                 email: '',
             });
-        
+
             this.closeModal();
             this.handleSubmit();
 

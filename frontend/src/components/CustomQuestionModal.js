@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React from 'react';
+import React, {Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Media } from 'reactstrap';
 import Axios from 'axios';
 
@@ -49,16 +49,17 @@ class CustomQuestionModal extends React.Component {
 
     saveQuestions(e) {
         e.preventDefault();
-        
+
         console.log(`add questions:`);
         console.log(this.state.questions);
+
         const newQuestions = {
           question: this.state.questions,
           companyId: 1,
           managerId: 1
         }
-        Axios.post('http://localhost:4000/api/customquestion/create',newQuestions).then(res=>console.log(res.data));
-        
+        Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
+
         this.setState({
             questions: [""],
         })

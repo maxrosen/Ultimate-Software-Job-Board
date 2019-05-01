@@ -10,6 +10,7 @@ import SignUpPage from './components/SignUpPage';
 import ChartPage from './components/ChartPage';
 import Onboard from './components/Onboard.js';
 import ApplicationList from './components/ApplicationList';
+import ManageJobsList from './components/ManageJobsList';
 import * as template from './components/api/formTemplate';
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/signup"  component={SignUpPage} />
             <Route path="/chart" component={ChartPage} />
             <Route path="/onboard" component={Onboard} />
+            <Route path="/managejobs" component={ManageJobsList} />
             <Route path="/viewapps" component={ApplicationList} />
             <Route path="/:page"  component={JobList} />
             <Route exact path="/"  render={()=><Redirect to='/1' />} />
