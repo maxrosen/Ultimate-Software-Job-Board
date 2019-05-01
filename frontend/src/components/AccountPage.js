@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
+import {Container,  Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
 import ApplyModal from './ApplyModal';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
@@ -62,42 +62,44 @@ class AccountPage extends Component {
     render() {
         let user = jwt_decode(localStorage.jwttoken)
         return (
-            <React.Fragment>
+            <Container className>
                 <div className="AccountPageConfig">
-                    <div className="AccountBar" align="center">
-                        <div className="sideBar">
-                            <Row className="space">
+                    <div className="AccountBar">
+                            <div className="space">
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-                            </Row>
-                            <Row className="space">
+                            </div>
+                            <div className="space">
                                 <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
-                            </Row>
-                            <Row className="space">
+                            </div>
+                            <div className="space">
                                 <Link to="/viewapps">
                                     <Button className="greenButton" size='lg'>Manage Applications</Button>
                                 </Link>
-                            </Row>
-                            <Row className="space">
+                            </div>
+                            <div className="space">
                                 <Button className="greenButton" size='lg' onClick={() => { alert('import popup') }}>Import Employees</Button>
-                            </Row>
-                            <Row className="space">
+                            </div>
+                            <div className="space">
                                 <Button className="greenButton" size='lg'>Import Jobs</Button>
-                            </Row>
-                            <Row className="space">
+                            </div>
+                            <div className="space">
                                 <Button className="greenButton" size='lg' onClick={this.openModal}>Manage Questions</Button>
-                            </Row>
-                        </div>
+                            </div>  
                     </div>
                     <div className="UserProfile">
-
-                        <Label>{user.companyId}</Label>
-
-
+                           <div className = "profileInfo">
+                                <Media className="profileImg" src={require('./resources/profile.png')} alt="image"/>
+                            <div className = "profileTextdiv" >
+                
+                                    <p className="profileName">Joe Smith</p>
+                                    <p className="profileText">Software Engineer</p>
+                                    <p className="profileText">Joesmith@slackers.com</p>
+                                    <p className="profileText">Employee ID: 123456789</p>
+                               
+                            </div>
+                            </div>
+                        </div>
                     </div>
-
-                </div>
-
-
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
@@ -126,7 +128,7 @@ class AccountPage extends Component {
                 </Modal>
 
 
-            </React.Fragment>
+            </Container>
         );
     }
 
