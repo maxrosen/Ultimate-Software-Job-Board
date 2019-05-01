@@ -11,6 +11,10 @@ const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
 const application = require('./router/api/applications');
 
+var cors = require('cors')
+
+app.use(cors())
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());

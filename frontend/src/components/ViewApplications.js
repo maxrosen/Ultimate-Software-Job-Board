@@ -9,6 +9,7 @@ import FormGen from './FormGen';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Axios from 'axios';
 import Modal from 'react-modal';
+import ApplicationList from './ApplicationList';
 
 class ViewApplications extends Component {
     constructor(){
@@ -55,28 +56,13 @@ class ViewApplications extends Component {
         e.preventDefault();
         console.log(`Application removed`);
 
-        const deletingApp = {
-          app: this.state._id
-        }
-
-        Axios.get('http://localhost:4000/api/applications/')
-          .then(res => {
-            //const emps = res.data;
-            //this.setState({ emps });
-            console.log(res.data);
-          })
-
-        Axios.delete('http://localhost:4000/api/applications/delete/', this.state.id)
+        Axios.delete('http://localhost:4000/api/applications/delete/' + this.props.id)
           .then(res => {
           console.log(res.data);
+          window.location.reload();
         });
 
-        Axios.get('http://localhost:4000/api/applications/')
-          .then(res => {
-            //const emps = res.data;
-            //this.setState({ emps });
-            console.log(res.data);
-          })
+
     }
 
     render(){
