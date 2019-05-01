@@ -44,21 +44,16 @@ class AccountPage extends Component {
                     <div className="AccountBar">
                             <div className="space">
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-<<<<<<< HEAD
-                            </Row>
+                            </div>
                             <Row className="space">
                                 <Link to="/managejobs">
                                     <Button className="greenButton" size='lg'>Edit Postings</Button>
                                 </Link>
                             </Row>
-                            <Row className="space">
-=======
-                            </div>
                             <div className="space">
                                 <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
                             </div>
                             <div className="space">
->>>>>>> 351657dc5acc35c9a68ab60ef647bf31c470021e
                                 <Link to="/viewapps">
                                     <Button className="greenButton" size='lg'>Manage Applications</Button>
                                 </Link>
@@ -69,7 +64,7 @@ class AccountPage extends Component {
                             <div className="space">
                                 <Button className="greenButton" size='lg'>Import Jobs</Button>
 
-                            </Row>
+                            </div>
                             <Row className="space">
                                 <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
                            </Row>
@@ -86,19 +81,18 @@ class AccountPage extends Component {
                                     <p className="profileText">Employee ID: 123456789</p>
                                
                             </div>
-                            </div>
                         </div>
                     </div>
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Example Modal"
-                    style={customStyles}
-                >
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        contentLabel="Example Modal"
+                        style={customStyles}
+                    >
                    
  
 
-                </Modal>
+                    </Modal>
 
 
             </Container>
