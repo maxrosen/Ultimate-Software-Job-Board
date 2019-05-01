@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\components",
+    "\\components\\api",
     "\\components\\resources"
   ],
   "SelectedNode": "\\components\\AccountPage.js",
