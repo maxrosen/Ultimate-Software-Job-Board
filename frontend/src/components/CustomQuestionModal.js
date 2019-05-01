@@ -41,11 +41,10 @@ class CustomQuestionModal extends React.Component {
     }
 
     onChange(event) {
+      // this.setState()
         this.state.questions[event.target.id] = event.target.value;
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
-        console.log("questions:");
-        console.log(this.state.questions);
     }
 
     saveQuestions(e) {
@@ -72,6 +71,8 @@ class CustomQuestionModal extends React.Component {
         this.state.questions.push("");
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
+        console.log("questions:");
+        console.log(this.state.questions);
     }
 
     deleteQuestion(event) {
@@ -100,7 +101,7 @@ class CustomQuestionModal extends React.Component {
           <ModalFooter>
             <Button color="primary" onClick={this.addQuestion}>Add Question</Button>
             <Button color="primary" type='submit' form='form' onClick={this.saveQuestions}>Save</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="primary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>

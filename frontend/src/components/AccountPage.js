@@ -59,10 +59,9 @@ class AccountPage extends Component {
                             <div className="space">
                                 <Button className="greenButton" size='lg'>Import Jobs</Button>
 
-                            </Row>
-                            <Row className="space">
+                            <div className="space">
                                 <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
-                           </Row>
+                           </div>
                         </div>
                     </div>
                     <div className="UserProfile">

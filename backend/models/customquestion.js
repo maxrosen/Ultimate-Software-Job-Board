@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const CustomQuestionSchema = new Schema({
     question:{
-        type: [String],
+        type: Array,
+        "default" : [],
         required: true
     },
     companyId:{

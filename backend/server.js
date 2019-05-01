@@ -44,7 +44,7 @@ mongoose.connect(url,function(err){
     console.log("MongoDB Successfully Connected");
 });
 
-//Import example data to MongoDB
+//Import example data to MongoDB locally
 let exec = require('child_process').exec
 
 let command = 'mongo slackers --eval "db.dropDatabase()"'

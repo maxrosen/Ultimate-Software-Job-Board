@@ -22,7 +22,7 @@ router.get('/getCompany/:id',(req,res)=> {
 //@access   Private
 router.post('/create',(req,res)=> {
     const newCustomQuestion = new customquestion({
-        question:req.body.firstName,
+        question:req.body.question,
         companyId:req.body.companyId,
         managerId:req.body.managerId
     });
