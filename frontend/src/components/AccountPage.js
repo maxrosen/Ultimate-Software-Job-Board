@@ -70,7 +70,9 @@ class AccountPage extends Component {
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
                             </Row>
                             <Row className="space">
-                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
+                                <Link to="/managejobs">
+                                    <Button className="greenButton" size='lg'>Edit Postings</Button>
+                                </Link>
                             </Row>
                             <Row className="space">
                                 <Link to="/viewapps">
