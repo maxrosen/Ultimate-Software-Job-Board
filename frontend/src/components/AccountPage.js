@@ -45,43 +45,26 @@ class AccountPage extends Component {
                         <div className="space">
                             <Row className="space">
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
-<<<<<<< HEAD
                             </Row>
-=======
-                            </div>
->>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
                             <Row className="space">
                                 <Link to="/managejobs">
                                     <Button className="greenButton" size='lg'>Edit Postings</Button>
                                 </Link>
                             </Row>
-<<<<<<< HEAD
                             <Row className="space">
-=======
-                            <div className="space">
                                 <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
-                            </div>
-                            <div className="space">
->>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
+                            </Row>
+                            <Row className="space">
                                 <Link to="/viewapps">
                                     <Button className="greenButton" size='lg'>Manage Applications</Button>
                                 </Link>
                             </Row>
-                          </div>
-                          <div className="space">
                             <Row className="space">
                               <Button className="greenButton" size='lg' onClick={() => { alert('import popup') }}>Import Employees</Button>
                             </Row>
-                          </div>
-                          <div className="space">
                             <Row className="space">
                                 <Button className="greenButton" size='lg'>Import Jobs</Button>
-<<<<<<< HEAD
                             </Row>
-=======
-
-                            </div>
->>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
                             <Row className="space">
                                 <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
                            </Row>
@@ -100,29 +83,14 @@ class AccountPage extends Component {
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
                     contentLabel="Example Modal"
                     style={customStyles}
                 >
-
-
-=======
-                    <Modal
-                        isOpen={this.state.modalIsOpen}
-                        onRequestClose={this.closeModal}
-                        contentLabel="Example Modal"
-                        style={customStyles}
-                    >
-                   
- 
->>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
-
-                    </Modal>
-
-
+                </Modal>
+            </div>
             </Container>
         );
     }
