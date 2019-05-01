@@ -45,13 +45,24 @@ class AccountPage extends Component {
                         <div className="space">
                             <Row className="space">
                                 <ApplyModal key='1' buttonLabel='Add Job' children={<FormGen template={template.work} formfunction={formfunction.createPosition} />} />
+<<<<<<< HEAD
                             </Row>
+=======
+                            </div>
+>>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
                             <Row className="space">
                                 <Link to="/managejobs">
                                     <Button className="greenButton" size='lg'>Edit Postings</Button>
                                 </Link>
                             </Row>
+<<<<<<< HEAD
                             <Row className="space">
+=======
+                            <div className="space">
+                                <Button className="greenButton" size='lg' onClick={() => { alert('under development') }}>Edit Postings</Button>
+                            </div>
+                            <div className="space">
+>>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
                                 <Link to="/viewapps">
                                     <Button className="greenButton" size='lg'>Manage Applications</Button>
                                 </Link>
@@ -65,7 +76,12 @@ class AccountPage extends Component {
                           <div className="space">
                             <Row className="space">
                                 <Button className="greenButton" size='lg'>Import Jobs</Button>
+<<<<<<< HEAD
                             </Row>
+=======
+
+                            </div>
+>>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
                             <Row className="space">
                                 <CustomQuestionModal key='0' buttonLabel='Manage Questions' buttonLabel='ManageQuestions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
                            </Row>
@@ -82,9 +98,9 @@ class AccountPage extends Component {
                                     <p className="profileText">Employee ID: 123456789</p>
 
                             </div>
-                            </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
@@ -93,8 +109,18 @@ class AccountPage extends Component {
                 >
 
 
+=======
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        contentLabel="Example Modal"
+                        style={customStyles}
+                    >
+                   
+ 
+>>>>>>> bf4c3379d07e9e75e28125cea8e51a765f181dd8
 
-                </Modal>
+                    </Modal>
 
 
             </Container>
