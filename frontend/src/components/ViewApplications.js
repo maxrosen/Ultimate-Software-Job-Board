@@ -19,7 +19,8 @@ class ViewApplications extends Component {
             modalIsOpen: false,
             position: '',
             phonenumber: '',
-            name: '',
+            first_name: '',
+            last_name: '',
             email: '',
             clicked: false
         };
@@ -69,10 +70,10 @@ class ViewApplications extends Component {
         e.preventDefault();
         console.log(`Emailing applicant`);
 
-        let emailSubject = 'Dear '+this.props.name
+        let emailSubject = 'Dear '+this.props.first_name
 
         let emailBody =
-          'Dear '+this.props.name+',%0D%0A%0D%0A'+
+          'Dear '+this.props.first_name+' '+this.props.last_name+',%0D%0A%0D%0A'+
           'After reviewing you application for '+this.props.position+' we would like to extend an offer to you for the position.'+
           '%0D%0A%0D%0APlease reply to this email so we can move forward with your onboarding process.'+
           '%0D%0A%0D%0ASincerely, %0D%0A'+user.first_name+' '+user.last_name
@@ -92,8 +93,8 @@ class ViewApplications extends Component {
       let randpassword = generatePassword();
 
       const newUser = {
-          first_name: this.props.name,
-          last_name: this.props.name,
+          first_name: this.props.first_name,
+          last_name: this.props.last_name,
           email: this.props.email,
           password: randpassword,
           companyName: user.companyName,
@@ -103,10 +104,10 @@ class ViewApplications extends Component {
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
-      let emailSubject = 'Congrats '+this.props.name
+      let emailSubject = 'Congrats '+this.props.first_name
 
       let emailBody =
-        'Dear '+this.props.name+',%0D%0A%0D%0A'+
+        'Dear '+this.props.first_name+' '+this.props.last_name+',%0D%0A%0D%0A'+
         'You have been successfully hired for '+this.props.position+'!'+
         '%0D%0A%0D%0AUsername: '+this.props.email+
         '%0D%0A%0D%0APassword: '+randpassword+
@@ -122,7 +123,7 @@ class ViewApplications extends Component {
         let user = jwt_decode(localStorage.jwttoken)
         return(
           <Container className = 'Jobs'>
-          <h1>Applicant Name: {this.props.name}</h1>
+          <h1>Applicant Name: {this.props.first_name} {this.props.last_name}</h1>
           <p>Position: {this.props.position}</p>
           <p>Phone number: {this.props.phonenumber}</p>
           <p>Email address: {this.props.email}</p>

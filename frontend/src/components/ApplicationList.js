@@ -29,7 +29,7 @@ class ApplicationList extends Component {
       return(
           <Container>
             <br></br><h1 className= "titleHome" align = "center">Current Applications</h1>
-              {this.state.applications.map((pos)=>(<ViewApplications key={pos._id} id={pos._id} position={pos.position} name={pos.name} phonenumber={pos.phonenumber} email={pos.email}/>))}
+              {this.state.applications.map((pos)=>(<ViewApplications key={pos._id} id={pos._id} position={pos.position} first_name={pos.first_name} last_name={pos.last_name} phonenumber={pos.phonenumber} email={pos.email}/>))}
           </Container>
       );
   }

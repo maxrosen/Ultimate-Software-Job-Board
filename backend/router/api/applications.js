@@ -16,7 +16,8 @@ router.get('/',(req,res)=> {
 //@access   Private
 router.post('/create',(req,res)=> {
     const newApplication = new Application({
-        name:req.body.name,
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
         email:req.body.email,
         phonenumber:req.body.phonenumber,
         position:req.body.position,
@@ -42,7 +43,8 @@ router.put('/update/:id',(req,res)=>{
         if(!application)
             res.status(404).send('application not found')
         else{
-            application.name=req.body.name;
+            application.first_name=req.body.first_name;
+            application.last_name=req.body.last_name;
             application.email=req.body.email;
             application.phonenumber=req.body.phonenumber;
             //user.date=req.body.body.date
