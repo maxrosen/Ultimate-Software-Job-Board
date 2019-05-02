@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const CustomQuestionSchema = new Schema({
     question:{
         type: Array,
-        "default" : [],
-        required: true
+        required: true,
+        default: []
     },
     companyId:{
         type: Number,
