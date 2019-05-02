@@ -84,10 +84,10 @@ class AccountPage extends Component {
                             <div className="profileInfo">
                                 <Media className="profileImg" src={require('./resources/profile.png')} alt="image" />
                                 <div className="profileTextdiv" >
-                                    <p className="profileName">Joe Smith</p>
-                                    <p className="profileText">Software Engineer</p>
-                                    <p className="profileText">Joesmith@slackers.com</p>
-                                    <p className="profileText">Employee ID: 123456789</p>
+                                    <p className="profileName">{user.first_name} {user.last_name}</p>
+                                    <p className="profileText">{user.title}</p>
+                                    <p className="profileText">{user.email}</p>
+                                    <p className="profileText">Employee ID: {user.employeeId}</p>
                                 </div>
                             </div>
                             <div className="companyBox">

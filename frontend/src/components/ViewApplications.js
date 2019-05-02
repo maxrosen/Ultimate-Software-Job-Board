@@ -69,7 +69,7 @@ class ViewApplications extends Component {
         return(
           <Container className = 'Jobs'>
           <h1>Applicant Name: {this.props.name}</h1>
-          <p>Position: {this.props.name}</p>
+          <p>Position: {this.props.position}</p>
           <p>Phone number: {this.props.phonenumber}</p>
           <p>Email address: {this.props.email}</p>
           <Row>

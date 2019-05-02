@@ -11,7 +11,7 @@ import Axios from 'axios';
 import Modal from 'react-modal';
 import ManageJobsList from './ManageJobsList';
 
-class ViewApplications extends Component {
+class ManageJobs extends Component {
     constructor(){
         super();
         this.state={
@@ -64,21 +64,57 @@ class ViewApplications extends Component {
           window.location.reload();
         });
 
+    }
+
+    editPosting(e) {
+        e.preventDefault();
+        let nm = this.props.title;
+        if(this.state.title!='')
+          nm = this.state.title;
+        let dscrpt = this.props.description;
+        if(this.state.description!='')
+          dscrpt = this.state.description;
+        Axios.post('http://localhost:4000/api/positions/update/' + this.props.id, {params:{title:nm, description:dscrpt}})
+          .then(res => {
+          console.log(res.data);
+          window.location.reload();
+        });
+        this.closeModal();
 
     }
 
     render(){
         return(
           <Container className = 'Jobs'>
+          <JobDesModal clicked={this.state.clicked} />
           <h1>Position Title: {this.props.title}</h1>
           <p>Description: {this.props.description}</p>
           <p>Post Date: {this.props.postedDate}</p>
           <p>Company Name: {this.props.companyName}</p>
           <Row>
-  	        <Col md = {{size:2,offset:10} }>
+            <Col md = {{offset:10} }>
+             <button size='lg' className = "greenButton" onClick={this.openModal}>Edit</button>
+            </Col>
+  	        <Col >
   	         <button size='lg' className = "greenButton" onClick={(e) => this.deletePosting(e)}>Delete</button>
   	        </Col>
           </Row>
+          <Modal
+                isOpen={this.state.modalIsOpen}
+                onRequestClose={this.closeModal}
+                contentLabel="Example Modal"
+                style={customStyles}
+              >
+              <Form onSubmit={(e) => this.editPosting(e)}>
+                <FormGroup>
+                    <Label for="position">Edit</Label>
+                    <Input type="text" name="title" id="title" placeholder={this.props.title} value={this.state.title||this.props.title} onChange={this.onChange.bind(this)}/>
+                    <Input type="text" name="description" id="description" placeholder={this.props.description} value={this.state.description||this.props.description} onChange={this.onChange.bind(this)}/>
+                  </FormGroup>
+                  <Button color="primary">Submit</Button>
+                  <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
+                </Form>
+              </Modal>
           </Container>
         );
     };
@@ -87,13 +123,13 @@ class ViewApplications extends Component {
 
 const customStyles = {
   content : {
-    top                   : '20%',
+    top                   : '30%',
     left                  : '50%',
-    right                 : '80%',
+    right                 : '70%',
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
   }
 };
 
-export default ViewApplications;
+export default ManageJobs;

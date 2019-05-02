@@ -19,13 +19,8 @@ router.get('/getCompany/:id',(req,res)=> {
 //@desc     Create a New customquestion
 //@access   Private
 router.post('/create',(req,res)=> {
-<<<<<<< HEAD:backend/router/api/customquestion.js
-    const newCustomQuestion = new customquestion({
-        question:req.body.question,
-=======
     const newCustomQuestion = new CustomQuestion({
         question:req.body.firstName,
->>>>>>> b52098ccc7f2659a1f8a86107bb2f9daf2fe1dfd:backend/router/api/customquestions.js
         companyId:req.body.companyId,
         managerId:req.body.managerId
     });
