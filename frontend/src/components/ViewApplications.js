@@ -104,6 +104,12 @@ class ViewApplications extends Component {
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
+      Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.id)
+        .then(res => {
+        console.log(res.data);
+        window.location.reload();
+      });
+
       let emailSubject = 'Congrats '+this.props.first_name
 
       let emailBody =
