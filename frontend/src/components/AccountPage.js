@@ -48,11 +48,11 @@ class AccountPage extends Component {
                             </div>
                                 <Row className="space">
                                     <Link to="/viewapps">
-                                        <Button className="greenButton" size='lg'>View Current</Button>
+                                        <Button className="greenButton" size='lg'>Open Applications</Button>
                                     </Link>
                                 </Row>
                                 <Row className="space">
-                                    <CustomQuestionModal key='0' buttonLabel='Manage Questions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
+                                    <CustomQuestionModal key='0' buttonLabel='Custom Questions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
                                 </Row>
 
                             <div className="space">

@@ -33,21 +33,21 @@ class CustomQuestionModal extends React.Component {
   }
 
   openModal() {
-        this.setState({ modalIsOpen: true });
-    }
+    this.setState({ modalIsOpen: true });
+  }
 
-    closeModal() {
-        this.setState({ modalIsOpen: false });
-    }
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
 
-    onChange(event) {
+  onChange(event) {
       // this.setState()
         this.state.questions[event.target.id] = event.target.value;
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
-    }
+ }
 
-    saveQuestions(e) {
+  saveQuestions(e) {
         e.preventDefault();
 
         console.log(`add questions:`);
@@ -65,23 +65,22 @@ class CustomQuestionModal extends React.Component {
         })
 
         this.closeModal();
+  }
 
-    }
-
-    addQuestion() {
+  addQuestion() {
         this.state.questions.push("");
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
         console.log("questions:");
         console.log(this.state.questions);
-    }
+  }
 
-    deleteQuestion(event) {
+  deleteQuestion(event) {
         this.state.questions.splice(event.target.id, 1);
         console.log(this.state.questions);
         let temparray = this.state.questions;
         this.setState({ questions: temparray });
-    }
+  }
 
   render() {
     return (
@@ -102,7 +101,7 @@ class CustomQuestionModal extends React.Component {
           <ModalFooter>
             <Button color="primary" onClick={this.addQuestion}>Add Question</Button>
             <Button color="primary" type='submit' form='form' onClick={this.saveQuestions}>Save</Button>{' '}
-            <Button color="primary" onClick={this.toggle}>Cancel</Button>
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
