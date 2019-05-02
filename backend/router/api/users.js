@@ -91,8 +91,12 @@ router.post('/login',(req,res)=> {
                         _id: user._id,
                         first_name: user.first_name,
                         last_name: user.last_name,
+                        title: user.positionTitle,
                         email: user.email,
-                        companyId: user.companyId
+                        companyId: user.companyId,
+                        companyName: user.companyName,
+                        managerId: user.managerId,
+                        employeeId: user.employeeId
                     }
                     let token = jwt.sign(payload, process.env.SECRET_KEY, {
                         expiresIn: 1440

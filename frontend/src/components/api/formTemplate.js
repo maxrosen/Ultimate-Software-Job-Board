@@ -1,9 +1,6 @@
 export const work ={
     Title: 'text',
-    Description: 'text',
-    CompanyID: 'number',
-    CompanyName:'text',
-    ManagerId: 'number'
+    Description: 'text'
 }
 
 export const apply ={

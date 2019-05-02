@@ -3,6 +3,8 @@ import {Container, Button } from 'reactstrap'
 import ManageJobs from './ManageJobs';
 import * as template from './api/formTemplate';
 import * as listFunction from './api/listFunction';
+import jwt_decode from 'jwt-decode';
+import JobPage from './Pagination';
 
 class ManageJobsList extends Component {
   constructor(props){
@@ -10,15 +12,18 @@ class ManageJobsList extends Component {
       this.state = {
           positions:[
 
-          ]
+          ],
+          positionscnt:5,
+          currentPage:1
       }
   }
 
   componentDidMount(){
+      let user = jwt_decode(localStorage.jwttoken);
       const{match:{params}}=this.props;
       this.setState({currentPage:params.page});
-      listFunction.getList(params.page).then((data)=> this.setState({positions:data}));
-      listFunction.getCount().then((data)=>this.setState({positionscnt:data}));
+      listFunction.getCompanyList(params.page,user.companyId).then((data)=> this.setState({positions:data}));
+      listFunction.getCompanyCount(user.companyId).then((data)=>this.setState({positionscnt:data}));
   }
 
   render(){

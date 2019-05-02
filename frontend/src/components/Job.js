@@ -115,9 +115,9 @@ class Job extends Component {
 
 const customStyles = {
   content : {
-    top                   : '20%',
+    top                   : '30%',
     left                  : '50%',
-    right                 : '80%',
+    right                 : '70%',
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'

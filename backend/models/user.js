@@ -35,8 +35,8 @@ const UserSchema = new Schema({
         default: '-1'
     },
     positionTitle:{
-        type: Number,
-        default:'-1'
+        type: String,
+        default:''
     },
     date: {
         type: Date,
