@@ -22,6 +22,7 @@ class ViewApplications extends Component {
             first_name: '',
             last_name: '',
             email: '',
+            positionid: '',
             clicked: false
         };
 
@@ -104,10 +105,12 @@ class ViewApplications extends Component {
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
-      Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.id)
+      console.log(this.props.positionid)
+
+      Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.positionid)
         .then(res => {
         console.log(res.data);
-        window.location.reload();
+
       });
 
       let emailSubject = 'Congrats '+this.props.first_name
@@ -122,7 +125,7 @@ class ViewApplications extends Component {
 
       window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
 
-      this.deleteApp(e)
+      this.deleteApp(e);
     }
 
     render(){
