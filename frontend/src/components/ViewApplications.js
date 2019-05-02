@@ -9,6 +9,7 @@ import FormGen from './FormGen';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Axios from 'axios';
 import Modal from 'react-modal';
+import jwt_decode from 'jwt-decode';
 import ApplicationList from './ApplicationList';
 
 class ViewApplications extends Component {
@@ -61,11 +62,27 @@ class ViewApplications extends Component {
           console.log(res.data);
           window.location.reload();
         });
+    }
+
+    emailApp(e){
+        let user = jwt_decode(localStorage.jwttoken)
+        e.preventDefault();
+        console.log(`Emailing applicant`);
+
+        let emailSubject = 'Dear '+this.props.name
+
+        let emailBody =
+          'Dear '+this.props.name+',%0D%0A%0D%0A'+
+          'After reviewing you application for '+this.props.position+' we would like to extend an offer to you for the position.'+
+          '%0D%0A%0D%0APlease reply to this email so we can move forward with your onboarding process.'+
+          '%0D%0A%0D%0ASincerely, %0D%0A'+user.first_name+' '+user.last_name
 
 
+        window.open('mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody);
     }
 
     render(){
+        let user = jwt_decode(localStorage.jwttoken)
         return(
           <Container className = 'Jobs'>
           <h1>Applicant Name: {this.props.name}</h1>
@@ -75,7 +92,7 @@ class ViewApplications extends Component {
           <Row>
   	        <Col md = {{size:2,offset:10} }>
   	         <button size='lg' className = "greenButton" onClick={(e) => this.deleteApp(e)}>Delete</button>
-             <button size='lg' className = "greenButton" onClick={this.openModal}>Email Applicant</button>
+             <button size='lg' className = "greenButton" onClick={(e) => this.emailApp(e)}>Email Applicant</button>
              <button size='lg' className = "greenButton" onClick={this.openModal}>Hire Applicant</button>
   	        </Col>
           </Row>
