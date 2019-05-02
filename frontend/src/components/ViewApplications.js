@@ -78,7 +78,7 @@ class ViewApplications extends Component {
           '%0D%0A%0D%0ASincerely, %0D%0A'+user.first_name+' '+user.last_name
 
 
-        window.open('mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody);
+        window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
     }
 
     render(){
