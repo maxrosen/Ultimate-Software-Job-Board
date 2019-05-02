@@ -89,11 +89,13 @@ class ViewApplications extends Component {
 
       var generatePassword = require('password-generator');
 
+      let randpassword = generatePassword();
+
       const newUser = {
           first_name: this.props.name,
           last_name: this.props.name,
           email: this.props.email,
-          password: generatePassword(),
+          password: randpassword,
           companyName: user.companyName,
           companyId: user.companyId,
           managerId: user.employeeId,
@@ -101,6 +103,19 @@ class ViewApplications extends Component {
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
+      let emailSubject = 'Congrats '+this.props.name
+
+      let emailBody =
+        'Dear '+this.props.name+',%0D%0A%0D%0A'+
+        'You have been successfully hired for '+this.props.position+'!'+
+        '%0D%0A%0D%0AUsername: '+this.props.email+
+        '%0D%0A%0D%0APassword: '+randpassword+
+        '%0D%0A%0D%0AConrgrats again, and welcome to '+user.companyName+'!'
+
+
+      window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
+
+      this.deleteApp(e)
     }
 
     render(){
