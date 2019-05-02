@@ -81,6 +81,28 @@ class ViewApplications extends Component {
         window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
     }
 
+    hireApplicant(e){
+      e.preventDefault();
+      console.log(`Hiring applicant`);
+
+      let user = jwt_decode(localStorage.jwttoken)
+
+      var generatePassword = require('password-generator');
+
+      const newUser = {
+          first_name: this.props.name,
+          last_name: this.props.name,
+          email: this.props.email,
+          password: generatePassword(),
+          companyName: user.companyName,
+          companyId: user.companyId,
+          managerId: user.employeeId,
+          positionTitle: this.state.position,
+      }
+      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
+
+    }
+
     render(){
         let user = jwt_decode(localStorage.jwttoken)
         return(
@@ -93,7 +115,7 @@ class ViewApplications extends Component {
   	        <Col md = {{size:2,offset:10} }>
   	         <button size='lg' className = "greenButton" onClick={(e) => this.deleteApp(e)}>Delete</button>
              <button size='lg' className = "greenButton" onClick={(e) => this.emailApp(e)}>Email Applicant</button>
-             <button size='lg' className = "greenButton" onClick={this.openModal}>Hire Applicant</button>
+             <button size='lg' className = "greenButton" onClick={(e) => this.hireApplicant(e)}>Hire Applicant</button>
   	        </Col>
           </Row>
           </Container>

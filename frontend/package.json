@@ -9,6 +9,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
     "nodemailer": "^6.1.1",
+    "password-generator": "^2.2.0",
     "react": "^16.8.4",
     "react-d3-tree": "^1.12.3",
     "react-dom": "^16.8.4",
