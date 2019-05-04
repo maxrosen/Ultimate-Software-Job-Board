@@ -4,14 +4,17 @@ import React, {Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Media, Alert } from 'reactstrap';
 import Axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import * as listFunction from './api/listFunction';
 
 class CustomQuestionModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        questions: [""],
+        existedquestions : [],
+        questions: [''],
         modalIsOpen: false,
-        clicked: false
+        clicked: false,
+        user: []
 
     };
     this.openModal = this.openModal.bind(this);
@@ -20,10 +23,12 @@ class CustomQuestionModal extends React.Component {
     this.deleteQuestion = this.deleteQuestion.bind(this);
     this.addQuestion = this.addQuestion.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.getQuestions = this.getQuestions.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
+    this.getQuestions(this.state.user.companyId, this.state.user.managerId);
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -46,28 +51,23 @@ class CustomQuestionModal extends React.Component {
  }
 
   saveQuestions(e) {
-
-        // const user: jwt_decode(localStorage.jwttoken) 
-        // console.log("current user info");
-        // console.log(user);
         e.preventDefault();
         const temparray = this.state.questions;
+        //filter invalid input
         const filtered = temparray.filter(function(a) {
           return a !== null && a !== "";
         });
         if(filtered.length > 0) {
           const newQuestions = {
             question: filtered,
-            companyId: 1,
-            managerId: 1
+            companyId: this.state.user.companyId,
+            managerId: this.state.user.employeeId
           }
           Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
 
           this.setState({
-              questions: [""],
+              questions: [''],
           })  
-        } else {
-          
         }
         
         this.closeModal();
@@ -83,22 +83,37 @@ class CustomQuestionModal extends React.Component {
 
   deleteQuestion(event) {
         this.state.questions.splice(event.target.id, 1);
-        console.log(this.state.questions);
+        // console.log(this.state.questions);
         let temparray = this.state.questions;
         this.setState({ questions: temparray });
   }
 
+  getQuestions(companyId, managerId) {
+    console.log("trying to get existing question");
+    // Axios.get('http://localhost:4000/api/customquestions/getCompanyManager/',{params:{managerId, companyId}}).then(data => {
+
+    Axios.get('http://localhost:4000/api/customquestions/').then(data => {
+      const existedquestions = data.data;
+      this.setState({existedquestions});
+    })
+
+    console.log("made the call!");
+  }
+
   render() {
+    this.state.user = jwt_decode(localStorage.jwttoken);
+    console.log("user");
+    console.log(this.state.user);
     return (
       <div>
         <Button size='lg' className="greenButton" color="dark" onClick={this.toggle}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>{this.props.buttonLabel}</ModalHeader>
           <ModalBody>
-            {this.state.questions.map(
+            {this.state.existedquestions.map(
               (question, index) =>
                 <div className="questionAlign" key={index} id={index}>
-                    <Input type="text" id={index} key={index} placeholder="Type your question" Value={question} onChange={this.onChange.bind(this)} />
+                    <Input type="text" id={index} key={index} placeholder="Type your question" Value={question.question} onChange={this.onChange.bind(this)} />
                     <Media id={index} key={index} className="cancelImg" src={require('./resources/redX.png')} alt="image" onClick={this.deleteQuestion.bind(this)} />
                 </div>
               )

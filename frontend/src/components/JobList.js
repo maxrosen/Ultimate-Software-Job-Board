@@ -19,7 +19,7 @@ class JobList extends Component {
   }
 
   componentDidMount(){
-      const{match:{params}}=this.props;
+      const {match:{params}}=this.props;
       this.setState({currentPage:params.page});
       listFunction.getList(params.page).then((data)=> this.setState({positions:data}));
       listFunction.getCount().then((data)=>this.setState({positionscnt:data}));

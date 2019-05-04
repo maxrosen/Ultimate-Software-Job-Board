@@ -35,6 +35,7 @@ class AccountPage extends Component {
 
     render() {
         let user = jwt_decode(localStorage.jwttoken)
+
         return (
             <Container>
                 <div className="AccountPageConfig">
@@ -103,14 +104,6 @@ class AccountPage extends Component {
                         </Container>
                     </div>
 
-                    <div>
-                        <Modal
-                            isOpen={this.state.modalIsOpen}
-                            onRequestClose={this.closeModal}
-                            contentLabel="Example Modal"
-                            style={customStyles}>
-                        </Modal>
-                    </div>
                 </div>
             </Container>
         );

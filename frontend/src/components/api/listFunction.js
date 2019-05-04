@@ -25,3 +25,12 @@ export const getApps =(page) =>{
 export const getAppCount =() =>{
     return axios.get('http://localhost:4000/api/applications/count').then(res=>{ return res.data})
 }
+
+export const getCustomQuestions =() =>{
+	// return "something isn't working";
+    return axios.get('http://localhost:4000/api/customquestions/').then(res=>{ return res.data})
+}
+export const getCustom =(managerId, companyId) =>{
+	let url = 'http://localhost:4000/api/customquestions/getCompanyManager/';
+    return axios.get(url,{params:{managerId:managerId, companyId:companyId}}).then(res=>{console.log(res.data); return res.data})
+}

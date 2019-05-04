@@ -20,6 +20,6 @@ const CustomQuestionSchema = new Schema({
     }
 });
 
-var CustomQuestion = mongoose.model('customquestion',CustomQuestionSchema);
+var CustomQuestion = mongoose.model('customquestions',CustomQuestionSchema);
 
 module.exports = CustomQuestion;

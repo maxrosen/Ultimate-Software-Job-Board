@@ -15,6 +15,14 @@ router.get('/getCompany/:id',(req,res)=> {
     CustomQuestion.find({companyId:req.params.id}).then(customquestions => res.json(customquestions));
 });
 
+router.get('/getCompanyManager/',(req,res)=> {
+    CustomQuestion.find({companyId:req.params.companyId, managerId:req.params.managerId}).then(customquestions => res.json(customquestions));
+});
+
+router.get('/count',(req,res)=> {
+
+    CustomQuestion.countDocuments().then(data =>res.json(data));
+});
 //@route    POST api/customquestion
 //@desc     Create a New customquestion
 //@access   Private
@@ -26,6 +34,8 @@ router.post('/create',(req,res)=> {
     });
     newCustomQuestion.save().then(question=>res.json(question));
 });
+
+
 
 //@route    DEL api/customquestion
 //@desc     Create a New customquestion
