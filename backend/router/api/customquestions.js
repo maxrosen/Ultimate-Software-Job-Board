@@ -20,7 +20,7 @@ router.get('/getCompany/:id',(req,res)=> {
 //@access   Private
 router.post('/create',(req,res)=> {
     const newCustomQuestion = new CustomQuestion({
-        question:req.body.firstName,
+        question:req.body.question,
         companyId:req.body.companyId,
         managerId:req.body.managerId
     });
@@ -44,7 +44,7 @@ router.put('/update/:id',(req,res)=>{
         if(!customquestion)
             res.status(404).send('customquestion not found')
         else
-            question:req.body.firstName,
+            question:req.body.question,
         
         customquestion.save().then(customquestion=>{
             res.json({success:true})

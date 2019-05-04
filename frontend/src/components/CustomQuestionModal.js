@@ -1,8 +1,9 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React, {Component} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Media } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Media, Alert } from 'reactstrap';
 import Axios from 'axios';
+import jwt_decode from 'jwt-decode';
 
 class CustomQuestionModal extends React.Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class CustomQuestionModal extends React.Component {
         questions: [""],
         modalIsOpen: false,
         clicked: false
-    };
 
+    };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.saveQuestions = this.saveQuestions.bind(this);
@@ -28,10 +29,6 @@ class CustomQuestionModal extends React.Component {
     }));
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -43,27 +40,36 @@ class CustomQuestionModal extends React.Component {
   onChange(event) {
       // this.setState()
         this.state.questions[event.target.id] = event.target.value;
+
         const temparray = this.state.questions;
         this.setState({ questions: temparray });
  }
 
   saveQuestions(e) {
+
+        // const user: jwt_decode(localStorage.jwttoken) 
+        // console.log("current user info");
+        // console.log(user);
         e.preventDefault();
+        const temparray = this.state.questions;
+        const filtered = temparray.filter(function(a) {
+          return a !== null && a !== "";
+        });
+        if(filtered.length > 0) {
+          const newQuestions = {
+            question: filtered,
+            companyId: 1,
+            managerId: 1
+          }
+          Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
 
-        console.log(`add questions:`);
-        console.log(this.state.questions);
-
-        const newQuestions = {
-          question: this.state.questions,
-          companyId: 1,
-          managerId: 1
+          this.setState({
+              questions: [""],
+          })  
+        } else {
+          
         }
-        Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
-
-        this.setState({
-            questions: [""],
-        })
-
+        
         this.closeModal();
   }
 

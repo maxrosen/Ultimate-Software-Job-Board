@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CustomQuestionSchema = new Schema({
-    question:{
-        type: Array,
-        required: true,
-        default: []
-    },
+    question:[{
+        type: String,
+        required: true
+    }],
     companyId:{
         type: Number,
         required: true
