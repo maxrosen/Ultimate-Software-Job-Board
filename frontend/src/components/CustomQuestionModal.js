@@ -10,7 +10,6 @@ class CustomQuestionModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        existedquestions : [],
         questions: [''],
         modalIsOpen: false,
         clicked: false,
@@ -90,13 +89,15 @@ class CustomQuestionModal extends React.Component {
 
   getQuestions(companyId, managerId) {
     console.log("trying to get existing question");
-    // Axios.get('http://localhost:4000/api/customquestions/getCompanyManager/',{params:{managerId, companyId}}).then(data => {
-
     Axios.get('http://localhost:4000/api/customquestions/').then(data => {
-      const existedquestions = data.data;
-      this.setState({existedquestions});
-    })
+      var questionarrays = [];
+      for (let i = 0; i < data.data.length; i++){
+        questionarrays.unshift(data.data[i].question);
+      }
+      var questions = [].concat.apply([], questionarrays);
+      this.setState({questions});
 
+    })
     console.log("made the call!");
   }
 
@@ -110,10 +111,10 @@ class CustomQuestionModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>{this.props.buttonLabel}</ModalHeader>
           <ModalBody>
-            {this.state.existedquestions.map(
+            {this.state.questions.map(
               (question, index) =>
                 <div className="questionAlign" key={index} id={index}>
-                    <Input type="text" id={index} key={index} placeholder="Type your question" Value={question.question} onChange={this.onChange.bind(this)} />
+                    <Input type="text" id={index} key={question} placeholder="Type your question" Value={question} onChange={this.onChange.bind(this)} />
                     <Media id={index} key={index} className="cancelImg" src={require('./resources/redX.png')} alt="image" onClick={this.deleteQuestion.bind(this)} />
                 </div>
               )
