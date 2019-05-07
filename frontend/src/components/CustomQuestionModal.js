@@ -61,8 +61,8 @@ class CustomQuestionModal extends React.Component {
             question: filtered,
             companyId: this.state.user.companyId,
             managerId: this.state.user.employeeId
-          }
-          Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
+        }
+        Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
 
           this.setState({
               questions: [''],
@@ -87,9 +87,10 @@ class CustomQuestionModal extends React.Component {
         this.setState({ questions: temparray });
   }
 
-  getQuestions(companyId, managerId) {
+  getQuestions(companyId) {
     console.log("trying to get existing question");
-    Axios.get('http://localhost:4000/api/customquestions/').then(data => {
+    Axios.get('http://localhost:4000/api/customquestions/getCompany/'+companyId,{params:{id:companyId}}).then(data => {
+    // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
       var questionarrays = [];
       for (let i = 0; i < data.data.length; i++){
         questionarrays.unshift(data.data[i].question);
@@ -98,6 +99,14 @@ class CustomQuestionModal extends React.Component {
       this.setState({questions});
 
     })
+    const temparray = this.state.questions;
+    //filter invalid input
+    const filtered = temparray.filter(function(a) {
+      return a !== null && a !== "";
+    });
+    if (filtered.length < 1) {
+      this.setState({questions:['']})
+    }
     console.log("made the call!");
   }
 
