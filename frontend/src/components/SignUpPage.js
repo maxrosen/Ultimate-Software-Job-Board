@@ -36,7 +36,7 @@ class SignUpPage extends Component {
             email: this.state.email,
             password: this.state.password,
         }
-        Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>{
+        Axios.post('/api/users/register',newUser).then(res=>{
             console.log(res.data.success)
             if (res.data.success){
                 alert('Successfully signed up!');

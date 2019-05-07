@@ -33,7 +33,7 @@ class PositionForm extends React.Component {
             companyName: this.state.companyName,
             managerId: this.state.managerId
         }
-        Axios.post('http://localhost:4000/api/positions/create',newPosition).then(res=>console.log(res.data));
+        Axios.post('/api/positions/create',newPosition).then(res=>console.log(res.data));
         
         this.setState({
             title: '',

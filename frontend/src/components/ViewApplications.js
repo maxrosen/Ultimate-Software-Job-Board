@@ -59,19 +59,19 @@ class ViewApplications extends Component {
           app: this.state._id
         }
 
-        Axios.get('http://localhost:4000/api/applications/')
+        Axios.get('/api/applications/')
           .then(res => {
             //const emps = res.data;
             //this.setState({ emps });
             console.log(res.data);
           })
 
-        Axios.delete('http://localhost:4000/api/applications/delete/', this.state.id)
+        Axios.delete('/api/applications/delete/', this.state.id)
           .then(res => {
           console.log(res.data);
         });
 
-        Axios.get('http://localhost:4000/api/applications/')
+        Axios.get('/api/applications/')
           .then(res => {
             //const emps = res.data;
             //this.setState({ emps });
