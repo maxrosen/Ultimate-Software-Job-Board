@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const API_PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 const router = express.Router();
-
+const path = require('path');
 const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
@@ -23,11 +23,13 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 
 
+
 app.use('/api/positions',position);
 app.use('/api/employees',employee);
 app.use('/api/applications',application);
 app.use('/api/users',user);
 app.use('/api/customquestions',customquestion);
+
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -36,7 +38,9 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
     });
+
   } 
+
 
 //Cross Domain
 app.all('*', function (req, res, next) {
@@ -90,7 +94,7 @@ var jsonParser = bodyParser.json();
 // Accepting JSON data throught POST requests. We'll probably end up changing the format of the JSON later
 // Right now it accepts JSON in the format of {Title, Salary, Description}
 // The frontend will send this post request through some kind of form
-// /jobs is the route that accepts the JSON (right now its localhost:4000/jobs)
+// /jobs is the route that accepts the JSON (right now its  /jobs)
 // jsonParser is a type of body-parser object, body parser is middleware for express
 // that's used for obtaining the body data of http requests
 // (req, res) => is just an anonymous function that runs when a post request is made,
@@ -114,4 +118,4 @@ router.post('/jobs', jsonParser, (req,res) => {
 } );
 
 
-app.listen(API_PORT,()=>console.log("Server listening on 4000"));
+app.listen(PORT,()=>console.log("Server listening on "+PORT));

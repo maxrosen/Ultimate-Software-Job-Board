@@ -59,12 +59,15 @@ class ViewApplications extends Component {
         e.preventDefault();
         console.log(`Application removed`);
 
-        Axios.delete('http://localhost:4000/api/applications/delete/' + this.props.id)
+
+        Axios.delete('  /api/applications/delete/' + this.props.id)
+
           .then(res => {
           console.log(res.data);
           window.location.reload();
         });
     }
+
 
     emailApp(e){
         let user = jwt_decode(localStorage.jwttoken)
@@ -103,11 +106,11 @@ class ViewApplications extends Component {
           managerId: user.employeeId,
           positionTitle: this.state.position,
       }
-      Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
+      Axios.post('  /api/users/register',newUser).then(res=>console.log(res.data));
 
       console.log(this.props.positionid)
 
-      Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.positionid)
+      Axios.delete('  /api/positions/delete/' + this.props.positionid)
         .then(res => {
         console.log(res.data);
 
@@ -126,6 +129,7 @@ class ViewApplications extends Component {
       window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
 
       this.deleteApp(e);
+
     }
 
     render(){

@@ -58,7 +58,7 @@ class ManageJobs extends Component {
         e.preventDefault();
         console.log(`Posting removed`);
 
-        Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.id)
+        Axios.delete('  /api/positions/delete/' + this.props.id)
           .then(res => {
           console.log(res.data);
           window.location.reload();
@@ -74,7 +74,7 @@ class ManageJobs extends Component {
         let dscrpt = this.props.description;
         if(this.state.description!='')
           dscrpt = this.state.description;
-        Axios.post('http://localhost:4000/api/positions/update/' + this.props.id, {params:{title:nm, description:dscrpt}})
+        Axios.post('  /api/positions/update/' + this.props.id, {params:{title:nm, description:dscrpt}})
           .then(res => {
           console.log(res.data);
           window.location.reload();

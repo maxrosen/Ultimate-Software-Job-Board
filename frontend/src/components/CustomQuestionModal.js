@@ -62,7 +62,7 @@ class CustomQuestionModal extends React.Component {
             companyId: this.state.user.companyId,
             managerId: this.state.user.employeeId
         }
-        Axios.post('http://localhost:4000/api/customquestions/create',newQuestions).then(res=>console.log(res.data));
+          Axios.post('  /api/customquestions/create',newQuestions).then(res=>console.log(res.data));
 
           this.setState({
               questions: [''],
@@ -91,6 +91,7 @@ class CustomQuestionModal extends React.Component {
     console.log("trying to get existing question");
     Axios.get('http://localhost:4000/api/customquestions/getCompany/'+companyId,{params:{id:companyId}}).then(data => {
     // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
+
       var questionarrays = [];
       for (let i = 0; i < data.data.length; i++){
         questionarrays.unshift(data.data[i].question);
