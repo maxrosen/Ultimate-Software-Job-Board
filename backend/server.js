@@ -90,7 +90,7 @@ var jsonParser = bodyParser.json();
 // Accepting JSON data throught POST requests. We'll probably end up changing the format of the JSON later
 // Right now it accepts JSON in the format of {Title, Salary, Description}
 // The frontend will send this post request through some kind of form
-// /jobs is the route that accepts the JSON (right now its localhost:4000/jobs)
+// /jobs is the route that accepts the JSON (right now its  /jobs)
 // jsonParser is a type of body-parser object, body parser is middleware for express
 // that's used for obtaining the body data of http requests
 // (req, res) => is just an anonymous function that runs when a post request is made,

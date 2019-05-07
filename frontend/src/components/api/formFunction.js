@@ -10,21 +10,21 @@ export const createPosition =(tempPosition) =>{
         companyName: user.companyName,
         managerId: user.employeeId
    	}
-    return axios.post('http://localhost:4000/api/positions/create',newPosition).then(res=>console.log(res.data));
+    return axios.post('  /api/positions/create',newPosition).then(res=>console.log(res.data));
 }
 
 export const importPositions =(newPositions) =>{
-    return axios.post('http://localhost:4000/api/positions/import',newPositions).then(res=>console.log(res.data));
+    return axios.post('  /api/positions/import',newPositions).then(res=>console.log(res.data));
 }
 
 export const importEmployees =(newEmployees) =>{
-    return axios.post('http://localhost:4000/api/users/import',newEmployees).then(res=>console.log(res.data));
+    return axios.post('  /api/users/import',newEmployees).then(res=>console.log(res.data));
 }
 
 export const createApplication =(newApplication) =>{
-    return axios.post('http://localhost:4000/api/applications/create',newApplication).then(res=>console.log(res.data));
+    return axios.post('  /api/applications/create',newApplication).then(res=>console.log(res.data));
 }
 
 export const createQuestion = (newQuestion) => {
-	return axios.post('http://localhost:4000/api/customQuestion/create',newQuestion).then(res=>console.log(res.data));
+	return axios.post('  /api/customQuestion/create',newQuestion).then(res=>console.log(res.data));
 }
