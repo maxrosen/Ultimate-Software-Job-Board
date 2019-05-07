@@ -11,6 +11,7 @@ import Axios from 'axios';
 import Modal from 'react-modal';
 import jwt_decode from 'jwt-decode';
 import ApplicationList from './ApplicationList';
+import * as listFunction from './api/listFunction';
 
 class ViewApplications extends Component {
     constructor(){
@@ -23,6 +24,7 @@ class ViewApplications extends Component {
             last_name: '',
             email: '',
             positionid: '',
+            companySize: -1,
             clicked: false
         };
 
@@ -87,11 +89,15 @@ class ViewApplications extends Component {
       e.preventDefault();
       console.log(`Hiring applicant`);
 
-      let user = jwt_decode(localStorage.jwttoken)
+      let user = jwt_decode(localStorage.jwttoken);
+      console.log(user);
 
       var generatePassword = require('password-generator');
 
       let randpassword = generatePassword();
+
+      listFunction.getEmployeeCount(user.companyId).then((data)=> this.setState({companySize:data}));
+      console.log(this.state.companySize);
 
       const newUser = {
           first_name: this.props.first_name,
@@ -102,9 +108,24 @@ class ViewApplications extends Component {
           companyId: user.companyId,
           managerId: user.employeeId,
           positionTitle: this.state.position,
+          employeeId: this.state.companySize + 1
       }
       Axios.post('http://localhost:4000/api/users/register',newUser).then(res=>console.log(res.data));
 
+      const newEmployee = {
+          firstName: this.props.first_name,
+          lastName: this.props.last_name,
+          email: this.props.email,
+          companyName: user.companyName,
+          companyId: user.companyId,
+          managerId: user.employeeId,
+          positionTitle: this.props.position,
+          employeeId: this.state.companySize + 1
+      }
+      console.log(newEmployee);
+      Axios.post('http://localhost:4000/api/employees/create',newEmployee).then(res=>console.log(res.data));
+
+      
       console.log(this.props.positionid)
 
       Axios.delete('http://localhost:4000/api/positions/delete/' + this.props.positionid)
