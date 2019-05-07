@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const API_PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 const router = express.Router();
 
@@ -114,4 +114,4 @@ router.post('/jobs', jsonParser, (req,res) => {
 } );
 
 
-app.listen(API_PORT,()=>console.log("Server listening on 4000"));
+app.listen(PORT,()=>console.log("Server listening on "+PORT));
