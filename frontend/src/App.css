@@ -1,8 +1,13 @@
 .TopBar {
+    z-index: 1049;
+    top: 0px;
+    width: 100%;
+    position: fixed;
     background-color: white !important;
     border: 4px;
     border-bottom-color: rgb(153, 197, 85);
     border-bottom-style: solid;
+    min-width:504px;
 }
 
 .Jobs {
@@ -13,6 +18,38 @@
     margin: 10px;
     box-shadow: 1px 1px 6px #000000;
     border-color: rgba(255,255,255,.01);
+}
+
+.companyBox {
+    margin-top: 5%;
+    margin-left: 30px;
+
+    height: 120px;
+    width: 120vh;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0px 0px 4.5px #000000;
+}
+
+.recentJobs {
+    margin-right:5%;
+    min-width: 300px;
+    margin-top: 15px;
+    height: 550px;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0px 0px 4.5px #000000;
+}
+
+.recentJobsText{
+    margin-left:5px;
+    color:gray;
+    font-size:20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    padding-top:89px;
 }
 
 .cancelImg {
@@ -29,8 +66,58 @@
     }
 
 .UserProfile {
-    align-self: flex-start
+    margin-right: 30px;
+    text-align: center;
+    width:130vh;
+    height: 100%;
 }
+
+.profileImg {
+    margin-left:20%;
+    max-height: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    min-width: 250px;
+}
+
+.profileCenter {
+    display: inline-block;
+}
+
+.profileInfo {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileText {
+    white-space: nowrap;
+    width: 100%;
+    font-size: 20px;
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+.profileName {
+    white-space: nowrap;
+    width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.profileTextdiv {
+    text-align: left;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
 
 button {
     margin: 5px;
@@ -54,10 +141,12 @@ button {
 }
 
 .AccountPageConfig {
-    margin-left: -15px;
-    float: left;
     display: flex;
     flex-direction: row;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .questForm {
@@ -71,34 +160,22 @@ button {
 }
 
 .AccountBar {
-    padding-left: 20px;
+    padding-top:10px;
     background-color: rgb(242, 242, 242);
-    border-right-color: gray;
-    border-right-style: solid;
     width: 32%;
-    border-right-width: thick;
     height: 800px;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 280px;
+    width:20px;
 }
 
-.sideBar {
-    margin-top: 10px;
-    margin-left: 25px;
-    height: auto;
-    width: auto;
-}
 
 .space {
     margin-bottom: 5px;
+    margin-left:10px;
 }
 
 .signUpText {
     color: rgb(102,178,255);
-}
-
-.compText{
-   
 }
 
 .label {

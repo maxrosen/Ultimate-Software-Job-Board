@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CustomQuestionSchema = new Schema({
-    question:{
-        type: [String],
+    question:[{
+        type: String,
         required: true
-    },
+    }],
     companyId:{
         type: Number,
         required: true
@@ -20,6 +20,6 @@ const CustomQuestionSchema = new Schema({
     }
 });
 
-var CustomQuestion = mongoose.model('customquestion',CustomQuestionSchema);
+var CustomQuestion = mongoose.model('customquestions',CustomQuestionSchema);
 
 module.exports = CustomQuestion;

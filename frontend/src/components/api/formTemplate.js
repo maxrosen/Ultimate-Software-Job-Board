@@ -1,17 +1,18 @@
 export const work ={
-    title: 'text',
-    description: 'text',
-    companyId: 'number',
-    companyName:'text',
-    managerId: 'number'
+    Title: 'text',
+    Description: 'text'
 }
 
 export const apply ={
     name: 'text',
     address: 'text',
-    phonenumber: 'number',
+    phonenumber: 'number'
 }
 
 export const file = {
-	file: 'select file'
+   file: 'file'
+}
+
+export const question = {
+	question: 'text'
 }

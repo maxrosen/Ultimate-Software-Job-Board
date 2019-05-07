@@ -36,6 +36,7 @@ class SignUpPage extends Component {
             email: this.state.email,
             password: this.state.password,
         }
+
         Axios.post('/api/users/register',newUser).then(res=>{
             console.log(res.data.success)
             if (res.data.success){

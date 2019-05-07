@@ -10,17 +10,26 @@ const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
 const application = require('./router/api/applications');
+const customquestion = require('./router/api/customquestions');
+
+var cors = require('cors')
+
+app.use(cors())
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(logger("dev"));
-  // app.use('/',router);
-  app.use('/api/positions',position);
-  app.use('/api/employees',employee);
-  app.use('/api/applications',application);
-  app.use('/api/users',user);
+
+
+
+app.use('/api/positions',position);
+app.use('/api/employees',employee);
+app.use('/api/applications',application);
+app.use('/api/users',user);
+app.use('/api/customquestions',customquestion);
+
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -29,7 +38,9 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
     });
-  }
+
+  } 
+
 
 //Cross Domain
 app.all('*', function (req, res, next) {
@@ -55,7 +66,7 @@ mongoose.connect(url,function(err){
     console.log("MongoDB Successfully Connected");
 });
 
-//Import example data to MongoDB
+//Import example data to MongoDB locally
 let exec = require('child_process').exec
 
 let command = 'mongo slackers --eval "db.dropDatabase()"'
@@ -105,7 +116,6 @@ router.post('/jobs', jsonParser, (req,res) => {
 
     res.send("recieved data");
 } );
-
 
 
 app.listen(PORT,()=>console.log("Server listening on "+PORT));
