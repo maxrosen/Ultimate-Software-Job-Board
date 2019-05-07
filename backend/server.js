@@ -23,11 +23,11 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 
 
-// app.use('/api/positions',position);
-// app.use('/api/employees',employee);
-// app.use('/api/applications',application);
-// app.use('/api/users',user);
-// app.use('/api/customquestions',customquestion);
+app.use('/api/positions',position);
+app.use('/api/employees',employee);
+app.use('/api/applications',application);
+app.use('/api/users',user);
+app.use('/api/customquestions',customquestion);
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
