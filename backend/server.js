@@ -21,6 +21,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(logger("dev"));
+
+
+app.use('/api/positions',position);
+app.use('/api/employees',employee);
+app.use('/api/applications',application);
+app.use('/api/users',user);
+app.use('/api/customquestions',customquestion);
+
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('../frontend/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
+    });
+  } 
+
 //Cross Domain
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -96,11 +113,5 @@ router.post('/jobs', jsonParser, (req,res) => {
     res.send("recieved data");
 } );
 
-app.use('/',router);
-app.use('/api/positions',position);
-app.use('/api/employees',employee);
-app.use('/api/applications',application);
-app.use('/api/users',user);
-app.use('/api/customquestions',customquestion);
 
 app.listen(API_PORT,()=>console.log("Server listening on 4000"));
