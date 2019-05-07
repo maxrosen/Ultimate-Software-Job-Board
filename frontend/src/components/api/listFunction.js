@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const getList =(page) =>{
+
     return axios.get('  /api/positions/page',{params:{page:page}}).then(res=>{console.log(res.data); return res.data})
 }
 
@@ -29,6 +30,7 @@ export const getAppCount =() =>{
 export const getCustomQuestions =() =>{
 	// return "something isn't working";
     return axios.get('  /api/customquestions/').then(res=>{ return res.data})
+
 }
 export const getCustom =(managerId, companyId) =>{
 	let url = '  /api/customquestions/getCompanyManager/';

@@ -59,12 +59,15 @@ class ViewApplications extends Component {
         e.preventDefault();
         console.log(`Application removed`);
 
+
         Axios.delete('  /api/applications/delete/' + this.props.id)
+
           .then(res => {
           console.log(res.data);
           window.location.reload();
         });
     }
+
 
     emailApp(e){
         let user = jwt_decode(localStorage.jwttoken)
@@ -126,6 +129,7 @@ class ViewApplications extends Component {
       window.location.href = 'mailto:'+this.props.email+'?subject='+emailSubject+'&body='+emailBody;
 
       this.deleteApp(e);
+
     }
 
     render(){

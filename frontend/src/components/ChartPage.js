@@ -79,7 +79,7 @@ class ChartPage extends Component {
         if(localStorage.jwttoken){
             let user = jwt_decode(localStorage.jwttoken);
             //Replace "user.companyId" with "1" to view the tree for Crystal Security.
-            let url = "  /api/employees/getCompany/"+user.companyId;
+            let url = "/api/employees/getCompany/"+user.companyId;
             axios.get(url).then(
                 (res)=> {
                     var employeesList = lodash.groupBy(res.data,'managerId');

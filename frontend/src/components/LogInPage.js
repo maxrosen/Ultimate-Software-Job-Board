@@ -27,7 +27,8 @@ class LogInPage extends Component {
           email: this.state.email,
           password: this.state.password,
       }
-      axios.post('  /api/users/login',userCred).then(res=>{
+
+      axios.post('/api/users/login',userCred).then(res=>{
         localStorage.clear()
         if(res.data.success){
         localStorage.setItem('jwttoken',res.data.token)

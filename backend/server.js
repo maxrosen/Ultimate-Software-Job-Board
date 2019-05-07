@@ -5,7 +5,7 @@ const logger = require("morgan");
 const PORT = process.env.PORT || 4000;
 const app = express();
 const router = express.Router();
-
+const path = require('path');
 const user = require('./router/api/users');
 const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
@@ -23,11 +23,13 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 
 
+
 app.use('/api/positions',position);
 app.use('/api/employees',employee);
 app.use('/api/applications',application);
 app.use('/api/users',user);
 app.use('/api/customquestions',customquestion);
+
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -36,7 +38,9 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
     });
+
   } 
+
 
 //Cross Domain
 app.all('*', function (req, res, next) {

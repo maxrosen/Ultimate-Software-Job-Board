@@ -54,7 +54,8 @@ class Job extends Component {
                 position: this.props.title,
                 positionid: this.props.id
             }
-            Axios.post('  /api/applications/create',newApplication).then(res=>console.log(res.data));
+
+            Axios.post('/api/applications/create',newApplication).then(res=>console.log(res.data));
 
             this.setState({
                 first_name: '',

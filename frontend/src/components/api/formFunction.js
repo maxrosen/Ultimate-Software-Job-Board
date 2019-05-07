@@ -17,6 +17,7 @@ export const importPositions =(newPositions) =>{
     return axios.post('  /api/positions/import',newPositions).then(res=>console.log(res.data));
 }
 
+
 export const importEmployees =(newEmployees) =>{
     return axios.post('  /api/users/import',newEmployees).then(res=>console.log(res.data));
 }
@@ -27,4 +28,5 @@ export const createApplication =(newApplication) =>{
 
 export const createQuestion = (newQuestion) => {
 	return axios.post('  /api/customQuestion/create',newQuestion).then(res=>console.log(res.data));
+
 }
