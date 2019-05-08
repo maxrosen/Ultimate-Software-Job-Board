@@ -4,9 +4,11 @@
   "description": "CS 320 Semester project based on the MERN Stack",
   "main": "index.js",
   "scripts": {
-    "client": "cd frontend && npm run start",
-    "server": "cd backend && nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "start": "cd backend && npm install && npm start",
+    "server": "cd backend && nodemon server.js backend",
+    "client": "cd  frontend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install frontend && npm run build --prefix ./frontend"
   },
   "repository": {
     "type": "git",

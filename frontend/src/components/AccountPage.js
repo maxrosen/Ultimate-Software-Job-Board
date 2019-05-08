@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container,  Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
+import { Container, Button, Col, Row, Form, FormGroup, Label, Input, Media } from 'reactstrap';
 import ApplyModal from './ApplyModal';
 import ImportPosModal from './ImportPosModal';
 import ImportEmpModal from './ImportEmpModal';
@@ -123,7 +123,7 @@ class AccountPage extends Component {
                                 </div>
                             </div>
                             <div className="companyBox">
-                                text
+                                Company Bio and Name
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ class AccountPage extends Component {
                     <div className="recentJobs">
                         <p className="recentJobsText">Recently Posted</p>
                         <Container>
-                            stuff
+                            Recently Posted Jobs
                         </Container>
                     </div>
 
@@ -142,17 +142,16 @@ class AccountPage extends Component {
 
 }
 const customStyles = {
-    content: {
-        top: '40%',
-        left: '50%',
-        right: '80%',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        width: '60vh'
-    },
-    overlay: {zIndex:9999}
-   
+	content: {
+		top: '40%',
+		left: '50%',
+		right: '80%',
+		bottom: 'auto',
+		marginRight: '-50%',
+		transform: 'translate(-50%, -50%)',
+		width: '60vh'
+	},
+	overlay: { zIndex: 9999 }
 };
 
 export default AccountPage;

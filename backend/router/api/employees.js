@@ -17,6 +17,11 @@ router.get('/getCompany/:id',(req,res)=> {
     Employee.find({companyId:req.params.id}).then(employees => res.json(employees));
 });
 
+router.get('/count/company',(req,res)=> {
+
+    Employee.count({companyId:req.query.companyId}).then(count =>res.json(data));
+});
+
 //@route    POST api/employee
 //@desc     Create a New Employee
 //@access   Private
@@ -24,7 +29,7 @@ router.post('/create',(req,res)=> {
     const newEmployee = new Employee({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
-        employeeID:req.body.employeeID,
+        employeeId:req.body.employeeId,
         email:req.body.email,
         companyId:req.body.companyId,
         companyName:req.body.companyName,
