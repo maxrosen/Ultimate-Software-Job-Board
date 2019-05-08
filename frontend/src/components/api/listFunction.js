@@ -20,7 +20,7 @@ export const getCompanyCount =(companyId) =>{
 }
 
 export const getEmployeeCount =(companyId) =>{
-    let url = 'http://localhost:4000/api/employees/count/company/';
+    let url = '  /api/employees/count/company/';
     return axios.get(url, {params:{companyId:companyId}}).then(res=>{ return res.data})
 }
 

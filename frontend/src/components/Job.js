@@ -27,7 +27,10 @@ class Job extends Component {
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        this.setState({modalIsOpen: false, first_name: '',
+        last_name:'',
+        phonenumber: '',
+        email: '',});
     }
 
     onChange(event){
