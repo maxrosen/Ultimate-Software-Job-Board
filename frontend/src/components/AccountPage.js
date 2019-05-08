@@ -65,6 +65,7 @@ class AccountPage extends Component {
 
     render() {
         let user = jwt_decode(localStorage.jwttoken);
+        if(user.employeeId == 1){
         return (
             <Container>
                 <div className="AccountPageConfig">
@@ -137,7 +138,28 @@ class AccountPage extends Component {
 
                 </div>
             </Container>
-        );
+        );}
+        else{
+            return(
+                <Container>
+                    <div className="UserProfile">
+                        <div className="profileCenter">
+                            <div className="profileInfo">
+                                <Media className="profileImg" src={require('./resources/profile.png')} alt="image" />
+                                <div className="profileTextdiv" >
+                                    <p className="profileName">{user.first_name} {user.last_name}</p>
+                                    <p className="profileText">{user.title}</p>
+                                    <p className="profileText">{user.email}</p>
+                                    <p className="profileText">Employee ID: {user.employeeId}</p>
+                                </div>
+                            </div>
+                            <div className="companyBox">
+                                Company Bio and Name
+                            </div>
+                        </div>
+                    </div>
+                </Container>
+        );}
     }
 
 }
