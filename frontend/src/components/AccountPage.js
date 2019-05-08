@@ -116,25 +116,20 @@ class AccountPage extends Component {
                         <div className="profileCenter">
                             <div className="profileInfo">
                                 <Media className="profileImg" src={require('./resources/profile.png')} alt="image" />
-                                <div className="profileTextdiv" >
-                                    <p className="profileName">{user.first_name} {user.last_name}</p>
+                                <div className="profileTextdiv">
+                                    <p className="profileName">
+                                        {user.first_name} {user.last_name}
+                                    </p>
                                     <p className="profileText">{user.title}</p>
                                     <p className="profileText">{user.email}</p>
-                                    <p className="profileText">Employee ID: {user.employeeId}</p>
                                 </div>
                             </div>
-                            <div className="companyBox">
-                                Company Bio and Name
+                            <div className="questionBox">
+                                stuff
                             </div>
                         </div>
                     </div>
-
-                    <div className="recentJobs">
-                        <p className="recentJobsText">Recently Posted</p>
-                        <Container>
-                            Recently Posted Jobs
-                        </Container>
-                    </div>
+                    <div className="sideBar"></div>
 
                 </div>
             </Container>
@@ -150,7 +145,6 @@ class AccountPage extends Component {
                                     <p className="profileName">{user.first_name} {user.last_name}</p>
                                     <p className="profileText">{user.title}</p>
                                     <p className="profileText">{user.email}</p>
-                                    <p className="profileText">Employee ID: {user.employeeId}</p>
                                 </div>
                             </div>
                             <div className="companyBox">
