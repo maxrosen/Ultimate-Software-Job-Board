@@ -1,34 +1,39 @@
 {
-	"name": "frontend",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"axios": "^0.18.0",
-		"bootstrap": "^4.3.1",
-		"jwt-decode": "^2.2.0",
-		"lodash": "^4.17.11",
-		"password-generator": "^2.2.0",
-		"react": "^16.8.4",
-		"react-d3-tree": "^1.12.3",
-		"react-dom": "^16.8.4",
-		"react-file-reader": "^1.1.4",
-		"react-modal": "^3.8.1",
-		"react-router-dom": "^5.0.0",
-		"react-scripts": "^3.0.0",
-		"react-transition-group": "^2.6.1",
-		"reactstrap": "^7.1.0",
-		"tar": "^4.4.8",
-		"uuid": "^3.3.2"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"proxy": "http://localhost:4000",
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ]
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.11",
+    "password-generator": "^2.2.0",
+    "react": "^16.8.4",
+    "react-d3-tree": "^1.12.3",
+    "react-dom": "^16.8.4",
+    "react-file-reader": "^1.1.4",
+    "react-modal": "^3.8.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.0",
+    "react-transition-group": "^2.6.1",
+    "reactstrap": "^7.1.0",
+    "tar": "^4.4.8",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "https://tranquil-brushlands-90825.herokuapp.com",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
