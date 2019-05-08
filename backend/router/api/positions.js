@@ -48,7 +48,7 @@ router.post('/create',(req,res)=> {
 //@access	Private
 router.post('/import',(req,res)=> {
 	//const Users = JSON.parse(req.body.users);
-	Position.collection.insert(req.body.positions, function (err, docs) {
+	/*Position.collection.insert(req.body.positions, function (err, docs) {
       if (err){
 		  res.send('error: ' + err);
           console.log(err);
@@ -56,7 +56,25 @@ router.post('/import',(req,res)=> {
 		res.send("Multiple documents inserted to Positions");
         console.log("Multiple documents inserted to Positions");
       }
-	});
+    });
+    var i = 0;
+    var contents;
+    fs.readFile(req, (err, data)=> {
+        if(err) throw err;
+        contents = data;
+    });
+    var jsonContent = JSON.parse(contents);
+    let user = jwt_decode(localStorage.jwttoken);
+    for(i; i < jsonContent.length; i++){
+        const newPosition = new Position({
+            title: jsonContent[i].title,
+            description:jsonContent[i].description,
+            companyId: user.companyId,
+            companyName: user.companyName,
+            managerId: user.employeeId
+        });
+        newPosition.save().then(position=>res.json(position));
+    }*/
 });
 
 //@route    DEL api/position

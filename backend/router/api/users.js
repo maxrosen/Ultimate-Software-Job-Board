@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+
 //User Model
 const User = require('../../models/user');
 process.env.SECRET_KEY = 'slackers'
@@ -64,7 +65,7 @@ router.post('/register',(req,res)=> {
 //@access	Private
 router.post('/import',(req,res)=> {
 	//const Users = JSON.parse(req.body.users);
-	User.collection.insert(req.body.users, function (err, docs) {
+	/*User.collection.insert(req.body.users, function (err, docs) {
       if (err){
 		  res.send('error: ' + err);
           console.log(err);
@@ -72,7 +73,8 @@ router.post('/import',(req,res)=> {
 		res.send("Multiple documents inserted to Users");
         console.log("Multiple documents inserted to Users");
       }
-	});
+    });*/
+    
 });
 
 //@route    POST api/user

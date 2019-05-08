@@ -39,7 +39,7 @@ router.post('/create',(req,res)=> {
 //@desc     Import a multiple employees
 //@access   Private
 router.post('/import',(req,res)=> {
-    const newEmployee = new Employee({
+    /*const newEmployee = new Employee({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
         employeeID:req.body.employeeID,
@@ -51,6 +51,12 @@ router.post('/import',(req,res)=> {
         startDate:req.body.startDate
     });
     newEmployee.save().then(employee=>res.json(employee));
+    var i = 0;
+    var contents = fs.readFileSync(req);
+    var jsonContent = JSON.parse(contents);
+    for(i; i < jsonContent.length; i++){
+        axios.post('http://localhost:4000/api/employees/create',jsonContent[i]).then(res=>console.log(res.data));
+    }*/
 });
 
 //@route    DEL api/employee

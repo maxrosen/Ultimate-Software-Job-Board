@@ -20,6 +20,9 @@
   "homepage": "https://github.com/Conor-Carmichael/Slackers#readme",
   "dependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.11"
+    "formidable": "^1.2.1",
+    "fs": "0.0.1-security",
+    "nodemon": "^1.18.11",
+    "react-file-reader": "^1.1.4"
   }
 }

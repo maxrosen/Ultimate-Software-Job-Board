@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Container,  Button, Col, Row, Form, FormGroup, Label, Input, Media, } from 'reactstrap'
 import ApplyModal from './ApplyModal';
+import ImportPosModal from './ImportPosModal';
+import ImportEmpModal from './ImportEmpModal';
 import CustomQuestionModal from './CustomQuestionModal';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
@@ -8,6 +10,8 @@ import FormGen from './FormGen';
 import Modal from 'react-modal';
 import jwt_decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
+import ReactFileReader from 'react-file-reader';
+import axios from 'axios';
 
 class AccountPage extends Component {
     constructor() {
@@ -19,9 +23,7 @@ class AccountPage extends Component {
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        
     }
-
 
     openModal() {
         this.setState({ modalIsOpen: true });
@@ -31,11 +33,38 @@ class AccountPage extends Component {
         this.setState({ modalIsOpen: false });
     }
 
+    handlePositions = files => {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        // Use reader.result
+            console.log(reader.result);
+            var contents = JSON.parse(reader.result);
+            var i = 0;
+            for(i; i< contents.length; i++){
+                axios.post('http://localhost:4000/api/positions/create',contents[i]).then(res=>console.log(res.data));
+            }
+        }
+        alert("Positions have been added!");
+        reader.readAsText(files[0]);
+    }
 
+    handleEmployees = files => {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        // Use reader.result
+            console.log(reader.result);
+            var contents = JSON.parse(reader.result);
+            var i = 0;
+            for(i; i< contents.length; i++){
+                axios.post('http://localhost:4000/api/users/register',contents[i]).then(res=>console.log(res.data));
+            }
+        }
+        alert("Employees have been added!");
+        reader.readAsText(files[0]);
+    }
 
     render() {
-        let user = jwt_decode(localStorage.jwttoken)
-
+        let user = jwt_decode(localStorage.jwttoken);
         return (
             <Container>
                 <div className="AccountPageConfig">
@@ -64,7 +93,7 @@ class AccountPage extends Component {
                                 </Row>
                                 <Row className="space">
                                     <Link to="/managejobs">
-                                        <Button className="greenButton" size='lg'>Edit Postings</Button>
+                                        <Button className="greenButton" size='lg'>Edit Positions</Button>
                                     </Link>
                                 </Row>
 
@@ -72,10 +101,12 @@ class AccountPage extends Component {
                                 <h3 align="left">Import Data</h3>
                             </div>
                                 <Row className="space">
-                                    <ApplyModal key='1' buttonLabel='Import Positions' children={<FormGen template={template.file} formfunction={formfunction.importPositions} />} />
+                                    <ImportPosModal key='1' buttonLabel='Import Positions' 
+                                    children={<ReactFileReader handleFiles={this.handlePositions} fileTypes={'.json'}> <button className="greenButton">Upload</button> </ReactFileReader>} />
                                 </Row>
                                 <Row className="space">
-                                    <ApplyModal key='1' buttonLabel='Import Employees' children={<FormGen template={template.file} formfunction={formfunction.importEmployees} />} />
+                                    <ImportEmpModal key='1' buttonLabel='Import Employees' 
+                                    children={<ReactFileReader handleFiles={this.handleEmployees} fileTypes={'.json'}> <button className="greenButton">Upload</button> </ReactFileReader>} />
                                 </Row>   
                         </div>
                     </div>
