@@ -60,6 +60,7 @@ router.post('/register',(req,res)=> {
     });
 });
 
+
 //@route	POST api/position
 //@desc		Import positions
 //@access	Private

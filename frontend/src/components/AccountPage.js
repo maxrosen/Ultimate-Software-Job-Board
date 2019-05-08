@@ -41,10 +41,10 @@ class AccountPage extends Component {
             var contents = JSON.parse(reader.result);
             var i = 0;
             for(i; i< contents.length; i++){
-                axios.post('http://localhost:4000/api/positions/create',contents[i]).then(res=>console.log(res.data));
+                axios.post('  api/positions/create',contents[i]).then(res=>console.log(res.data));
             }
+            alert("Positions have been added!");
         }
-        alert("Positions have been added!");
         reader.readAsText(files[0]);
     }
 
@@ -56,10 +56,14 @@ class AccountPage extends Component {
             var contents = JSON.parse(reader.result);
             var i = 0;
             for(i; i< contents.length; i++){
-                axios.post('http://localhost:4000/api/users/register',contents[i]).then(res=>console.log(res.data));
+                console.log(contents[i]);
+                var newUser = contents[i];
+                newUser["password"] = "12345";
+                axios.post('  /api/users/register', newUser).then(res=>console.log(res.data));
+                axios.post('  /api/employees/create',contents[i]).then(res=>console.log(res.data));
             }
+            alert("Employees have been added!");
         }
-        alert("Employees have been added!");
         reader.readAsText(files[0]);
     }
 
@@ -83,7 +87,7 @@ class AccountPage extends Component {
                                     </Link>
                                 </Row>
                                 <Row className="space">
-                                    <CustomQuestionModal key='0' buttonLabel='Custom Questions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
+                                    <CustomQuestionModal key='0' buttonLabel='Edit Custom Questions' children={<FormGen template={template.question} formfunction={formfunction.createQuestion} />} />
                                 </Row>
 
                             <div className="space">
