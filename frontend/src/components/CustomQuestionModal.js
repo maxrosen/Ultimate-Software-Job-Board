@@ -52,24 +52,49 @@ class CustomQuestionModal extends React.Component {
   saveQuestions(e) {
         e.preventDefault();
         const temparray = this.state.questions;
+
+
         //filter invalid input
         const filtered = temparray.filter(function(a) {
           return a !== null && a !== "";
         });
         if(filtered.length > 0) {
           const newQuestions = {
-            question: filtered,
+            question: this.state.questions,
             companyId: this.state.user.companyId,
             managerId: this.state.user.employeeId
-        }
-          Axios.post('  /api/customquestions/create',newQuestions).then(res=>console.log(res.data));
+          }
+
+          let nq = this.state.questions;
+
+          let questionID;
+
+          Axios.get('http://localhost:4000/api/customquestions/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          .then(data => {
+            if(data.data[0] === undefined){
+              Axios.post('http://localhost:4000/api/customquestions/create/', newQuestions)
+              .then(res => {
+                console.log(res.data);
+              });
+            }
+
+            else{
+              questionID = data.data[0]._id;
+              console.log(this.state.questions);
+              console.log("TEST: "+questionID);
+              Axios.put('http://localhost:4000/api/customquestions/update/'+questionID, {params:{question:nq}})
+              .then(res => {
+                console.log(res.data);
+              });
+            }
+          });
 
           this.setState({
-              questions: [''],
-          })  
+              questions: filtered,
+          });
         }
-        
-        this.closeModal();
+
+        this.setState({ modal: false });
   }
 
   addQuestion() {
@@ -124,7 +149,7 @@ class CustomQuestionModal extends React.Component {
             {this.state.questions.map(
               (question, index) =>
                 <div className="questionAlign" key={index} id={index}>
-                    <Input type="text" id={index} key={question} placeholder="Type your question" Value={question} onChange={this.onChange.bind(this)} />
+                    <Input type="text" id={index} key={index} placeholder="Type your question" Value={question} onChange={this.onChange.bind(this)} />
                     <Media id={index} key={index} className="cancelImg" src={require('./resources/redX.png')} alt="image" onClick={this.deleteQuestion.bind(this)} />
                 </div>
               )
