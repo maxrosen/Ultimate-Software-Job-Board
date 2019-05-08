@@ -4,6 +4,7 @@ import ApplyModal from './ApplyModal';
 import ImportPosModal from './ImportPosModal';
 import ImportEmpModal from './ImportEmpModal';
 import CustomQuestionModal from './CustomQuestionModal';
+import UserQuestions from './userQuestions';
 import * as template from './api/formTemplate';
 import * as formfunction from './api/formFunction';
 import FormGen from './FormGen';
@@ -124,9 +125,16 @@ class AccountPage extends Component {
                                     <p className="profileText">{user.email}</p>
                                 </div>
                             </div>
-                            <div className="questionBox">
-                                stuff
-                            </div>
+
+
+
+
+                            <UserQuestions></UserQuestions>
+
+
+
+
+
                         </div>
                     </div>
                     <div className="sideBar"></div>
