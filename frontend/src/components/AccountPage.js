@@ -43,7 +43,7 @@ class AccountPage extends Component {
 			var i = 0;
 			for (i; i < contents.length; i++) {
 				axios
-					.post('http://localhost:4000/api/positions/create', contents[i])
+					.post('  /api/positions/create', contents[i])
 					.then((res) => console.log(res.data));
 			}
 		};
@@ -60,7 +60,8 @@ class AccountPage extends Component {
 			var i = 0;
 			for (i; i < contents.length; i++) {
 				axios
-					.post('http://localhost:4000/api/users/register', contents[i])
+					.post('  /api/users/register', contents[i])
+					.post('  /api/users/register', contents[i])
 					.then((res) => console.log(res.data));
 			}
 		};
