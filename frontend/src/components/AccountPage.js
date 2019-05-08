@@ -71,10 +71,8 @@ class AccountPage extends Component {
             <Container>
                 <div className="AccountPageConfig">
                     <div className="AccountBar" align="center">
-
                         <h2 align="center">Manager Options</h2>
                         
-                        <div className="sideBar">
                             <div className="space">
                                 <h3 align="left">Applications</h3>
                             </div>
@@ -110,7 +108,6 @@ class AccountPage extends Component {
                                     <ImportEmpModal key='1' buttonLabel='Import Employees' 
                                     children={<ReactFileReader handleFiles={this.handleEmployees} fileTypes={'.json'}> <button className="greenButton">Upload</button> </ReactFileReader>} />
                                 </Row>   
-                        </div>
                     </div>
 
                     <div className="UserProfile">
