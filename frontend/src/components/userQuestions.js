@@ -30,7 +30,11 @@ class userQuestions extends Component {
     }
 
     onChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        // this.setState({ [event.target.name]: event.target.value });
+        this.state.answer[event.target.id] = event.target.value;
+
+        const temparray = this.state.answer;
+        this.setState({ answer: temparray });
     }
 
     getQuestions(companyId) {
@@ -66,7 +70,57 @@ class userQuestions extends Component {
 
 
     onSubmit(e) {
-       
+       console.log("SAVE!");
+       e.preventDefault();
+        const temparray = this.state.answer;
+        console.log("temparray");
+        console.log(temparray);
+
+
+        //filter invalid input
+        const filtered = temparray.filter(function(a) {
+          return a !== null && a !== "";
+        });
+        if(filtered.length > 0) {
+          const newQuestions = {
+            answer: this.state.answer,
+            companyId: this.state.user.companyId,
+            employeeId: this.state.user.employeeId
+          }
+
+          let nq = this.state.answer;
+          console.log("nq");
+          console.log(nq);
+          let questionID;
+
+          Axios.get('http://localhost:4000/api/customanswers/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          .then(data => {
+            if(data.data[0] === undefined){
+                console.log("undefined, create new answer");
+              Axios.post('http://localhost:4000/api/customanswers/create/', newQuestions)
+              .then(res => {
+                console.log("created?");
+                console.log(res.data);
+              });
+            }
+
+            else{
+              questionID = data.data[0]._id;
+              console.log(this.state.answer);
+              console.log("TEST: "+questionID);
+              Axios.put('http://localhost:4000/api/customanswers/update/'+questionID, {params:{question:nq}})
+              .then(res => {
+                console.log(res.data);
+              });
+            }
+          });
+
+          this.setState({
+              answer: filtered,
+          });
+        }
+
+        this.setState({ modal: false });
     }
 
     render() {
@@ -103,12 +157,12 @@ class userQuestions extends Component {
                                 (question, index) =>
                                     <div key={index} id={index}>
                                         <text id={index} key={index} placeholder="Question">{question}</text>
-                                        <Input type="text" id={index} key={question} placeholder="Type your Answer" onChange={this.onChange.bind(this)} />
+                                        <Input type="text" id={index} key={question} placeholder="Type your Answer" onChange={this.onChange} />
                                     </div>
                             )
                             }
                         </FormGroup>
-                        <Button color="primary">Save</Button>
+                        <Button color="primary" onClick = {this.onSubmit}>Save</Button>
                         <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
                     </Form>
                 </Modal>

@@ -10,7 +10,7 @@ const CustomAnswerSchema = new Schema({
         type: Number,
         required: true
     },
-    managerId:{
+    employeeId:{
         type: Number,
         required: true
     },

@@ -16,7 +16,7 @@ router.get('/getCompany/:id',(req,res)=> {
 });
 
 router.get('/getCompanyManager/:id',(req,res)=> {
-    CustomAnswer.find({companyId:req.params.companyId, managerId:req.params.managerId}).then(customanswers => res.json(customanswers));
+    CustomAnswer.find({companyId:req.params.companyId, employeeId:req.params.employeeId}).then(customanswers => res.json(customanswers));
 });
 
 router.get('/count',(req,res)=> {
@@ -34,7 +34,7 @@ router.post('/create',(req,res)=> {
     const newCustomAnswer = new CustomAnswer({
         answer:req.body.answer,
         companyId:req.body.companyId,
-        managerId:req.body.managerId
+        employeeId:req.body.employeeId
     });
     newCustomAnswer.save().then(answer=>res.json(answer));
 });
