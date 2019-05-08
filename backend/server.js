@@ -11,6 +11,7 @@ const position = require('./router/api/positions');
 const employee = require('./router/api/employees');
 const application = require('./router/api/applications');
 const customquestion = require('./router/api/customquestions');
+const customanswer = require('./router/api/customanswers');
 
 var cors = require('cors')
 
@@ -29,6 +30,7 @@ app.use('/api/employees',employee);
 app.use('/api/applications',application);
 app.use('/api/users',user);
 app.use('/api/customquestions',customquestion);
+app.use('/api/customanswers', customanswer);
 
 
 if (process.env.NODE_ENV === 'production') {
