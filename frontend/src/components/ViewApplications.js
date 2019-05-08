@@ -126,7 +126,7 @@ class ViewApplications extends Component {
           employeeId: this.state.companySize + 1
       }
       console.log(newEmployee);
-      Axios.post('http://localhost:4000/api/employees/create',newEmployee).then(res=>console.log(res.data));
+      Axios.post('  /api/employees/create',newEmployee).then(res=>console.log(res.data));
 
       
       console.log(this.props.positionid)

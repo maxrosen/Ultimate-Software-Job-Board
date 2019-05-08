@@ -16,3 +16,7 @@ export const file = {
 export const question = {
 	question: 'text'
 }
+
+export const answer = {
+    answer: 'test'
+}

@@ -15,14 +15,18 @@ router.get('/getCompany/:id',(req,res)=> {
     CustomQuestion.find({companyId:req.params.id}).then(customquestions => res.json(customquestions));
 });
 
-router.get('/getCompanyManager/',(req,res)=> {
+router.get('/getCompanyManager/:id',(req,res)=> {
     CustomQuestion.find({companyId:req.params.companyId, managerId:req.params.managerId}).then(customquestions => res.json(customquestions));
 });
 
 router.get('/count',(req,res)=> {
-
     CustomQuestion.countDocuments().then(data =>res.json(data));
 });
+
+router.get('/getQuestions/:id', (req,res)=>{
+    CustomQuestion.findById(req.params.id).then(customquestions => res.json(customquestions.question));
+});
+
 //@route    POST api/customquestion
 //@desc     Create a New customquestion
 //@access   Private
@@ -50,19 +54,21 @@ router.delete('/delete/:id',(req,res)=>{
 //@desc     Update a customquestion
 //@access   Private
 router.put('/update/:id',(req,res)=>{
+
     CustomQuestion.findById(req.params.id,function(err,customquestion){
-        if(!customquestion)
-            res.status(404).send('customquestion not found')
-        else
-            question:req.body.question,
-        
-        customquestion.save().then(customquestion=>{
-            res.json({success:true})
-        })
-        .catch(err=>res.status(400).json({success:false}));
+       if(!customquestion)
+           res.status(404).send('customquestion not found')
+       else{
+         customquestion.set('question', req.body.params.question);
+       }
+
+       customquestion.save().then(customquestion=>{
+           res.json({success:true})
+       })
+       .catch(err=>res.status(400).json({success:false}));
 
     });
 
-    });
+});
 
 module.exports=router;

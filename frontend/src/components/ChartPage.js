@@ -103,9 +103,8 @@ class ChartPage extends Component {
     render() {
         return (
             <Container>
-                <h1 className="label">Company Hierarchy</h1>
                 <div className="treeGraph" align="center"  ref={tc => (this.treeContainer = tc)}>
-                    <Tree
+                    <Tree className = "treeGraph"
                     translate={this.state.translate}
                    
 					allowForeignObjects
