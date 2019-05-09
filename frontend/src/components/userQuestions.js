@@ -35,6 +35,7 @@ class userQuestions extends Component {
 
         const temparray = this.state.answer;
         this.setState({ answer: temparray });
+        this.getQuestions(this.state.user.companyId);
     }
 
     getQuestions(companyId) {
@@ -82,42 +83,44 @@ class userQuestions extends Component {
           return a !== null && a !== "";
         });
         if(filtered.length > 0) {
-          const newQuestions = {
+          const newAnswers = {
             answer: this.state.answer,
             companyId: this.state.user.companyId,
             employeeId: this.state.user.employeeId
           }
 
-          let nq = this.state.answer;
-          console.log("nq");
-          console.log(nq);
-          let questionID;
+          let na = this.state.answer;
+          let answerID;
 
-          Axios.get('http://localhost:4000/api/customanswers/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          Axios.get(' /api/customanswers/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
           .then(data => {
             if(data.data[0] === undefined){
                 console.log("undefined, create new answer");
-              Axios.post('http://localhost:4000/api/customanswers/create/', newQuestions)
+                console.log(newAnswers);
+                Axios.post('/api/customanswers/create/', newAnswers)
               .then(res => {
-                console.log("created?");
-                console.log(res.data);
+                console.log(res.data[0]);
               });
             }
 
             else{
-              questionID = data.data[0]._id;
+                console.log("found!");
+              answerID = data.data[0]._id;
               console.log(this.state.answer);
-              console.log("TEST: "+questionID);
-              Axios.put('http://localhost:4000/api/customanswers/update/'+questionID, {params:{question:nq}})
+              console.log("TEST: "+answerID);
+              console.log(data.data[0]);
+              Axios.put('  /api/customanswers/update/'+answerID, {params:{answer:na}})
               .then(res => {
                 console.log(res.data);
               });
             }
+            console.log("reach here?");
           });
 
           this.setState({
               answer: filtered,
           });
+          console.log(this.state.answer);
         }
 
         this.setState({ modal: false });
@@ -125,8 +128,8 @@ class userQuestions extends Component {
 
     render() {
         this.state.user = jwt_decode(localStorage.jwttoken);
-        console.log("user");
-        console.log(this.state.user);
+        // console.log("user");
+        // console.log(this.state.user);
         return (
             <Container >
                 <div className = "questionBox">

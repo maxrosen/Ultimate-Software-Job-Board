@@ -69,10 +69,10 @@ class CustomQuestionModal extends React.Component {
 
           let questionID;
 
-          Axios.get('  /getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          Axios.get('/api/customquestions/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
           .then(data => {
             if(data.data[0] === undefined){
-              Axios.post('  /create/', newQuestions)
+              Axios.post('/api/customquestions/create/', newQuestions)
               .then(res => {
                 console.log(res.data);
               });
@@ -82,7 +82,7 @@ class CustomQuestionModal extends React.Component {
               questionID = data.data[0]._id;
               console.log(this.state.questions);
               console.log("TEST: "+questionID);
-              Axios.put('  /api/customquestions/update/'+questionID, {params:{question:nq}})
+              Axios.put('/api/customquestions/update/'+questionID, {params:{question:nq}})
               .then(res => {
                 console.log(res.data);
               });
@@ -114,7 +114,7 @@ class CustomQuestionModal extends React.Component {
 
   getQuestions(companyId) {
     console.log("trying to get existing question");
-    Axios.get('  /getCompany/'+companyId,{params:{id:companyId}}).then(data => {
+    Axios.get('/api/customquestions/getCompany/'+companyId,{params:{id:companyId}}).then(data => {
     // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
       var questionarrays = [];
