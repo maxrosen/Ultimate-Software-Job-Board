@@ -27,16 +27,15 @@ class ImportPosModal extends React.Component {
           <ModalBody align = "center">
             <p align="center"> JSON File in Format: </p>
             <p align = "center">
-            "first_name",
-            "last_name",
+            "firstName",
+            "lastName",
             "email",
-            "password",
             "employeeId",
             "companyName",
             "companyId",
             "managerId",
             "positionTitle",
-            "date"
+            "startDate"
             </p>
             {this.props.children}
           </ModalBody>

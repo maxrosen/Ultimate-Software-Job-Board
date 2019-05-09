@@ -53,15 +53,17 @@ class AccountPage extends Component {
         var reader = new FileReader();
         reader.onload = function(e) {
         // Use reader.result
-            console.log(reader.result);
             var contents = JSON.parse(reader.result);
             var i = 0;
             for(i; i< contents.length; i++){
-                console.log(contents[i]);
-                var newUser = contents[i];
+                axios.post('  /api/employees/create',contents[i]).then(res=>console.log(res.data));
+                var newUser = JSON.parse(JSON.stringify(contents[i]));
+                newUser["first_name"] = newUser.firstName;
+                newUser["last_name"] = newUser.lastName;
+                delete newUser.firstName;
+                delete newUser.lastName;
                 newUser["password"] = "12345";
                 axios.post('  /api/users/register', newUser).then(res=>console.log(res.data));
-                axios.post('  /api/employees/create',contents[i]).then(res=>console.log(res.data));
             }
             alert("Employees have been added!");
         }
