@@ -35,7 +35,7 @@ class NodeLabel extends React.PureComponent {
       <div className={className}>
 		  <h2 style={{'font-size':18}}>{name}</h2>
 		  <p>{nodeData.title}</p>
-        <a onClick={alert(nodeData.email)}>EMail</a>
+        <a onClick={e=>alert(nodeData.email)}>EMail</a>
 	  </div>
     )
   }
@@ -78,6 +78,7 @@ class ChartPage extends Component {
 
         if(localStorage.jwttoken){
             let user = jwt_decode(localStorage.jwttoken);
+            //user.companyId=1
             //Replace "user.companyId" with "1" to view the tree for Crystal Security.
             let url = "/api/employees/getCompany/"+user.companyId;
             axios.get(url).then(
