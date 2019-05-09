@@ -85,12 +85,11 @@ class userQuestions extends Component {
 
 
     onSubmit(e) {
-       console.log("SAVE!");
+       // console.log("SAVE!");
        e.preventDefault();
         const temparray = this.state.answer;
-        console.log("temparray");
-        console.log(temparray);
-
+        // console.log("temparray");
+        // console.log(temparray);
 
         //filter invalid input
         const filtered = temparray.filter(function(a) {
@@ -106,11 +105,11 @@ class userQuestions extends Component {
           let na = this.state.answer;
           let answerID;
 
-          Axios.get(' /api/customanswers/getEmployee/'+this.state.user.employeeId,{params:{id:this.state.user.employeeId}})
+          Axios.get(' /api/customanswers/getCompany/'+this.state.user.employeeId,{params:{id:this.state.user.employeeId}})
           .then(data => {
             if(data.data[0] === undefined){
-                console.log("undefined, create new answer");
-                console.log(newAnswers);
+                // console.log("undefined, create new answer");
+                // console.log(newAnswers);
                 Axios.post('/api/customanswers/create/', newAnswers)
               .then(res => {
                 console.log(res.data[0]);
