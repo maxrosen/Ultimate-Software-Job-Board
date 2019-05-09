@@ -40,7 +40,7 @@ class userQuestions extends Component {
 
     getQuestions(companyId) {
         console.log("trying to get existing question");
-        Axios.get('  /api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
+        Axios.get('http:/api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var questionarrays = [];
@@ -60,6 +60,20 @@ class userQuestions extends Component {
             this.setState({ questions: [''] })
         }
         console.log("made the call!");
+    }
+
+    getAnswers(employeeId) {
+        Axios.get('http:/api/customanswers/getEmployee/' + employeeId, { params: { id: employeeId } }).then(data => {
+            // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
+
+            var answerArray = [];
+            for (let i = 0; i < data.data.length; i++) {
+                answerArray.unshift(data.data[i].answer);
+            }
+            var answer = [].concat.apply([], answerArray);
+            this.setState({ answer });
+
+        })
     }
 
     componentDidMount() {
@@ -92,7 +106,7 @@ class userQuestions extends Component {
           let na = this.state.answer;
           let answerID;
 
-          Axios.get(' /api/customanswers/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          Axios.get(' /api/customanswers/getEmployee/'+this.state.user.employeeId,{params:{id:this.state.user.employeeId}})
           .then(data => {
             if(data.data[0] === undefined){
                 console.log("undefined, create new answer");
@@ -114,11 +128,11 @@ class userQuestions extends Component {
                 console.log(res.data);
               });
             }
-            console.log("reach here?");
+            // console.log("reach here?");
           });
 
           this.setState({
-              answer: filtered,
+              answer: [],
           });
           console.log(this.state.answer);
         }

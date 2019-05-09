@@ -11,8 +11,8 @@ router.get('/',(req,res)=> {
     CustomAnswer.find().sort({date:-1}).then(customanswers => res.json(customanswers));
 });
 
-router.get('/getCompany/:id',(req,res)=> {
-    CustomAnswer.find({companyId:req.params.id}).then(customanswers => res.json(customanswers));
+router.get('/getEmployee/:id',(req,res)=> {
+    CustomAnswer.find({employeeId:req.params.id}).then(customanswers => res.json(customanswers));
 });
 
 router.get('/getCompanyManager/:id',(req,res)=> {
