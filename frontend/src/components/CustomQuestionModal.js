@@ -94,7 +94,8 @@ class CustomQuestionModal extends React.Component {
           });
         }
 
-        this.setState({ modal: false });
+      this.setState({ modal: false });
+      window.location.reload();
   }
 
   addQuestion() {

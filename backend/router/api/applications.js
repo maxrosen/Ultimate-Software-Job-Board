@@ -8,7 +8,9 @@ const Application = require('../../models/application');
 //@desc     Get all Users
 //@access   Public
 router.get('/',(req,res)=> {
-    Application.find().sort({date:-1}).then(applications => res.json(applications));
+    var companyId = Number(req.query.companyId)
+    console.log(companyId);
+    Application.find().populate('positionid').sort({date:-1}).then(applications => {applications=applications.filter(a=>{ return a.positionid&&a.positionid.companyId==companyId});res.json(applications)});
 });
 
 //@route    POST api/user

@@ -3,7 +3,7 @@ import {Container, Button } from 'reactstrap'
 import ViewApplications from './ViewApplications';
 import * as template from './api/formTemplate';
 import * as listFunction from './api/listFunction';
-
+import jwt_decode from 'jwt-decode';
 class ApplicationList extends Component {
   constructor(props){
       super(props)
@@ -18,9 +18,11 @@ class ApplicationList extends Component {
   }
 
   componentDidMount(){
+      let user = jwt_decode(localStorage.jwttoken);
+      // for testing
       const{match:{params}}=this.props;
       this.setState({currentPage:params.page});
-      listFunction.getApps(params.page).then((data)=> this.setState({applications:data}));
+      listFunction.getApps(user.companyId).then((data)=> this.setState({applications:data}));
       listFunction.getAppCount().then((data)=>this.setState({positionscnt:data}));
   }
 
