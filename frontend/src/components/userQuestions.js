@@ -136,9 +136,6 @@ class userQuestions extends Component {
             // console.log("reach here?");
           });
 
-          this.setState({
-              answer: [],
-          });
           console.log(this.state.answer);
         }
 
