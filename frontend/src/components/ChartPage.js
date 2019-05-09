@@ -26,6 +26,8 @@ const svgSquare = {
 }
 
 const companyId = 1;
+const minzoom = 0.1;
+const maxzoom = 5;
 
 class NodeLabel extends React.PureComponent {
 	render() {
@@ -54,11 +56,13 @@ class ChartPage extends Component {
         this.state = {
             employees:[
 			],
-            tree:{}
-            
+            tree:{},
+            zoomsize:1
 
         }
-        this.buildtree=this.buildtree.bind(this)
+        this.buildtree = this.buildtree.bind(this)
+        this.zoomIn = this.zoomIn.bind(this)
+        this.zoomOut = this.zoomOut.bind(this)
     }
 	
 	
@@ -108,24 +112,50 @@ class ChartPage extends Component {
 		}
 	}
 
+    zoomIn() {
+        const temp = this.state.zoomsize
+        if (temp < maxzoom) {
+            this.setState({ zoomsize: temp + 0.25 });
+        }
+    }
+
+    zoomOut() {
+        const temp = this.state.zoomsize
+        if (temp > minzoom) {
+            this.setState({ zoomsize: temp - 0.25 });
+        }
+    }
+
     render() {
         return (
             <Container>
-                <div className="treeGraph" align="center"  ref={tc => (this.treeContainer = tc)}>
-                    <Tree className = "treeGraph"
-                    translate={this.state.translate}
-                   
-					allowForeignObjects
-					nodeLabelComponent={{
-						render: <NodeLabel className='myLabelComponentInSvg' />,
-						foreignObjectWrapper: {
-							x:-60
-						}
-					}}
+                <div className="treeGraph" align="center" ref={tc => (this.treeContainer = tc)}>
+                    <div className="chartButtonsAlign">
+                        <button className="chartButton" onClick={this.zoomIn} > +</button>
+                        <button className="chartButton" onClick={this.zoomOut} > -</button>
+                    </div>
+                    <Tree className="treeGraph"
+                        zoomable={true}
+                        scaleExtent={{ min: minzoom, max: maxzoom }}
+                        zoom={this.state.zoomsize}
+                        translate={this.state.translate}
+                        allowForeignObjects
+                        nodeLabelComponent={{
+                            render: <NodeLabel className='myLabelComponentInSvg' />,
+                            foreignObjectWrapper: {
+                                x: -60
+                            }
+                        }}
                         orientation={"vertical"}
                         data={this.state.tree}
-						nodeSvgShape={svgSquare}
-                    />
+                        nodeSvgShape={svgSquare}
+                                    
+                       
+                    >
+
+
+                    </Tree>
+
                    </div>
             </Container>)
 
