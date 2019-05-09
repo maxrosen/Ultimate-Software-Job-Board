@@ -18,6 +18,8 @@ class userQuestions extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.getQuestions = this.getQuestions.bind(this);
+        this.getAnswers = this.getAnswers.bind(this);
 
     }
 
@@ -26,6 +28,7 @@ class userQuestions extends Component {
     }
 
     closeModal() {
+        // this.
         this.setState({ modalIsOpen: false });
     }
 
@@ -63,11 +66,12 @@ class userQuestions extends Component {
     }
 
     getAnswers(employeeId) {
-        Axios.get('/api/customanswers/getEmployee/' + employeeId, { params: { id: employeeId } }).then(data => {
+        Axios.get('/api/customanswers/getCompany/' + employeeId, { params: { id: employeeId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var answerArray = [];
             for (let i = 0; i < data.data.length; i++) {
+                // this.questions
                 answerArray.unshift(data.data[i].answer);
             }
             var answer = [].concat.apply([], answerArray);
@@ -77,7 +81,8 @@ class userQuestions extends Component {
     }
 
     componentDidMount() {
-        this.getQuestions(this.state.user.companyId, this.state.user.managerId);
+        this.getQuestions(this.state.user.companyId);
+        this.getAnswers(this.state.user.employeeId);
         this.setState(prevState => ({
             modal: !prevState.modal
         }));
@@ -124,6 +129,7 @@ class userQuestions extends Component {
               console.log(data.data[0]);
               Axios.put('/api/customanswers/update/'+answerID, {params:{answer:na}})
               .then(res => {
+                window.location.reload();
                 console.log(res.data);
               });
             }
@@ -137,12 +143,16 @@ class userQuestions extends Component {
         }
 
         this.setState({ modal: false });
+        this.closeModal();
+
     }
 
     render() {
         this.state.user = jwt_decode(localStorage.jwttoken);
+        // this.componentDidMount();
         // console.log("user");
         // console.log(this.state.user);
+        const {qest,ans,usr,modal} = this.state;
         return (
             <Container >
                 <div className = "questionBox">
@@ -150,7 +160,7 @@ class userQuestions extends Component {
                         (question, index) =>
                             <div key={index} id={index}>
                                 <text id={index} key={index} placeholder="Question">{question}</text>
-                                <text id={index} key={question} placeholder="Type your Answer"></text>
+                                <text id={index} key={question} placeholder="Type your Answer">: {this.state.answer[index]}</text>
                             </div>
 
                 )
@@ -173,7 +183,7 @@ class userQuestions extends Component {
                                 (question, index) =>
                                     <div key={index} id={index}>
                                         <text id={index} key={index} placeholder="Question">{question}</text>
-                                        <Input type="text" id={index} key={question} placeholder="Type your Answer" onChange={this.onChange} />
+                                        <Input type="text" id={index} key={question} placeholder="Type your Answer" Value={this.state.answer[index]} onChange={this.onChange} />
                                     </div>
                             )
                             }
