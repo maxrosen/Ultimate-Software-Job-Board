@@ -26,14 +26,13 @@ router.post('/register',(req,res)=> {
         last_name:req.body.last_name,
         email:req.body.email
     });
-    if(req.body.employeeID != null){
         newUser.employeeID = req.body.employeeID;
         newUser.companyId = req.body.companyId;
         newUser.companyName = req.body.companyName;
         newUser.managerId = req.body.managerId;
         newUser.positionTitle = req.body.positionTitle;
         newUser.startDate = req.body.startDate;
-    }
+
     User.findOne({email:req.body.email}).then(
         user=>{
             if(user){
