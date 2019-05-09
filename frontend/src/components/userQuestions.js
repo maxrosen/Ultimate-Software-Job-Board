@@ -18,7 +18,7 @@ class userQuestions extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
-        
+
     }
 
     openModal() {
@@ -106,15 +106,15 @@ class userQuestions extends Component {
           let na = this.state.answer;
           let answerID;
 
-          Axios.get(' /api/customanswers/getEmployee/'+this.state.user.employeeId,{params:{id:this.state.user.employeeId}})
+          Axios.get('/api/customanswers/getEmployee/'+this.state.user.employeeId, {params:{id:this.state.user.employeeId}})
           .then(data => {
             if(data.data[0] === undefined){
                 console.log("undefined, create new answer");
                 console.log(newAnswers);
                 Axios.post('/api/customanswers/create/', newAnswers)
-              .then(res => {
-                console.log(res.data[0]);
-              });
+                .then(res => {
+                  console.log(res.data[0]);
+                });
             }
 
             else{
@@ -123,7 +123,7 @@ class userQuestions extends Component {
               console.log(this.state.answer);
               console.log("TEST: "+answerID);
               console.log(data.data[0]);
-              Axios.put('  /api/customanswers/update/'+answerID, {params:{answer:na}})
+              Axios.put('/api/customanswers/update/'+answerID, {params:{answer:na}})
               .then(res => {
                 console.log(res.data);
               });
@@ -148,12 +148,12 @@ class userQuestions extends Component {
             <Container >
                 <div className = "questionBox">
                 {this.state.questions.map(
-                        (question, index) => 
+                        (question, index) =>
                             <div key={index} id={index}>
                                 <text id={index} key={index} placeholder="Question">{question}</text>
                                 <text id={index} key={question} placeholder="Type your Answer"></text>
                             </div>
-                        
+
                 )
                 }
                 <div className="space">
