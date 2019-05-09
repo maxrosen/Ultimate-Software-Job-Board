@@ -33,7 +33,7 @@ class NodeLabel extends React.PureComponent {
     const name = nodeData.name
     let email
     if(nodeData.email){
-        email = <a style={{"color":'#007bff','text-decoration': 'underline'}} onClick={e=>alert(nodeData.email)}>EMail</a>
+        email = <a style={{"color":'purple','text-decoration': 'underline'}} onClick={e=>alert(nodeData.email)}>EMail</a>
     }
     else{
         email = null
