@@ -87,7 +87,6 @@ class CustomQuestionModal extends React.Component {
                 console.log(res.data);
               });
             }
-            window.location.reload();
 
           });
 
