@@ -24,8 +24,8 @@ export const getEmployeeCount =(companyId) =>{
     return axios.get(url, {params:{companyId:companyId}}).then(res=>{ return res.data})
 }
 
-export const getApps =(page) =>{
-    return axios.get('  /api/applications/',{params:{page:page}}).then(res=>{console.log(res.data); return res.data})
+export const getApps =(companyId) =>{
+    return axios.get('  /api/applications/',{params:{companyId:companyId}}).then(res=>{console.log(res.data); return res.data})
 }
 
 export const getAppCount =() =>{

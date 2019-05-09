@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Position = require('./position');
 const Schema = mongoose.Schema;
 
 const ApplicationSchema = new Schema({
@@ -20,7 +21,8 @@ const ApplicationSchema = new Schema({
     	type: String
     },
     positionid:{
-    	type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'position',
     	required: true
     },
     date: {
