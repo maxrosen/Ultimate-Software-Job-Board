@@ -15,13 +15,13 @@ export const getCount =() =>{
 }
 
 export const getCompanyCount =(companyId) =>{
-	let url = '  /api/positions/count/company/' + companyId;
+	let url = '  /api/positions/count/' + companyId;
     return axios.get(url, {params:{companyId:companyId}}).then(res=>{ return res.data})
 }
 
 export const getEmployeeCount =(companyId) =>{
     let url = '  /api/employees/count/company/';
-    return axios.get(url, {params:{companyId:companyId}}).then(res=>{ return res.data})
+    return axios.get(url, {params:{companyId:companyId}}).then(res=>{ console.log("wrong "+res.data);return res.data})
 }
 
 export const getApps =(companyId) =>{

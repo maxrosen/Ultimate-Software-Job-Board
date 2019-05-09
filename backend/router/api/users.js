@@ -24,14 +24,14 @@ router.post('/register',(req,res)=> {
     const newUser = new User({
         first_name:req.body.first_name,
         last_name:req.body.last_name,
-        email:req.body.email
+        email:req.body.email,
+        employeeId: req.body.employeeId,
+        companyId: req.body.companyId,
+        companyName: req.body.companyName,
+        managerId: req.body.managerId,
+        positionTitle: req.body.positionTitle,
+        startDate: req.body.startDate
     });
-        newUser.employeeID = req.body.employeeID;
-        newUser.companyId = req.body.companyId;
-        newUser.companyName = req.body.companyName;
-        newUser.managerId = req.body.managerId;
-        newUser.positionTitle = req.body.positionTitle;
-        newUser.startDate = req.body.startDate;
 
     User.findOne({email:req.body.email}).then(
         user=>{
