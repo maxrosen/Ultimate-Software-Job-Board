@@ -20,7 +20,6 @@ class ApplicationList extends Component {
   componentDidMount(){
       let user = jwt_decode(localStorage.jwttoken);
       // for testing
-      user.companyId=2
       const{match:{params}}=this.props;
       this.setState({currentPage:params.page});
       listFunction.getApps(user.companyId).then((data)=> this.setState({applications:data}));
