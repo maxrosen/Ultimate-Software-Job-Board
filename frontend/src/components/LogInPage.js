@@ -61,7 +61,6 @@ class LogInPage extends Component {
                     </FormGroup>
                     <Button className="LoginButton">Log In</Button>
                 </Form>
-                <NavLink href="/signup" className="signUpText">Dont Have and Account? Sign Up!</NavLink>
             </div>
         );
     }
