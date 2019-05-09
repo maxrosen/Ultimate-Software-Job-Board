@@ -30,14 +30,21 @@ const companyId = 1;
 class NodeLabel extends React.PureComponent {
 	render() {
     const {className, nodeData} = this.props
-	const name = nodeData.name
+    const name = nodeData.name
+    let email
+    if(nodeData.email){
+        email = <a style={{"color":'#007bff','text-decoration': 'underline'}} onClick={e=>alert(nodeData.email)}>EMail</a>
+    }
+    else{
+        email = null
+    }
     return (
       <div className={className}>
 		  <h2 style={{'font-size':18}}>{name}</h2>
 		  <p style={{'margin':0}}>{nodeData.title}</p>
-        <a style={{"color":'#007bff','text-decoration': 'underline'}} onClick={e=>alert(nodeData.email)}>EMail</a>
+        {email}
 	  </div>
-    )
+    );
   }
 }
 class ChartPage extends Component {
@@ -78,7 +85,7 @@ class ChartPage extends Component {
 
         if(localStorage.jwttoken){
             let user = jwt_decode(localStorage.jwttoken);
-            user.companyId=1
+            //user.companyId=1
             //Replace "user.companyId" with "1" to view the tree for Crystal Security.
             let url = "/api/employees/getCompany/"+user.companyId;
             axios.get(url).then(
