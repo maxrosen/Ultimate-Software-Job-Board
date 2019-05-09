@@ -72,108 +72,109 @@ class AccountPage extends Component {
 		let user = jwt_decode(localStorage.jwttoken);
 		if (user.employeeId == 1) {
 			return (
-				<Container>
-					<div className="AccountPageConfig">
-						<div className="AccountBar" align="center">
-							<h2 align="center">Manager Options</h2>
+                <Container>
+                    <div className="AccountPageConfig" align="center">
+                        <div className="UserProfile">
+                            <div className="profileCenter">
+                                <div className="profileInfo">
+                                    <Media
+                                        className="profileImg"
+                                        src={require('./resources/profile.png')}
+                                        alt="image"
+                                    />
+                                    <div className="profileTextdiv">
+                                        <p className="profileName">
+                                            {user.first_name} {user.last_name}
+                                        </p>
+                                        <p className="profileText">{user.companyName}</p>
+                                        <p className="profileText">{user.title}</p>
+                                        <p className="profileText">{user.email}</p>
+                                       
+                                    </div>
+                                </div>
+                                
+                                <UserQuestions />
+                            </div>
+                        </div>
 
-							<div className="space">
-								<h3 align="left">Applications</h3>
-							</div>
-							<Row className="space">
-								<Link to="/viewapps">
-									<Button className="greenButton" size="lg">
-										Open Applications
+                        <div className="AccountBar" align="center">
+
+                            <div className="space">
+                                <h3 className="sideBarText" align="left">Applications</h3>
+                            </div>
+                            <Row className="space">
+                                <Link to="/viewapps">
+                                    <Button className="greenButton" size="lg">
+                                        Open Applications
 									</Button>
-								</Link>
-							</Row>
-							<Row className="space">
-								<CustomQuestionModal
-									key="0"
-									buttonLabel="Custom Questions"
-									children={
-										<FormGen
-											template={template.question}
-											formfunction={formfunction.createQuestion}
-										/>
-									}
-								/>
-							</Row>
+                                </Link>
+                            </Row>
+                            <Row className="space">
+                                <CustomQuestionModal
+                                    key="0"
+                                    buttonLabel="Custom Questions"
+                                    children={
+                                        <FormGen
+                                            template={template.question}
+                                            formfunction={formfunction.createQuestion}
+                                        />
+                                    }
+                                />
+                            </Row>
 
-							<div className="space">
-								<h3 align="left">Jobs</h3>
-							</div>
-							<Row className="space">
-								<ApplyModal
-									key="1"
-									buttonLabel="Add Position"
-									children={
-										<FormGen template={template.work} formfunction={formfunction.createPosition} />
-									}
-								/>
-							</Row>
-							<Row className="space">
-								<Link to="/managejobs">
-									<Button className="greenButton" size="lg">
-										Edit Positions
+                            <div className="space">
+                                <h3 className="sideBarText" align="left">Jobs</h3>
+                            </div>
+                            <Row className="space">
+                                <ApplyModal
+                                    key="1"
+                                    buttonLabel="Add Position"
+                                    children={
+                                        <FormGen template={template.work} formfunction={formfunction.createPosition} />
+                                    }
+                                />
+                            </Row>
+                            <Row className="space">
+                                <Link to="/managejobs">
+                                    <Button className="greenButton" size="lg">
+                                        Edit Positions
 									</Button>
-								</Link>
-							</Row>
+                                </Link>
+                            </Row>
 
-							<div className="space">
-								<h3 align="left">Import Data</h3>
-							</div>
-							<Row className="space">
-								<ImportPosModal
-									key="1"
-									buttonLabel="Import Positions"
-									children={
-										<ReactFileReader handleFiles={this.handlePositions} fileTypes={'.json'}>
-											{' '}
-											<button className="greenButton">Upload</button>{' '}
-										</ReactFileReader>
-									}
-								/>
-							</Row>
-							<Row className="space">
-								<ImportEmpModal
-									key="1"
-									buttonLabel="Import Employees"
-									children={
-										<ReactFileReader handleFiles={this.handleEmployees} fileTypes={'.json'}>
-											{' '}
-											<button className="greenButton">Upload</button>{' '}
-										</ReactFileReader>
-									}
-								/>
-							</Row>
-						</div>
+                            <div className="space">
+                                <h3 className="sideBarText" align="left">Import Data</h3>
+                            </div>
+                            <Row className="space">
+                                <ImportPosModal
+                                    key="1"
+                                    buttonLabel="Import Positions"
+                                    children={
+                                        <ReactFileReader handleFiles={this.handlePositions} fileTypes={'.json'}>
+                                            {' '}
+                                            <button className="greenButton">Upload</button>{' '}
+                                        </ReactFileReader>
+                                    }
+                                />
+                            </Row>
+                            <Row className="space">
+                                <ImportEmpModal
+                                    key="1"
+                                    buttonLabel="Import Employees"
+                                    children={
+                                        <ReactFileReader handleFiles={this.handleEmployees} fileTypes={'.json'}>
+                                            {' '}
+                                            <button className="greenButton">Upload</button>{' '}
+                                        </ReactFileReader>
+                                    }
+                                />
+                            </Row>
+                        </div>
 
-						<div className="UserProfile">
-							<div className="profileCenter">
-								<div className="profileInfo">
-									<Media
-										className="profileImg"
-										src={require('./resources/profile.png')}
-										alt="image"
-									/>
-									<div className="profileTextdiv">
-										<p className="profileName">
-											{user.first_name} {user.last_name}
-										</p>
-										<p className="profileText">{user.title}</p>
-										<p className="profileText">{user.companyName}</p>
-										<p className="profileText">{user.email}</p>
-									</div>
-								</div>
 
-								<UserQuestions />
-							</div>
-						</div>
-						<div className="sideBar" />
-					</div>
-				</Container>
-			);
+                    </div>
+                </Container>
+            );
 		} else {
 			return (
 				<Container>
