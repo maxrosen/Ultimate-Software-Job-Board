@@ -302,3 +302,8 @@ button {
     justify-content: center;
     margin: 30px;
 }
+
+.leafNodeBase {
+
+    fill: white
+}
