@@ -12,7 +12,7 @@ router.get('/',(req,res)=> {
 });
 
 router.get('/getCompany/:id',(req,res)=> {
-    CustomAnswer.find({companyId:req.params.id}).then(customanswers => res.json(customanswers));
+    CustomAnswer.find({employeeId:req.params.id}).then(customanswers => res.json(customanswers));
 });
 
 router.get('/getCompanyManager/:id',(req,res)=> {

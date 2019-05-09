@@ -18,7 +18,7 @@ class userQuestions extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
-        
+
     }
 
     openModal() {
@@ -40,7 +40,7 @@ class userQuestions extends Component {
 
     getQuestions(companyId) {
         console.log("trying to get existing question");
-        Axios.get('  /api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
+        Axios.get('/api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var questionarrays = [];
@@ -62,6 +62,20 @@ class userQuestions extends Component {
         console.log("made the call!");
     }
 
+    getAnswers(employeeId) {
+        Axios.get('/api/customanswers/getEmployee/' + employeeId, { params: { id: employeeId } }).then(data => {
+            // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
+
+            var answerArray = [];
+            for (let i = 0; i < data.data.length; i++) {
+                answerArray.unshift(data.data[i].answer);
+            }
+            var answer = [].concat.apply([], answerArray);
+            this.setState({ answer });
+
+        })
+    }
+
     componentDidMount() {
         this.getQuestions(this.state.user.companyId, this.state.user.managerId);
         this.setState(prevState => ({
@@ -71,12 +85,11 @@ class userQuestions extends Component {
 
 
     onSubmit(e) {
-       console.log("SAVE!");
+       // console.log("SAVE!");
        e.preventDefault();
         const temparray = this.state.answer;
-        console.log("temparray");
-        console.log(temparray);
-
+        // console.log("temparray");
+        // console.log(temparray);
 
         //filter invalid input
         const filtered = temparray.filter(function(a) {
@@ -92,15 +105,15 @@ class userQuestions extends Component {
           let na = this.state.answer;
           let answerID;
 
-          Axios.get(' /api/customanswers/getCompany/'+this.state.user.companyId,{params:{id:this.state.user.companyId}})
+          Axios.get(' /api/customanswers/getCompany/'+this.state.user.employeeId,{params:{id:this.state.user.employeeId}})
           .then(data => {
             if(data.data[0] === undefined){
-                console.log("undefined, create new answer");
-                console.log(newAnswers);
+                // console.log("undefined, create new answer");
+                // console.log(newAnswers);
                 Axios.post('/api/customanswers/create/', newAnswers)
-              .then(res => {
-                console.log(res.data[0]);
-              });
+                .then(res => {
+                  console.log(res.data[0]);
+                });
             }
 
             else{
@@ -109,16 +122,16 @@ class userQuestions extends Component {
               console.log(this.state.answer);
               console.log("TEST: "+answerID);
               console.log(data.data[0]);
-              Axios.put('  /api/customanswers/update/'+answerID, {params:{answer:na}})
+              Axios.put('/api/customanswers/update/'+answerID, {params:{answer:na}})
               .then(res => {
                 console.log(res.data);
               });
             }
-            console.log("reach here?");
+            // console.log("reach here?");
           });
 
           this.setState({
-              answer: filtered,
+              answer: [],
           });
           console.log(this.state.answer);
         }
@@ -134,12 +147,12 @@ class userQuestions extends Component {
             <Container >
                 <div className = "questionBox">
                 {this.state.questions.map(
-                        (question, index) => 
+                        (question, index) =>
                             <div key={index} id={index}>
                                 <text id={index} key={index} placeholder="Question">{question}</text>
                                 <text id={index} key={question} placeholder="Type your Answer"></text>
                             </div>
-                        
+
                 )
                 }
                 <div className="space">

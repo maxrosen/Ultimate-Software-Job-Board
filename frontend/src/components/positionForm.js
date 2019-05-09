@@ -13,12 +13,12 @@ class PositionForm extends React.Component {
             companyId: '',
             companyName: '',
             managerId: ''
-            
+
         };
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
     }
-    
+
     onChange(event){
         this.setState({[event.target.name]: event.target.value});
     }
@@ -35,9 +35,9 @@ class PositionForm extends React.Component {
             managerId: user.employeeId
         }
 
-        Axios.post('  /api/positions/create',newPosition).then(res=>console.log(res.data));
+        Axios.post('/api/positions/create',newPosition).then(res=>console.log(res.data));
 
-        
+
         this.setState({
             title: '',
             description: '',

@@ -91,10 +91,10 @@ class AccountPage extends Component {
                                         <p className="profileText">{user.companyName}</p>
                                         <p className="profileText">{user.title}</p>
                                         <p className="profileText">{user.email}</p>
-                                       
+
                                     </div>
                                 </div>
-                                
+
                                 <UserQuestions />
                             </div>
                         </div>
