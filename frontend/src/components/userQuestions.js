@@ -40,7 +40,7 @@ class userQuestions extends Component {
 
     getQuestions(companyId) {
         console.log("trying to get existing question");
-        Axios.get('http:/api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
+        Axios.get('/api/customquestions/getCompany/' + companyId, { params: { id: companyId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var questionarrays = [];
@@ -63,7 +63,7 @@ class userQuestions extends Component {
     }
 
     getAnswers(employeeId) {
-        Axios.get('http:/api/customanswers/getEmployee/' + employeeId, { params: { id: employeeId } }).then(data => {
+        Axios.get('/api/customanswers/getEmployee/' + employeeId, { params: { id: employeeId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var answerArray = [];

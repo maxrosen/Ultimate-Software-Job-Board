@@ -114,7 +114,7 @@ class CustomQuestionModal extends React.Component {
 
   getQuestions(companyId) {
     console.log("trying to get existing question");
-    Axios.get('http://localhost:4000/api/customquestions/getCompany/'+companyId,{params:{id:companyId}}).then(data => {
+    Axios.get('/api/customquestions/getCompany/'+companyId,{params:{id:companyId}}).then(data => {
     // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
       var questionarrays = [];
