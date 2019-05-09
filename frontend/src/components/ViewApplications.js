@@ -99,7 +99,7 @@ class ViewApplications extends Component {
 
       let randpassword = generatePassword();
 
-      listFunction.getEmployeeCount(user.companyId).then((data)=> {console.log("something"+data);this.setState({companySize:data})});
+      listFunction.getCompanyCount(user.companyId).then((data)=> {console.log("something"+data);this.setState({companySize:data})});
       console.log(this.state.companySize);
 
       const newUser = {

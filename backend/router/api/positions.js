@@ -26,7 +26,7 @@ router.get('/count',(req,res)=> {
 
 router.get('/count/company/:id',(req,res)=> {
 
-    Position.find({companyId:req.params.id}).countDocuments().then(data =>res.json(data));
+    Position.find({companyId:req.params.id}).countDocuments().then(data =>{console.log(data); res.json(data)});
 });
 
 //@route    POST api/position

@@ -15,7 +15,7 @@ export const getCount =() =>{
 }
 
 export const getCompanyCount =(companyId) =>{
-	let url = '  /api/positions/count/company/' + companyId;
+	let url = '  /api/positions/count/' + companyId;
     return axios.get(url, {params:{companyId:companyId}}).then(res=>{ return res.data})
 }
 
