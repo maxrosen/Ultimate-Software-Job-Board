@@ -35,7 +35,7 @@ class NodeLabel extends React.PureComponent {
       <div className={className}>
 		  <h2 style={{'font-size':18}}>{name}</h2>
 		  <p>{nodeData.title}</p>
-
+        <a onClick={alert(nodeData.email)}>EMail</a>
 	  </div>
     )
   }
