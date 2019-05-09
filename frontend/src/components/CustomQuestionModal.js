@@ -87,6 +87,8 @@ class CustomQuestionModal extends React.Component {
                 console.log(res.data);
               });
             }
+            window.location.reload();
+
           });
 
           this.setState({
@@ -111,6 +113,7 @@ class CustomQuestionModal extends React.Component {
         // console.log(this.state.questions);
         let temparray = this.state.questions;
         this.setState({ questions: temparray });
+
   }
 
   getQuestions(companyId) {
