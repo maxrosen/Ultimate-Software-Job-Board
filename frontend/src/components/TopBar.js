@@ -1,4 +1,5 @@
 import React from 'react';
+import jwt_decode from 'jwt-decode'
 import {
     Collapse,
     Navbar,
@@ -44,6 +45,15 @@ export default class TopBar extends React.Component {
             this.setState({ loginbutton: <NavLink href="/login" className="nav-element">Log In</NavLink>});
         }
         else{
+            let user = jwt_decode(localStorage.jwttoken);
+            let orgchart 
+            if (user.companyId!=-1){
+                console.log(user.companyId)
+                orgchart=                        <DropdownItem href="/chart">
+                Organizational Chart
+                </DropdownItem>
+            }
+           
             this.setState({
                 loginbutton:<UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret className="nav-element">
@@ -52,9 +62,7 @@ export default class TopBar extends React.Component {
                     <DropdownMenu right>
                         <DropdownItem href="/myaccount">My Account
                                     </DropdownItem>
-                        <DropdownItem href="/chart">
-                            Organizational Chart
-                  </DropdownItem>
+                        {orgchart}
                         <DropdownItem divider />
                         <DropdownItem href="/1" onClick={this.logout} >Log Out</DropdownItem>
 
