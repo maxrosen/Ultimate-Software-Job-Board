@@ -10,8 +10,10 @@ export const createPosition =(tempPosition) =>{
         companyId: user.companyId,
         companyName: user.companyName,
         managerId: user.employeeId
-   	}
-    return axios.post('  /api/positions/create',newPosition).then(res=>console.log(res.data));
+       }
+       axios.post('  /api/positions/create',newPosition).then(res=>console.log(res.data));
+       alert("New position has been created!");
+    return;
 }
 
 export const createApplication =(newApplication) =>{
