@@ -66,7 +66,7 @@ class userQuestions extends Component {
     }
 
     getAnswers(employeeId) {
-        Axios.get('/api/customanswers/getCompany/' + employeeId, { params: { id: employeeId } }).then(data => {
+        Axios.get('/api/customanswers/getCompany/' + employeeId, { query: { id: employeeId, companyId: this.state.user.companyId } }).then(data => {
             // Axios.get('http://localhost:4000/api/getCompanyManager/', {params:params}).then(data => {
 
             var answerArray = [];
