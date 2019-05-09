@@ -189,6 +189,7 @@ class AccountPage extends Component {
                                         <p className="profileName">
                                             {user.first_name} {user.last_name}
                                         </p>
+                                        <p className="profileText">{user.companyName}</p>
                                         <p className="profileText">{user.title}</p>
                                         <p className="profileText">{user.email}</p>
                                     </div>

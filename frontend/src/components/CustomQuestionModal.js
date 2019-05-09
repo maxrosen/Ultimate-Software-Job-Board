@@ -97,6 +97,7 @@ class CustomQuestionModal extends React.Component {
         }
 
         this.setState({ modal: false });
+
   }
 
   addQuestion() {
